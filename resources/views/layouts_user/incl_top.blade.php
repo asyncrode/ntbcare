@@ -22,10 +22,15 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets_user/media/favicons/apple-touch-icon-180x180.png')}}">
         <!-- END Icons -->
 
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="{{asset('assets_user/js/plugins/select2/css/select2.css')}}">
+        <link rel="stylesheet" href="{{asset('assets_user/js/plugins/dropzonejs/dist/dropzone.css')}}">
+
         <!-- Stylesheets -->
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
         <link rel="stylesheet" id="css-main" href="{{asset('assets_user/css/codebase.min.css')}}">
+        
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->

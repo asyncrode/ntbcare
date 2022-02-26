@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'admin'],function(){
-    Route::get('/', function () {
-        return view('auth.login');
-    });
+    Route::get('login', 'Admin\Auth\AuthadminController@getLogin')->name('admin.login');
+    Route::post('login', 'Admin\Auth\AuthadminController@postLogin')->name('adminpost.login');
+    Route::post('logout', 'Admin\Auth\AuthadminController@postLogout')->name('adminpost.logout');
+
     
-    Auth::routes();
-    Route::get('/dashboard','Admin\DashboardController@index')->middleware('auth')->name('dashboard.index');
+    Route::get('/dashboard','Admin\DashboardController@index')->middleware('auth:admin')->name('dashboard.index');
     
    
 });

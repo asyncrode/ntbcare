@@ -109,9 +109,14 @@
                     <i class="fa fa-angle-down ml-5"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
-                    <a class="dropdown-item" href="op_auth_signin.html">
+                    
+                    <a class="dropdown-item" href="{{route('adminpost.logout')}}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
                         <i class="si si-logout mr-5"></i> Sign Out
                     </a>
+                    <form id="logout-form" action="{{ route('adminpost.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
             <!-- END User Dropdown -->

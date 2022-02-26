@@ -25,16 +25,29 @@
             If your sidebar menu includes icons and you would like to hide them, you can add the class 'nav-main-header-no-icons'
             -->
             <ul class="nav-main-header nav-main-header-no-icons">
-                @guest
                 <li>
                     <a class="" href="">
                         <i class="si si-home"></i>Home
                     </a>
                 </li>
                 <li>
-                    <a class="" href="">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="" href="{{route('pengaduan.index')}}">
+                        <i class="si si-home"></i>Pengaduan
                     </a>
+                </li>
+                @guest
+                <li>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                @else
+                <li>
+                    <a class="nav-link" href="{{ route('login') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout
+                    </a>
+                    
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
                 @endguest
             </ul>
