@@ -83,7 +83,7 @@
             <!-- END Visible only in normal mode -->
         </div>
         <!-- END Side User -->
-
+        @hasrole('super-admin')
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
@@ -91,31 +91,48 @@
                     <a href="be_pages_dashboard.html"><i class="si si-cup"></i><span
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
-                <li class="nav-main-heading"><span class="sidebar-mini-visible">BD</span><span
-                        class="sidebar-mini-hidden">Build</span></li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
-                            class="sidebar-mini-hide">Layout</span></a>
+                            class="sidebar-mini-hide">Pengaduan</span></a>
                     <ul>
                         <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">General</a>
-                            <ul>
-                                <li>
-                                    <a href="be_layout_default.html">Default</a>
-                                </li>
-                                <li>
-                                    <a href="be_layout_flipped.html">Flipped</a>
-                                </li>
-                                <li>
-                                    <a href="be_layout_native_scrolling.html">Native Scrolling</a>
-                                </li>
-                            </ul>
+                            <a href="be_layout_default.html">Test</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
+                            class="sidebar-mini-hide">Manajemen User</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Test</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
         <!-- END Side Navigation -->
+        @else
+        <!-- Side Navigation -->
+        <div class="content-side content-side-full">
+            <ul class="nav-main">
+                <li>
+                    <a href="be_pages_dashboard.html"><i class="si si-cup"></i><span
+                            class="sidebar-mini-hide">Dashboard</span></a>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
+                            class="sidebar-mini-hide">Pengaduan</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Test</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- END Side Navigation -->
+        @endhasrole
     </div>
     <!-- Sidebar Content -->
 </nav>

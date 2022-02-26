@@ -32,51 +32,30 @@
             -->
             <ul class="nav-main">
                 <li>
-                    <a class="active" href="">
+                    <a class="" href="">
                         <i class="si si-home"></i>Home
                     </a>
                 </li>
-                <li class="nav-main-heading">Heading</li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#">
-                        <i class="si si-puzzle"></i>Dropdown
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)">Link #1</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Link #2</a>
-                        </li>
-                        <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">Dropdown</a>
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)">Link #1</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Link #2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-main-heading">Vital</li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
+                    <a class="" href="{{route('pengaduan.index')}}">
+                        <i class="si si-home"></i>Pengaduan
                     </a>
                 </li>
+                @guest
                 <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
-                    </a>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
+                @else
                 <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
+                    <a class="nav-link" href="{{ route('login') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout
                     </a>
+                    
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
+                @endguest
             </ul>
         </div>
         <!-- END Side Main Navigation -->
