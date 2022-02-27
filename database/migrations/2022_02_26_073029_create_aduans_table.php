@@ -26,7 +26,7 @@ class CreateAduansTable extends Migration
             $table->string('bukti');
             $table->string('bukti_2');
             $table->longText('pesan');
-            $table->enum('status',['on process','pending','approved','completed','rejected'])->nullable();
+            $table->enum('status',['Waiting','Approved','Rejected','On process','Complete'])->nullable();
             $table->enum('priority',['biasa','penting','segera'])->nullable();
             $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade');
             $table->foreign('id_subkategori')->references('id')->on('subkategoris')->onDelete('cascade');

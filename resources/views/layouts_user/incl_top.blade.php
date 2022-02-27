@@ -25,7 +25,7 @@
 
         <!-- Page JS Plugins CSS -->
         <link rel="stylesheet" href="{{asset('assets_user/js/plugins/select2/css/select2.css')}}">
-        <link rel="stylesheet" href="{{asset('assets_user/js/plugins/dropzonejs/dist/dropzone.css')}}">
+        <link href="{{asset('assets_user/js/plugins/kartik/css/fileinput.css')}}" media="all" rel="stylesheet" type="text/css" />
 
         <!-- Stylesheets -->
         <!-- Fonts and Codebase framework -->
