@@ -11,3 +11,11 @@
 <script src="{{asset('assets_user/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
 <!-- Page JS Helpers (Select2 plugin) -->
 <script>jQuery(function(){ Codebase.helpers('select2'); });</script>
+<script>
+     $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+</script>
+

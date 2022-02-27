@@ -14,7 +14,8 @@
             </div>
             <div class="block-content">
 
-                <form class="js-validation-bootstrap" action="" method="post">
+                <form class="js-validation-bootstrap" id="frm_add" action="{{route("pengaduan.store")}}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row py-20">
                         <div class="col-xl-6">
                             <div class="form-group ">
@@ -25,8 +26,6 @@
                                         style="width: 100%;" data-placeholder="Choose one..">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
                                     </select>
                                 </div>
                             </div>
@@ -38,9 +37,6 @@
                                         style="width: 100%;" data-placeholder="Choose one..">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
-                                        <option value="javascript">JavaScript</option>
                                     </select>
                                 </div>
                             </div>
@@ -54,8 +50,6 @@
                                         style="width: 100%;" data-placeholder="Choose one..">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
                                     </select>
                                 </div>
                             </div>
@@ -67,9 +61,6 @@
                                         style="width: 100%;" data-placeholder="Choose one..">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
-                                        <option value="javascript">JavaScript</option>
                                     </select>
                                 </div>
                             </div>
@@ -81,11 +72,17 @@
                                         style="width: 100%;" data-placeholder="Choose one..">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
-                                        <option value="javascript">JavaScript</option>
                                     </select>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="form-group ">
+                            <label class="col-form-label" for="pesan">Alamat <span
+                                    class="text-danger">*</span></label>
+                            <div class="">
+                                <input type="text" class="form-control" id="alamat" name="alamat">
                             </div>
                         </div>
                     </div>
@@ -104,7 +101,7 @@
                             <label class="col-form-label" for="Gambar">Gambar <span
                                     class="text-danger">*</span></label>
                             <div class="">
-                                <input type="file" name="file" id="">
+                                <input type="file" name="bukti" id="bukti">
                             </div>
                         </div>
                     </div>
@@ -113,13 +110,13 @@
                             <label class="col-form-label" for="pesan">Dokumen Pendukung <span
                                     class="text-danger">*</span></label>
                             <div class="">
-                                <input type="file" name="file" id="">
+                                <input type="file" name="bukti_2" id="bukti_2">
                             </div>
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="">
-                            <button type="submit" class="btn btn-alt-primary btn-block">Submit</button>
+                            <button type="submit" id="save" class="btn btn-alt-primary btn-block">Submit</button>
                         </div>
                     </div>
                 </form>

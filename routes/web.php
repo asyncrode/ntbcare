@@ -19,11 +19,11 @@ Route::get('/', function () {
 Route::get('/pengaduan','User\PengaduanController@index')->name('pengaduan.index');
 
 // Get Data
-Route::get('/getKategori','Admin\KategoriController@getKategori')->name('kategori.data');
-Route::get('/getKecamatan','Admin\KecamatanController@getKecamatan')->name('kecamatan.data');
-Route::get('/getKelurahan','Admin\KelurahanController@getKelurahan')->name('kelurahan.data');
-Route::get('/getSubkategori','Admin\SubkategoriController@getSubkategori')->name('subkategori.data');
-Route::get('/getWilayah','Admin\WilayahController@getWilayah')->name('wilayah.data');
+Route::get('/getData','User\PengaduanController@getData')->name('pengaduan.data');
+
+// Post Data
+Route::post('/store','User\PengaduanController@store')->name('pengaduan.store');
+
 
 Auth::routes();
 
