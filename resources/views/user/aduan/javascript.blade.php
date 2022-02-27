@@ -20,7 +20,30 @@
     });
 
     $(document).ready(function(){
-    
+
+        $("#bukti").fileinput({
+            theme: 'fa',
+            required: true,
+            allowedFileExtensions:  ["jpg", "png", "jpeg", "JPG", "JPEG", "PNG"],
+            showUpload: false,
+            "fileActionSettings":{
+                "showDrag":false,
+                "showUpload":false,
+                "showRemove":false
+            }
+        })
+
+        $("#bukti_2").fileinput({
+               theme: 'fa',
+                required: true,
+                allowedFileExtensions: ["pdf"],
+                showUpload: false,
+                "fileActionSettings":{
+                    "showDrag":false,
+                    "showUpload":false,
+                    "showRemove":false
+                }
+            })
         // Get Data
         $.ajax({
             url:"{{ route('pengaduan.data') }}",

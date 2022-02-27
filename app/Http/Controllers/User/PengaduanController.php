@@ -64,7 +64,7 @@ class PengaduanController extends Controller
         $aduan->bukti = $name;
         $aduan->bukti_2 = $dokumen_name;
         $aduan->pesan = $request->pesan;
-        $aduan->status = 'on process';
+        $aduan->status = 'Waiting';
         $aduan->save();
         return response()->json([
             'message' => 'Pengajuan berhasi di tambah'

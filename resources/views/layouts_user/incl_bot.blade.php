@@ -7,8 +7,9 @@
 <script src="{{asset('assets_user/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 <script src="{{asset('assets_user/js/plugins/jquery-validation/additional-methods.js')}}"></script>
 
-{{-- Dropzone --}}
-<script src="{{asset('assets_user/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
+{{-- Kartik --}}
+<script src="{{asset('assets_user/js/plugins/kartik/js/fileinput.js')}}"></script>
+<script src="{{asset('assets_user/js/plugins/kartik/themes/fa/theme.js')}}"></script>
 <!-- Page JS Helpers (Select2 plugin) -->
 <script>jQuery(function(){ Codebase.helpers('select2'); });</script>
 <script>
