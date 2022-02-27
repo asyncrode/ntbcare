@@ -13,3 +13,4 @@
 
 <!-- Page JS Code -->
 <script src="{{asset('assets/js/pages/be_pages_dashboard.min.js')}}""></script>
+<script>jQuery(function(){ Codebase.helpers('content-filter'); });</script>

@@ -20,6 +20,6 @@ Route::group(['prefix' => 'admin'],function(){
 
     
     Route::get('/dashboard','Admin\DashboardController@index')->middleware('auth:admin')->name('dashboard.index');
-    
+    Route::get('/pengaduan','Admin\PengaduanController@index')->middleware('auth:admin')->name('pengaduan.admin.index');
    
 });
