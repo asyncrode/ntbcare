@@ -21,7 +21,7 @@ class CreateAduansTable extends Migration
             $table->char('id_wil');
             $table->char('id_kec');
             $table->char('id_kel');
-            $table->unsignedBigInteger('id_opd');
+            $table->unsignedBigInteger('id_opd')->nullable();
             $table->string('alamat');
             $table->string('bukti');
             $table->string('bukti_2');
