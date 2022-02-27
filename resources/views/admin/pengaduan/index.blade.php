@@ -18,7 +18,7 @@
                 @foreach ($kategori as $k)
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-category-link={{$k->id}}>
-                        <i class="fa fa-fw fa-briefcase mr-5"></i> {{$k->kategori}}
+                        <i class="fa fa-fw fa-th-list mr-5"></i> {{$k->kategori}}
                     </a>
                 </li>
                 @endforeach
@@ -33,25 +33,45 @@
         <!-- END Navigation -->
 
         <!-- Projects -->
-        <div class="row row-deck">
-            @foreach ($aduan as $d)
+        <div class="row row-deck" >
+            @foreach ($user as $d)
             <div class="col-sm-4" data-category="{{$d->id_kategori}}">
                 <a class="block block-link-pop ">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Block</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option">
-                                <i class="si si-wrench"></i>
+                    <div class="block-header block-header-default pb-0">
+                        <h3 class=" block-title">
+                            {{$d->name}}
+                        </h3>
+                        <div class="block-options text-center">
+                            <button type="button" class="btn-block-option" >
+                                <i class="si si-action-redo"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="block-content">
-                        <img class="img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
-                            alt="Project 12 Promo">
-                        <p>
-                            {{$d->pesan}}
+                    <div class="block-header block-header-default pt-0">
+                        <p class="m-0">
+                            <span class="text-muted">{{$d->id_wil}} - Kota Mataram</span> <br> <!--Nama wilayah -->
+                            <span class="badge badge-primary">Infrastruktur</span><br>
                         </p>
-
+                    </div>
+                    <div class="block-content p-0">
+                        <p class="p-0 bg-warning text-center mb-0">{{$d->status}}</p>
+                    </div>
+                    <div class="block-content">
+                        <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
+                            alt="Project 12 Promo">
+                        <p class="mb-0">
+                            {{$d->pesan}} <br> <br>
+                            <span class="text-muted text-left">{{$d->created_at}}</span> 
+                        </p>
+                        <div class="block-options text-right mb-20">
+                            
+                            <button type="button" class="btn-block-option" >
+                                <i class="si si-action-redo"></i> 1
+                            </button>
+                            <button type="button" class="btn-block-option" >
+                                <i class="si si-bubble"></i> 3
+                            </button>
+                        </div>
                     </div>
                 </a>
             </div>

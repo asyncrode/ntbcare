@@ -52,19 +52,19 @@
         <div class="content-side content-side-full content-side-user px-10 align-parent">
             <!-- Visible only in mini mode -->
             <div class="sidebar-mini-visible-b align-v animated fadeIn">
-                <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar15.jpg" alt="">
+                <img class="img-avatar img-avatar32" src="{{asset('assets/media/avatars/avatar15.jpg')}}" alt="">
             </div>
             <!-- END Visible only in mini mode -->
 
             <!-- Visible only in normal mode -->
             <div class="sidebar-mini-hidden-b text-center">
                 <a class="img-link" href="be_pages_generic_profile.html">
-                    <img class="img-avatar" src="assets/media/avatars/avatar15.jpg" alt="">
+                    <img class="img-avatar" src="{{asset('assets/media/avatars/avatar15.jpg')}}" alt="">
                 </a>
                 <ul class="list-inline mt-10">
                     <li class="list-inline-item">
                         <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase"
-                            href="be_pages_generic_profile.html">J. Smith</a>
+                            href="be_pages_generic_profile.html">Super Admin</a>
                     </li>
                     <li class="list-inline-item">
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
@@ -88,12 +88,28 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href="be_pages_dashboard.html"><i class="si si-cup"></i><span
+                    <a href="{{route('dashboard.index')}}"><i class="si si-bar-chart"></i><span
                             class="sidebar-mini-hide">Dashboard</span></a>
+                </li>                
+                <li>
+                    <a href="{{route('pengaduan.admin.index')}}"><i class="si si-bubbles"></i><span
+                        class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
-                            class="sidebar-mini-hide">Pengaduan</span></a>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span
+                            class="sidebar-mini-hide">List Pengguna</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">pelapor</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">admin</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-briefcase"></i><span
+                            class="sidebar-mini-hide">List OPD/Instansi</span></a>
                     <ul>
                         <li>
                             <a href="be_layout_default.html">Test</a>
@@ -101,8 +117,41 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
-                            class="sidebar-mini-hide">Manajemen User</span></a>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
+                            class="sidebar-mini-hide">Manajemen Kategori</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Test</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
+                            class="sidebar-mini-hide">Report Filtering</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Wilayah</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per OPD/Instansi</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rincian per Wilayah</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
+                            class="sidebar-mini-hide">Untold Story</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Test</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-newspaper-o"></i><span
+                            class="sidebar-mini-hide">News</span></a>
                     <ul>
                         <li>
                             <a href="be_layout_default.html">Test</a>
@@ -117,11 +166,11 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href="be_pages_dashboard.html"><i class="si si-cup"></i><span
+                    <a href="be_pages_dashboard.html"><i class="si si-bar-chart"></i><span
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-vector"></i><span
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bubbles"></i><span
                             class="sidebar-mini-hide">Pengaduan</span></a>
                     <ul>
                         <li>
