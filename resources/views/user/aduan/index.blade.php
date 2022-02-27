@@ -13,7 +13,6 @@
                 </div>
             </div>
             <div class="block-content">
-
                 <form class="js-validation-bootstrap" id="frm_add" action="{{route("pengaduan.store")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row py-20">
