@@ -14,11 +14,14 @@ class PengaduanController extends Controller
 {
     public function index()
     {
-        $aduan = Aduan::all();
-        $kategori = Kategori::all();
-        // $kategori = Kategori::join('aduans', 'aduans.id_kategori', '=', 'kategoris.id')->get();
-        $user = User::join('aduans', 'aduans.id_pelapor', '=', 'users.id')
+        $aduan = Aduan::join('users', 'users.id', '=', 'aduans.id_pelapor')
+            ->join('kategoris', 'kategoris.id', '=', 'aduans.id_kategori')
+            ->join('subkategoris', 'subkategoris.id', '=', 'aduans.id_subkategori')
+            ->join('wilayahs', 'wilayahs.id', '=', 'aduans.id_wil')
             ->get();
+        // $aduan = Aduan::all();
+        $kategori = Kategori::all();
+        $user = User::join('aduans', 'aduans.id_pelapor', '=', 'users.id')->get();
         return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
     }
 }

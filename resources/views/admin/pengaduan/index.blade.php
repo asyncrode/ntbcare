@@ -34,7 +34,7 @@
 
         <!-- Projects -->
         <div class="row row-deck" >
-            @foreach ($user as $d)
+            @foreach ($aduan as $d)
             <div class="col-sm-4" data-category="{{$d->id_kategori}}">
                 <a class="block block-link-pop ">
                     <div class="block-header block-header-default pb-0">
@@ -49,8 +49,8 @@
                     </div>
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
-                            <span class="text-muted">{{$d->id_wil}} - Kota Mataram</span> <br> <!--Nama wilayah -->
-                            <span class="badge badge-primary">Infrastruktur</span><br>
+                            <span class="text-muted">{{$d->nama_will}}</span> <br>
+                            <span class="badge badge-primary">{{$d->kategori}}</span><br>
                         </p>
                     </div>
                     <div class="block-content p-0">
@@ -61,7 +61,7 @@
                             alt="Project 12 Promo">
                         <p class="mb-0">
                             {{$d->pesan}} <br> <br>
-                            <span class="text-muted text-left">{{$d->created_at}}</span> 
+                            <span class="text-muted text-left">{{$d->a_created_at}}</span> <!--ganti nama field created_at di table aduan-->
                         </p>
                         <div class="block-options text-right mb-20">
                             

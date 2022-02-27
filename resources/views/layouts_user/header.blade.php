@@ -7,7 +7,7 @@
             <div class="content-header-item">
                 <a class="link-effect font-w700 mr-5" href="">
                     <i class="si si-fire text-primary"></i>
-                    <span class="font-size-xl text-dual-primary-dark">code</span><span class="font-size-xl text-primary">base</span>
+                    <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                 </a>
             </div>
             <!-- END Logo -->
@@ -33,6 +33,16 @@
                 <li>
                     <a class="" href="{{route('pengaduan.index')}}">
                         <i class="si si-home"></i>Pengaduan
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="#">
+                        <i class="si si-home"></i>Untold Story
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="#">
+                        <i class="si si-home"></i>Berita
                     </a>
                 </li>
                 @guest
