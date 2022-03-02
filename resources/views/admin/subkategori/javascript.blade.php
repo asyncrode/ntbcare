@@ -1,37 +1,38 @@
 <script>
-    $('#admin').select2({
+    $('#kategori').select2({
         theme: 'bootstrap4',
     });
     $(document).ready(function(){
         var idEdit = 0;
 
         // Show Data
-        var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('opd.data') }}",
-        columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'nama', name: 'nama'},
-            {data: 'id_admin', name: 'id_admin'},
-            {data: 'created_at', name: 'created_at'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
+        var table = $('.tableSubkategori').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('subkategori.data') }}",
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'subkategori', name: 'subkategori'},
+                {data: 'id_kategori', name: 'id_kategori'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ]
+        });
         // End Show
 
         // Create Modal
-        $('#addOpd').click(function () {
-            $('#frm_add').trigger("reset");
-            $('#modalOpd').modal('show');
+        $('#addSubkategori').click(function () {
+            $('#frm_subkategori').trigger("reset");
+            $('#modalSubkategori').modal('show');
                 $.ajax({
-                url:"{{ route('opd.getUser') }}",
+                url:"{{ route('subkategori.getKategori') }}",
                 type:'GET',
                 success:function(res){
-                    $("#admin").empty();
+                    console.log(res)
+                    $("#kategori").empty();
                     $.each(res.data,function(key, value)
                     {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                        $("#kategori").append('<option value=' + value.id + '>' + value.kategori + '</option>');
                     });
                 }
             })
@@ -44,11 +45,11 @@
             
             if(idEdit === 0)
             {
-                url = "{{ route('opd.store') }}"
+                url = "{{ route('subkategori.store') }}"
                 type = "POST"
             }else{
 
-                url = '{{ route("opd.update", ":id") }}';
+                url = '{{ route("subkategori.update", ":id") }}';
                 url = url.replace(':id', idEdit );
                 
                 type = "PUT"
@@ -59,7 +60,7 @@
                 },
                 type : type,
                 url : url,
-                data : $('#frm_add').serialize(),
+                data : $('#frm_subkategori').serialize(),
                 success : function(response){
                     Swal.fire({
                         title : 'Berhasil !',
@@ -68,8 +69,8 @@
                         showConfirmButton : true
                     })
                     idEdit = 0;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('hide');
+                    $('#frm_subkategori').trigger("reset");
+                    $('#modalSubkategori').modal('hide');
                     table.draw()
                 }
             })
@@ -80,7 +81,7 @@
         // EDIT DATA
         $('body').on('click','#edit',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.edit",":id") }}'
+            var url = '{{ route("subkategori.edit",":id") }}'
             url = url.replace(':id',id)
 
             $.ajax({
@@ -89,14 +90,14 @@
                 success:function(res){
                     console.log(res)
                     idEdit = res.data.id;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('show');
-                    $('#nama').val(res.data.nama);
-                    $("#admin").empty()
+                    $('#frm_subkategori').trigger("reset");
+                    $('#modalSubkategori').modal('show');
+                    $('#nama').val(res.data.subkategori);
+                    $("#kategori").empty()
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    $.each(res.admin,function(key, value)
+                    $.each(res.kategori,function(key, value)
                     {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                        $("#kategori").append('<option value=' + value.id + '>' + value.kategori + '</option>');
                     });
 
                 }
@@ -107,7 +108,7 @@
         // Delete
         $('body').on('click','#delete',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.delete", ":id") }}';
+            var url = '{{ route("subkategori.delete", ":id") }}';
             url = url.replace(':id', id );
             Swal.fire({
                 title : 'Anda Yakin ?',

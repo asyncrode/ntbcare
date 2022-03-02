@@ -28,5 +28,13 @@ class UseradminSeeder extends Seeder
         ]);
         
         $lombok->assignRole('opd-lombok');
+
+        $bima = Admin::create([
+            'nama' => 'opd bima',
+            'email' => 'bima@gmail.com',
+            'password' => bcrypt('admin123')
+        ]);
+        
+        $bima->assignRole('opd-bima');
     }
 }
