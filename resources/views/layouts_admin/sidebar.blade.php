@@ -133,13 +133,13 @@
                             class="sidebar-mini-hide">List Wilayah</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Kab/kota</a>
+                            <a href="{{route('wilayah.index')}}">Kab/kota</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Kecamatan</a>
+                            <a href="{{route('kecamatan.index')}}">Kecamatan</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Kelurahan</a>
+                            <a href="{{route('kelurahan.index')}}">Kelurahan</a>
                         </li>
                     </ul>
                 </li>
@@ -182,22 +182,6 @@
                     <ul>
                         <li>
                             <a href="be_layout_default.html">Test</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-maps"></i><span
-                            class="sidebar-mini-hide">Input Wilayah</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{route('wilayah.index')}}">Kab/kota</a>
-                        </li>
-                        <li>
-                            <a href="{{route('kecamatan.index')}}">Kecamatan</a>
-                        </li>
-                        <li>
-                            <a href="{{route('kelurahan.index')}}">Kelurahan</a>
                         </li>
                     </ul>
                 </li>
