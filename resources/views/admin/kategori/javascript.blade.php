@@ -1,19 +1,15 @@
 <script>
-    $('#admin').select2({
-        theme: 'bootstrap4',
-    });
     $(document).ready(function(){
         var idEdit = 0;
 
         // Show Data
-        var table = $('.data-table').DataTable({
+        var table = $('.tableKategori').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('opd.data') }}",
+        ajax: "{{ route('kategori.data') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'nama', name: 'nama'},
-            {data: 'id_admin', name: 'id_admin'},
+            {data: 'kategori', name: 'kategori'},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -21,20 +17,9 @@
         // End Show
 
         // Create Modal
-        $('#addOpd').click(function () {
-            $('#frm_add').trigger("reset");
-            $('#modalOpd').modal('show');
-                $.ajax({
-                url:"{{ route('opd.getUser') }}",
-                type:'GET',
-                success:function(res){
-                    $("#admin").empty();
-                    $.each(res.data,function(key, value)
-                    {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
-                    });
-                }
-            })
+        $('#addKategori').click(function () {
+            $('#frm_kategori').trigger("reset");
+            $('#modalKategori').modal('show');
         });
 
         // Store Data
@@ -44,11 +29,11 @@
             
             if(idEdit === 0)
             {
-                url = "{{ route('opd.store') }}"
+                url = "{{ route('kategori.store') }}"
                 type = "POST"
             }else{
 
-                url = '{{ route("opd.update", ":id") }}';
+                url = '{{ route("kategori.update", ":id") }}';
                 url = url.replace(':id', idEdit );
                 
                 type = "PUT"
@@ -59,7 +44,7 @@
                 },
                 type : type,
                 url : url,
-                data : $('#frm_add').serialize(),
+                data : $('#frm_kategori').serialize(),
                 success : function(response){
                     Swal.fire({
                         title : 'Berhasil !',
@@ -68,8 +53,8 @@
                         showConfirmButton : true
                     })
                     idEdit = 0;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('hide');
+                    $('#frm_kategori').trigger("reset");
+                    $('#modalKategori').modal('hide');
                     table.draw()
                 }
             })
@@ -80,7 +65,7 @@
         // EDIT DATA
         $('body').on('click','#edit',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.edit",":id") }}'
+            var url = '{{ route("kategori.edit",":id") }}'
             url = url.replace(':id',id)
 
             $.ajax({
@@ -89,15 +74,9 @@
                 success:function(res){
                     console.log(res)
                     idEdit = res.data.id;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('show');
-                    $('#nama').val(res.data.nama);
-                    $("#admin").empty()
-                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    $.each(res.admin,function(key, value)
-                    {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
-                    });
+                    $('#frm_kategori').trigger("reset");
+                    $('#modalKategori').modal('show');
+                    $('#kategori').val(res.data.kategori);
 
                 }
             })
@@ -107,7 +86,7 @@
         // Delete
         $('body').on('click','#delete',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.delete", ":id") }}';
+            var url = '{{ route("kategori.delete", ":id") }}';
             url = url.replace(':id', id );
             Swal.fire({
                 title : 'Anda Yakin ?',

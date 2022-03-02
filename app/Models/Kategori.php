@@ -10,4 +10,8 @@ class Kategori extends Model
     protected $fillable = [
         'kategori'
     ];
+    public function subkategori()
+    {
+        return $this->hasMany(Subkategori::class,'id');
+    }
 }
