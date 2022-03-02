@@ -8,7 +8,7 @@ class Aduan extends Model
 {
     protected $table = 'aduans';
     protected $fillable = [
-        'id_kategori','id_subkategori','id_pelapor','id_wil','id_kec','id_kel','id_opd','alamat','bukti','buktu_2',
-        'pesan','status','priority'
+        'id_kategori', 'id_subkategori', 'id_pelapor', 'id_wil', 'id_kec', 'id_kel', 'id_opd', 'alamat', 'bukti', 'bukti_2',
+        'pesan', 'status', 'priority'
     ];
 }

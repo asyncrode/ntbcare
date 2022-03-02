@@ -1,18 +1,64 @@
 @extends('layouts_admin.master')
 @section('content')
 <div class="content">
-    <h2 class="content-heading">Project X <small>Web Design and Development</small></h2>
+    {{-- <h2 class="content-heading">Project X <small>Web Design and Development</small></h2> --}}
     <div class="block">
         <!-- Navigation -->
         <div class="block-content block-content-full border-b clearfix">
-            <div class="btn-group float-right">
-                <a class="btn btn-secondary" href="javascript:void(0)">
-                    <i class="fa fa-arrow-left text-primary mr-5"></i> Prev
-                </a>
-                <a class="btn btn-secondary" href="javascript:void(0)">
-                    Next <i class="fa fa-arrow-right text-primary ml-5"></i>
-                </a>
+            @foreach ($aduan as $d)
+            <div class="btn-group float-right" role="group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Forward</button>
+                <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        OPD 1
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        OPD 2
+                    </a>
+                    {{-- <div class="dropdown-divider"></div> --}}
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        OPD 3
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        OPD 4
+                    </a>
+                </div>
             </div>
+            <div class="btn-group float-right" role="group">
+                <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{$d->status}}</button>
+                <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        Approved
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        Rejected
+                    </a>
+                    {{-- <div class="dropdown-divider"></div> --}}
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        On Proccess
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        Completed
+                    </a>
+                </div>
+            </div>
+            @endforeach
+            <div class="btn-group float-right">
+                {{-- @if ($d->a_status == 'Waiting')
+                            <div class="ribbon-box bg-warning text-uppercase" style="font-size: 60%;">{{$d->a_status}}</div>
+                        @else
+                            @if ($d->a_status == 'Rejected')
+                                <div class="ribbon-box bg-danger text-uppercase" style="font-size: 60%;">{{$d->a_status}}</div>
+                            @else
+                                @if ($d->a_status == 'Approved')
+                                    <div class="ribbon-box bg-info text-uppercase" style="font-size: 60%;">{{$d->a_status}}</div>
+                                @else
+                                    <div class="ribbon-box bg-success text-uppercase" style="font-size: 60%;">{{$d->a_status}}</div>
+                                @endif
+                            @endif
+                        @endif --}}
+            </div>
+            
             <a class="btn btn-secondary" href="be_pages_generic_project_list.php">
                 <i class="fa fa-th-large text-primary mr-5 "></i> All Projects
             </a>
@@ -22,6 +68,7 @@
         <!-- Project -->
         @foreach ($aduan as $d)
         <div class="block-content block-content-full">
+            <p class="text-muted m-0">{{$d->a_created_at}}<br></p>
             <div class="row py-20">
                 <div class="col-sm-6 invisible" data-toggle="appear">
                     <!-- Image Slider (.js-slider class is initialized in Helpers.slick()) -->
@@ -38,13 +85,23 @@
                         </div> --}}
                     </div>
                     <!-- END Image Slider -->
-
-                    <!-- Project Info -->
-                    <table class="table table-striped table-borderless mt-20">
+                </div>
+                <div class="col-sm-6 nice-copy">
+                    <!-- Project Description -->
+                    {{-- <h5>DETAIL ADUAN</h5> --}}
+                    <table class="table table-striped table-borderless mt-0">
                         <tbody>
-                            <tr>
+                            {{-- <tr>
                                 <td class="font-w600">Nama</td>
                                 <td>{{$d->name}}</td>
+                            </tr> --}}
+                            <tr>
+                                <td class="font-w600">Kategori Aduan</td>
+                                <td>{{$d->kategori}}</td>
+                            </tr>
+                            <tr>
+                                <td class="font-w600">Subkategori</td>
+                                <td class="font-w600">{{$d->subkategori}}</td>
                             </tr>
                             <tr>
                                 <td class="font-w600">Lokasi</td>
@@ -62,24 +119,15 @@
                                 <td class="font-w600">Kelurahan</td>
                                 <td>{{$d->nama_kel}}</td>
                             </tr>
-                            <tr>
-                                <td class="font-w600">Kategori Aduan</td>
-                                <td>{{$d->kategori}}</td>
-                            </tr>
-                            <tr>
-                                <td class="font-w600">Subkategori</td>
-                                <td>
-                                    <a href="javascript:void(0)">{{$d->subkategori}}</a>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
-                    <!-- END Project Info -->
-                </div>
-                <div class="col-sm-6 nice-copy">
-                    <!-- Project Description -->
-                    <h3 class="mb-10">Deskripsi Aduan:</h3>
-                    {{$d->pesan}}
+
+                    {{-- <h4 class="mt-10 mb-10">Deskripsi Aduan:</h4> --}}
+                    <p>
+                        <b style="font-size: 110%">{{$d->name}} : </b>
+                        {{$d->pesan}}
+                    </p>
                     <!-- END Project Description -->
                 </div>
             </div>
