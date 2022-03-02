@@ -20,5 +20,13 @@ class Admin extends Authenticable
     ];
 
     protected $hidden = ['password'];
-    
+
+    public function opd()
+    {
+        return $this->hasOne(Opd::class, 'id');
+    }
 }
+    
+
+
+
