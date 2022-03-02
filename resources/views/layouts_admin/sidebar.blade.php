@@ -64,7 +64,7 @@
                 <ul class="list-inline mt-10">
                     <li class="list-inline-item">
                         <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase"
-                            href="be_pages_generic_profile.html">Super Admin</a>
+                            href="be_pages_generic_profile.html">{{Auth::user()->name}}</a>
                     </li>
                     <li class="list-inline-item">
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
@@ -112,7 +112,7 @@
                             class="sidebar-mini-hide">List OPD/Instansi</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Test</a>
+                            <a href="{{route('opd.index')}}">OPD</a>
                         </li>
                     </ul>
                 </li>
