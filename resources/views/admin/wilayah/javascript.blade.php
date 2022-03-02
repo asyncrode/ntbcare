@@ -1,19 +1,20 @@
 <script>
-    $('#admin').select2({
+    $('#opd').select2({
         theme: 'bootstrap4',
     });
     $(document).ready(function(){
         var idEdit = 0;
 
         // Show Data
-        var table = $('.data-table').DataTable({
+        var table = $('.tableWilayah').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('opd.data') }}",
+        ajax: "{{ route('wilayah.data') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'nama', name: 'nama'},
-            {data: 'id_admin', name: 'id_admin'},
+            {data: 'id', name: 'id'},
+            {data: 'nama_will', name: 'nama_will'},
+            {data: 'id_opd', name: 'id_opd'},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -21,17 +22,18 @@
         // End Show
 
         // Create Modal
-        $('#addOpd').click(function () {
-            $('#frm_add').trigger("reset");
-            $('#modalOpd').modal('show');
+        $('#addWilayah').click(function () {
+            $('#frm_wilayah').trigger("reset");
+            $('#modalWilayah').modal('show');
                 $.ajax({
-                url:"{{ route('opd.getUser') }}",
+                url:"{{ route('wilayah.getOpd') }}",
                 type:'GET',
                 success:function(res){
-                    $("#admin").empty();
+                    console.log(res)
+                    $("#opd").empty();
                     $.each(res.data,function(key, value)
                     {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                        $("#opd").append('<option value=' + value.id + '>' + value.nama + '</option>');
                     });
                 }
             })
@@ -44,11 +46,11 @@
             
             if(idEdit === 0)
             {
-                url = "{{ route('opd.store') }}"
+                url = "{{ route('wilayah.store') }}"
                 type = "POST"
             }else{
 
-                url = '{{ route("opd.update", ":id") }}';
+                url = '{{ route("wilayah.update", ":id") }}';
                 url = url.replace(':id', idEdit );
                 
                 type = "PUT"
@@ -59,7 +61,7 @@
                 },
                 type : type,
                 url : url,
-                data : $('#frm_add').serialize(),
+                data : $('#frm_wilayah').serialize(),
                 success : function(response){
                     Swal.fire({
                         title : 'Berhasil !',
@@ -68,8 +70,8 @@
                         showConfirmButton : true
                     })
                     idEdit = 0;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('hide');
+                    $('#frm_wilayah').trigger("reset");
+                    $('#modalWilayah').modal('hide');
                     table.draw()
                 }
             })
@@ -80,7 +82,7 @@
         // EDIT DATA
         $('body').on('click','#edit',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.edit",":id") }}'
+            var url = '{{ route("wilayah.edit",":id") }}'
             url = url.replace(':id',id)
 
             $.ajax({
@@ -89,14 +91,15 @@
                 success:function(res){
                     console.log(res)
                     idEdit = res.data.id;
-                    $('#frm_add').trigger("reset");
-                    $('#modalOpd').modal('show');
-                    $('#nama').val(res.data.nama);
-                    $("#admin").empty()
+                    $('#frm_wilayah').trigger("reset");
+                    $('#modalWilayah').modal('show');
+                    $('#id').val(res.data.id);
+                    $('#nama_will').val(res.data.nama_will);
+                    $("#opd").empty()
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    $.each(res.admin,function(key, value)
+                    $.each(res.opd,function(key, value)
                     {
-                        $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                        $("#opd").append('<option value=' + value.id + '>' + value.nama + '</option>');
                     });
 
                 }
@@ -107,7 +110,7 @@
         // Delete
         $('body').on('click','#delete',function(){
             var id = $(this).attr('data-id');
-            var url = '{{ route("opd.delete", ":id") }}';
+            var url = '{{ route("wilayah.delete", ":id") }}';
             url = url.replace(':id', id );
             Swal.fire({
                 title : 'Anda Yakin ?',

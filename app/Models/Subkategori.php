@@ -11,8 +11,14 @@ class Subkategori extends Model
         'subkategori', 'id_kategori'
     ];
 
+
     public function aduan()
     {
         return $this->hasOne(Aduan::class, 'id');
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class,'id_kategori');
+
     }
 }

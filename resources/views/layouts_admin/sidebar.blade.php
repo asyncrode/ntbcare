@@ -96,6 +96,18 @@
                         class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bubbles"></i><span
+                            class="sidebar-mini-hide">Kategori</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('kategori.index')}}">Kategori</a>
+                        </li>
+                        <li>
+                            <a href="{{route('subkategori.index')}}">Subkategori</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span
                             class="sidebar-mini-hide">List Pengguna</span></a>
                     <ul>
@@ -173,7 +185,22 @@
                         </li>
                     </ul>
                 </li>
-                
+
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-maps"></i><span
+                            class="sidebar-mini-hide">Input Wilayah</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('wilayah.index')}}">Kab/kota</a>
+                        </li>
+                        <li>
+                            <a href="{{route('kecamatan.index')}}">Kecamatan</a>
+                        </li>
+                        <li>
+                            <a href="{{route('kelurahan.index')}}">Kelurahan</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- END Side Navigation -->

@@ -16,8 +16,14 @@ class Opd extends Model
         return $this->belongsTo(Admin::class, 'id_admin');
     }
 
+
     public function aduan()
     {
         return $this->hasOne(Aduan::class, 'id');
+
+    public function wilayah()
+    {
+        return $this->hasOne(Wilayah::class, 'id');
+
     }
 }
