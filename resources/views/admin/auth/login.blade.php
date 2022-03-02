@@ -20,9 +20,9 @@
 
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{{asset('assets/media/favicons/favicon.png')}}">
+        <link rel="shortcut icon" href="{{asset('assets/media/favicons/favicon-192x192.png')}}">
         <link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/media/favicons/favicon-192x192.png')}}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/favicons/apple-touch-icon-180x180.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/media/favicons/favicon-192x192.png')}}">
         <!-- END Icons -->
 
         <!-- Stylesheets -->
@@ -52,7 +52,7 @@
                                 <div class="py-30 text-center">
                                     <a class="link-effect font-w700" href="index.html">
                                         <i class="si si-fire"></i>
-                                        <span class="font-size-xl text-primary-dark">code</span><span class="font-size-xl">base</span>
+                                        <span class="font-size-xl text-primary-dark">ntb</span><span class="font-size-xl">care</span>
                                     </a>
                                     <h1 class="h4 font-w700 mt-30 mb-10">Welcome to Your Dashboard</h1>
                                     <h2 class="h5 font-w400 text-muted mb-0">It’s a great day today!</h2>

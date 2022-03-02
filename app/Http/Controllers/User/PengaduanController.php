@@ -35,23 +35,24 @@ class PengaduanController extends Controller
             'sub' => $sub,
             'wilayah' => $wilayah
         ];
-        return response()->json($data,200);
-
+        return response()->json($data, 200);
     }
 
     public function store(Request $request)
     {
         $gambar = $request->bukti;
         $gambar_ext = $gambar->getClientOriginalExtension();
-        $name = $gambar->getClientOriginalName();'.'.$gambar_ext;
-        $path = public_path().'/upload/aduan';
-        $upload = $gambar->move($path,$name);
+        $name = $gambar->getClientOriginalName();
+        '.' . $gambar_ext;
+        $path = public_path() . '/upload/aduan';
+        $upload = $gambar->move($path, $name);
 
         $dokumen = $request->bukti_2;
         $doc_ext = $dokumen->getClientOriginalExtension();
-        $dokumen_name = $dokumen->getClientOriginalName();'.'.$doc_ext;
-        $path = public_path().'/upload/aduan';
-        $upload = $dokumen->move($path,$dokumen_name);
+        $dokumen_name = $dokumen->getClientOriginalName();
+        '.' . $doc_ext;
+        $path = public_path() . '/upload/aduan';
+        $upload = $dokumen->move($path, $dokumen_name);
 
         $aduan = new Aduan;
         $aduan->id_kategori = $request->kategori;
@@ -67,8 +68,7 @@ class PengaduanController extends Controller
         $aduan->status = 'Waiting';
         $aduan->save();
         return response()->json([
-            'message' => 'Pengajuan berhasi di tambah'
-        ],200);
-
+            'message' => 'Pengaduan berhasi dikirim'
+        ], 200);
     }
 }

@@ -5,13 +5,13 @@
         <div class="hero bg-black-op-25">
             <div class="hero-inner">
                 <div class="content content-full text-center">
-                    <h1 class="display-3 font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown">Hero Title</h1>
-                    <h2 class="font-w400 text-white-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown">Hero Subtitle.</h2>
-                    <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">
-                        <i class="fa fa-rocket mr-10"></i> Call to Action
+                    <h1 class="display-3 font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown"><i>NTB Care</i></h1>
+                    <h2 class="font-w400 text-white-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown">caring society with integrity</h2>
+                    <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('pengaduan.index')}}">
+                        <i class="fa fa-pencil-square-o mr-10"></i> Buat Pengaduan
                     </a>
                     <a class="btn btn-hero btn-noborder btn-rounded btn-primary mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">
-                        <i class="fa fa-rocket mr-10"></i> Call to Action
+                        <i class="fa fa-search mr-10"></i> Lacak Pengaduan
                     </a>
                 </div>
             </div>
