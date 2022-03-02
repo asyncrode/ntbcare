@@ -18,15 +18,15 @@
                 @foreach ($kategori as $k)
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-category-link={{$k->id}}>
-                        <i class="fa fa-fw fa-th-list mr-5"></i> {{$k->kategori}}
+                        <i class="fa fa-fw fa-tags mr-5"></i> {{$k->kategori}}
                     </a>
                 </li>
                 @endforeach
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#" data-category-link="2">
                         <i class="fa fa-fw fa-briefcase mr-5"></i> Test
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>
@@ -36,7 +36,7 @@
         <div class="row row-deck" >
             @foreach ($aduan as $d)
             <div class="col-sm-4" data-category="{{$d->id_kategori}}">
-                <a class="block block-link-pop ">
+                <a class="block block-link-pop " href="{{route('pengaduan.detailaduan',$d->id)}}">
                     <div class="block-header block-header-default pb-0">
                         <h3 class=" block-title">
                             {{$d->name}}
@@ -54,7 +54,7 @@
                         </p>
                     </div>
                     <div class="block-content p-0">
-                        <p class="p-0 bg-warning text-center mb-0">{{$d->status}}</p>
+                        <p class="p-0 bg-warning text-center mb-0">{{$d->a_status}}</p> <!--ganti nama status di table aduan-->
                     </div>
                     <div class="block-content">
                         <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"

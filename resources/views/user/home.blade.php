@@ -7,7 +7,7 @@
                 <div class="content content-full text-center">
                     <h1 class="display-3 font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown"><i>NTB Care</i></h1>
                     <h2 class="font-w400 text-white-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown">caring society with integrity</h2>
-                    <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">
+                    <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('pengaduan.index')}}">
                         <i class="fa fa-pencil-square-o mr-10"></i> Buat Pengaduan
                     </a>
                     <a class="btn btn-hero btn-noborder btn-rounded btn-primary mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">

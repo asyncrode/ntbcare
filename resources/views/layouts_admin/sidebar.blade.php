@@ -158,6 +158,21 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-maps"></i><span
+                            class="sidebar-mini-hide">Input Wilayah</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Kab/kota</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Kecamatan</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Kelurahan</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- END Side Navigation -->
