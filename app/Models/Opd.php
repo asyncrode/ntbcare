@@ -20,6 +20,7 @@ class Opd extends Model
     public function aduan()
     {
         return $this->hasOne(Aduan::class, 'id');
+    }
 
     public function wilayah()
     {
