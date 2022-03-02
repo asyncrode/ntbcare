@@ -12,15 +12,14 @@ class Wilayah extends Model
     protected $table = 'wilayahs';
     protected $fillable = [
 
-        'nama_will', 'id_opd'
+        'id','nama_will', 'id_opd'
     ];
 
     public function aduan()
     {
         return $this->hasOne(Aduan::class, 'id');
 
-       'id','nama_will','id_opd'
-    ];
+    }
 
     public function opd()
     {

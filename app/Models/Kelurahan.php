@@ -12,15 +12,14 @@ class Kelurahan extends Model
     protected $table = 'kelurahans';
     protected $fillable = [
 
-        'nama_kel', 'id_kecamatans'
+        'id','nama_kel', 'id_kecamatans'
     ];
 
     public function aduan()
     {
         return $this->hasOne(Aduan::class, 'id');
 
-        'id','nama_kel','id_kecamatans'
-    ];
+    }
 
     public function kecamatan()
     {
