@@ -11,6 +11,14 @@ class Wilayah extends Model
     protected $keyType = 'string';
     protected $table = 'wilayahs';
     protected $fillable = [
+
+        'nama_will', 'id_opd'
+    ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+
        'id','nama_will','id_opd'
     ];
 
@@ -22,5 +30,6 @@ class Wilayah extends Model
     public function kecamatan()
     {
         return $this->hasOne(kecamatan::class,'id');
+
     }
 }

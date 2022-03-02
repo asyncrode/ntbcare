@@ -11,11 +11,20 @@ class Kelurahan extends Model
     protected $keyType = 'string';
     protected $table = 'kelurahans';
     protected $fillable = [
+
+        'nama_kel', 'id_kecamatans'
+    ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+
         'id','nama_kel','id_kecamatans'
     ];
 
     public function kecamatan()
     {
         return $this->belongsTo(Kecamatan::class,'id_kecamatans');
+
     }
 }

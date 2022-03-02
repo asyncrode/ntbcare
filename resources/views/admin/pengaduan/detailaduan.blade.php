@@ -6,24 +6,13 @@
         <!-- Navigation -->
         <div class="block-content block-content-full border-b clearfix">
             @foreach ($aduan as $d)
-            <div class="btn-group float-right" role="group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Forward</button>
-                <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        OPD 1
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        OPD 2
-                    </a>
-                    {{-- <div class="dropdown-divider"></div> --}}
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        OPD 3
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        OPD 4
-                    </a>
-                </div>
+            <div class="float-right">
+                {{-- <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Forward</button> --}}
+                <button type="button" class="btn btn-outline-dark" >
+                    <i class="si si-action-redo"></i>
+                </button>
             </div>
+            <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete" data-id="{{$d->id}}" ><i class="fa fa-trash" ></i></button>
             <div class="btn-group float-right" role="group">
                 <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{$d->status}}</button>
                 <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
@@ -42,7 +31,8 @@
                     </a>
                 </div>
             </div>
-            @endforeach
+            
+            
             <div class="btn-group float-right">
                 {{-- @if ($d->a_status == 'Waiting')
                             <div class="ribbon-box bg-warning text-uppercase" style="font-size: 60%;">{{$d->a_status}}</div>
@@ -62,13 +52,16 @@
             <a class="btn btn-secondary" href="be_pages_generic_project_list.php">
                 <i class="fa fa-th-large text-primary mr-5 "></i> All Projects
             </a>
+            
         </div>
+        @endforeach
         <!-- END Navigation -->
 
         <!-- Project -->
         @foreach ($aduan as $d)
         <div class="block-content block-content-full">
-            <p class="text-muted m-0">{{$d->a_created_at}}<br></p>
+            <p class="text-muted m-0">
+            Diposting Tanggal: {{$d->created_at}}</p>
             <div class="row py-20">
                 <div class="col-sm-6 invisible" data-toggle="appear">
                     <!-- Image Slider (.js-slider class is initialized in Helpers.slick()) -->
@@ -77,18 +70,18 @@
                         <div>
                             <img class="img-fluid" src="{{ asset('upload/aduan/'.$d->bukti) }}">
                         </div>
-                        {{-- <div>
-                            <img class="img-fluid" src="{{ asset('upload/aduan/'.$d->bukti) }}">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="{{ asset('upload/aduan/'.$d->bukti) }}">
-                        </div> --}}
                     </div>
                     <!-- END Image Slider -->
                 </div>
                 <div class="col-sm-6 nice-copy">
                     <!-- Project Description -->
-                    {{-- <h5>DETAIL ADUAN</h5> --}}
+                    
+                    {{-- <h4 class="mt-10 mb-10">Deskripsi Aduan:</h4> --}}
+                    <p>
+                        <b> Pengaduan: <br> </b>
+                        {{$d->pesan}}
+                    </p>
+
                     <table class="table table-striped table-borderless mt-0">
                         <tbody>
                             {{-- <tr>
@@ -97,11 +90,11 @@
                             </tr> --}}
                             <tr>
                                 <td class="font-w600">Kategori Aduan</td>
-                                <td>{{$d->kategori}}</td>
+                                <td>{{$d->kategori->kategori}}</td>
                             </tr>
                             <tr>
                                 <td class="font-w600">Subkategori</td>
-                                <td class="font-w600">{{$d->subkategori}}</td>
+                                <td class="font-w600">{{$d->sub->subkategori}}</td>
                             </tr>
                             <tr>
                                 <td class="font-w600">Lokasi</td>
@@ -109,25 +102,19 @@
                             </tr>
                             <tr>
                                 <td class="font-w600">Kabupaten/kota</td>
-                                <td>{{$d->nama_will}}</td>
+                                <td>{{$d->wilayah->nama_will}}</td>
                             </tr>
                             <tr>
-                                <td class="font-w600">Kecamatan</td>
-                                <td>{{$d->nama_kec}}</td>
+                                <td class="font-w600">Lampiran</td>
+                                <td><a href="{{ asset('upload/aduan/'.$d->bukti_2) }}" target="_blank">{{$d->bukti_2}}</a></td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td class="font-w600">Kelurahan</td>
-                                <td>{{$d->nama_kel}}</td>
-                            </tr>
+                                <td>{{$d->kel->nama_kel}}</td>
+                            </tr> --}}
                             
                         </tbody>
                     </table>
-
-                    {{-- <h4 class="mt-10 mb-10">Deskripsi Aduan:</h4> --}}
-                    <p>
-                        <b style="font-size: 110%">{{$d->name}} : </b>
-                        {{$d->pesan}}
-                    </p>
                     <!-- END Project Description -->
                 </div>
             </div>
@@ -233,12 +220,5 @@
 </div>
 @endsection
 @push('scripts')
-    <script src="assets/js/codebase.core.min.js"></script>
-    <script src="assets/js/codebase.app.min.js"></script>
-    <script src="assets/js/plugins/slick/slick.min.js"></script>
-    <script>
-        jQuery(function(){ 
-            Codebase.helpers('slick'); 
-        });
-    </script>
+@include('admin.pengaduan.javascript')
 @endpush
