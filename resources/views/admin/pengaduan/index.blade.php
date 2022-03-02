@@ -37,31 +37,46 @@
             @foreach ($aduan as $d)
             <div class="col-sm-4" data-category="{{$d->id_kategori}}">
                 <a class="block block-link-pop " href="{{route('pengaduan.detailaduan',$d->id)}}">
-                    <div class="block-header block-header-default pb-0">
+                    
+                    <div class="block-header block-header-default pb-0 ribbon ribbon-info">
                         <h3 class=" block-title">
                             {{$d->name}}
                         </h3>
-                        <div class="block-options text-center">
+                        {{-- <div class="block-options text-center">
                             <button type="button" class="btn-block-option" >
                                 <i class="si si-action-redo"></i>
                             </button>
-                        </div>
+                        </div> --}}
+                        {{-- <div class="ribbon-box bg-primary text-uppercase" style="font-size: 50%;">{{$d->kategori}}</div> --}}
+                        @if ($d->status == 'Waiting')
+                            <div class="ribbon-box bg-warning text-uppercase" style="font-size: 60%;">{{$d->status}}</div>
+                        @else
+                            @if ($d->status == 'Rejected')
+                                <div class="ribbon-box bg-danger text-uppercase" style="font-size: 60%;">{{$d->status}}</div>
+                            @else
+                                @if ($d->status == 'Approved')
+                                    <div class="ribbon-box bg-info text-uppercase" style="font-size: 60%;">{{$d->status}}</div>
+                                @else
+                                    <div class="ribbon-box bg-success text-uppercase" style="font-size: 60%;">{{$d->status}}</div>
+                                @endif
+                            @endif
+                        @endif
                     </div>
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
                             <span class="text-muted">{{$d->nama_will}}</span> <br>
-                            <span class="badge badge-primary">{{$d->kategori}}</span><br>
+                            <span class="badge badge-dark">{{$d->kategori}}</span><br>
                         </p>
                     </div>
-                    <div class="block-content p-0">
-                        <p class="p-0 bg-warning text-center mb-0">{{$d->a_status}}</p> <!--ganti nama status di table aduan-->
-                    </div>
+                    {{-- <div class="block-content ">
+                        
+                    </div> --}}
                     <div class="block-content">
                         <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
                             alt="Project 12 Promo">
                         <p class="mb-0">
                             {{$d->pesan}} <br> <br>
-                            <span class="text-muted text-left">{{$d->a_created_at}}</span> <!--ganti nama field created_at di table aduan-->
+                            <span class="text-muted text-left">{{$d->created_at}}</span> <!--ganti nama field created_at di table aduan-->
                         </p>
                         <div class="block-options text-right mb-20">
                             

@@ -5,7 +5,7 @@
         <h2 class="content-heading">Pengaduan</h2>
         <div class="block shadow-lg">
             <div class="block-header block-header-default">
-                <h3 class="block-title">Pengaduan</h3>
+                <h3 class="block-title">Formulir Pengaduan</h3>
                 <div class="block-options">
                     <button type="button" class="btn-block-option">
                         <i class="si si-wrench"></i>
