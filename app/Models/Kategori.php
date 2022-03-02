@@ -10,4 +10,9 @@ class Kategori extends Model
     protected $fillable = [
         'kategori'
     ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+    }
 }

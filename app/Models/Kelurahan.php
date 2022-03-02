@@ -11,6 +11,11 @@ class Kelurahan extends Model
     protected $keyType = 'string';
     protected $table = 'kelurahans';
     protected $fillable = [
-        'nama_kel','id_kecamatans'
+        'nama_kel', 'id_kecamatans'
     ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+    }
 }

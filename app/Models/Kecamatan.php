@@ -12,6 +12,11 @@ class Kecamatan extends Model
 
     protected $table = 'kecamatans';
     protected $fillable = [
-        'nama_kec','id_wilayahs'
+        'nama_kec', 'id_wilayahs'
     ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+    }
 }

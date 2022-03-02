@@ -8,6 +8,11 @@ class Subkategori extends Model
 {
     protected $table = 'subkategoris';
     protected $fillable = [
-        'subkategori','id_kategori'
+        'subkategori', 'id_kategori'
     ];
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
+    }
 }

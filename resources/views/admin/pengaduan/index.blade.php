@@ -2,7 +2,7 @@
 @section('content')
 <div class="content content-full">
     <!-- Images Filtering -->
-    <h2 class="content-heading">Project List <small>All your latest projects</small></h2>
+    <h2 class="content-heading">List Aduan <small></small></h2>
 
     <!-- Project Filtering (.js-filter class is initialized in Helpers.contentFilter()) -->
     <!-- If data-numbers="true" is added, then the number of the items of each category will be auto added to each category link -->
@@ -40,7 +40,7 @@
                     
                     <div class="block-header block-header-default pb-0 ribbon ribbon-info">
                         <h3 class=" block-title">
-                            {{$d->name}}
+                            {{$d->user->name}}
                         </h3>
                         {{-- <div class="block-options text-center">
                             <button type="button" class="btn-block-option" >
@@ -64,8 +64,8 @@
                     </div>
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
-                            <span class="text-muted">{{$d->nama_will}}</span> <br>
-                            <span class="badge badge-dark">{{$d->kategori}}</span><br>
+                            <span class="text-muted">{{$d->wilayah->nama_will}}</span> <br>
+                            <span class="badge badge-dark">{{$d->kategori->kategori}}</span><br>
                         </p>
                     </div>
                     {{-- <div class="block-content ">

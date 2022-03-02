@@ -8,11 +8,16 @@ class Opd extends Model
 {
     protected $table = 'opds';
     protected $fillable = [
-        'id_admin','nama'
+        'id_admin', 'nama'
     ];
 
     public function admin()
     {
         return $this->belongsTo(Admin::class, 'id_admin');
+    }
+
+    public function aduan()
+    {
+        return $this->hasOne(Aduan::class, 'id');
     }
 }
