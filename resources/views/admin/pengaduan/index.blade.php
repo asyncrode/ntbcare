@@ -34,6 +34,7 @@
 
         <!-- Projects -->
         <div class="row row-deck" >
+            
             @foreach ($aduan as $d)
             <div class="col-sm-4" data-category="{{$d->id_kategori}}">
                 <a class="block block-link-pop " href="{{route('pengaduan.detailaduan',$d->id)}}">
@@ -74,9 +75,10 @@
                     <div class="block-content">
                         <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
                             alt="Project 12 Promo">
-                        <p class="mb-0">
+                        <p class="mb-10 mt-10">
                             {{$d->pesan}} <br> <br>
-                            <span class="text-muted text-left">{{$d->created_at}}</span> <!--ganti nama field created_at di table aduan-->
+                            <span class="text-muted text-left"><small> <?= date('l, d-M-Y \a\t h:i A', strtotime($d->created_at)); ?></small></span>
+
                         </p>
                         <div class="block-options text-right mb-20">
                             

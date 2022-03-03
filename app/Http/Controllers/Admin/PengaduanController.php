@@ -19,7 +19,7 @@ class PengaduanController extends Controller
         //     ->join('subkategoris', 'subkategoris.id', '=', 'aduans.id_subkategori')
         //     ->join('wilayahs', 'wilayahs.id', '=', 'aduans.id_wil')
         //     ->get();
-        $aduan = Aduan::all();
+        $aduan = Aduan::all()->sortByDesc('created_at');
         $kategori = Kategori::all();
         $user = User::all();
         return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
