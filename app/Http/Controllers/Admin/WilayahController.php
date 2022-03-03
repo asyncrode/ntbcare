@@ -25,11 +25,6 @@ class WilayahController extends Controller
         $wilayah = Wilayah::all();
         return Datatables::of($wilayah)
             ->addIndexColumn()
-            ->addColumn('id_opd', function ($wilayah) {
-                if ($wilayah->id_opd != null) {
-                    return $wilayah->opd->nama;
-                }
-            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
@@ -41,21 +36,12 @@ class WilayahController extends Controller
             ->make(true);
     }
 
-    public function getOpd()
-    {
-        $opd = Opd::all();
-        return response()->json([
-            'status' => 'List Opd',
-            'data'   => $opd
-        ]);
-    }
 
     public function store(Request $request)
     {
         $wilayah = new Wilayah;
         $wilayah->id = $request->id;
         $wilayah->nama_will = $request->nama_will;
-        $wilayah->id_opd = $request->opd;
         $wilayah->save();
         return response()->json([
             'message' => 'Wilayah Berhasil Di Tambah'
@@ -65,11 +51,9 @@ class WilayahController extends Controller
     public function edit($id)
     {
         $wilayah = Wilayah::find($id);
-        $opd = Opd::all();
         return response()->json([
             'message' => 'Wilayah Edit',
             'data'    => $wilayah,
-            'opd'     => $opd
         ]);
     }
 
@@ -78,7 +62,6 @@ class WilayahController extends Controller
         $wilayah = Wilayah::find($id);
         $wilayah->id = $request->id;
         $wilayah->nama_will = $request->nama_will;
-        $wilayah->id_opd = $request->opd;
         $wilayah->save();
         return response()->json([
             'message'   => 'Opd Berhasil Di Update'

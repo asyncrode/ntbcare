@@ -8,7 +8,7 @@ class Opd extends Model
 {
     protected $table = 'opds';
     protected $fillable = [
-        'id_admin', 'nama'
+        'id_admin','id_wilayah', 'nama'
     ];
 
     public function admin()
@@ -24,7 +24,7 @@ class Opd extends Model
 
     public function wilayah()
     {
-        return $this->hasOne(Wilayah::class, 'id');
+        return $this->belongsTo(Wilayah::class, 'id_wilayah');
 
     }
 }

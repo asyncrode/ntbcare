@@ -21,13 +21,16 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/dashboard', 'Admin\DashboardController@index')->middleware('auth:admin')->name('dashboard.index');
     Route::get('/pengaduan', 'Admin\PengaduanController@index')->middleware('auth:admin')->name('pengaduan.admin.index');
+    Route::get('/pengaduan/opd', 'Admin\PengaduanController@getOpd')->middleware('auth:admin')->name('pengaduan.admin.opd');
+    Route::put('/pengaduan/forward/{id}', 'Admin\PengaduanController@forward')->middleware('auth:admin')->name('pengaduan.admin.forward');
     Route::get('/detail/{id}', 'Admin\PengaduanController@detail')->middleware('auth:admin')->name('pengaduan.detailaduan');
+    Route::put('/pengaduan/status/{id}', 'Admin\PengaduanController@editstat')->middleware('auth:admin')->name('pengaduan.admin.stat');
     Route::delete('/delete/{id}', 'Admin\PengaduanController@delete')->middleware('auth:admin')->name('pengaduan.detailaduan.delete');
 
     Route::group(['prefix' => 'opd', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\OpdController@index')->name('opd.index');
-        Route::get('/getOpd', 'Admin\OpdController@getOpd')->name('opd.data');
-        Route::get('/getUser', 'Admin\OpdController@getUser')->name('opd.getUser');
+        Route::get('/getOpd', 'Admin\OpdController@getOpd')->name('opd.opd');
+        Route::get('/getData', 'Admin\OpdController@getData')->name('opd.data');
         Route::post('/store', 'Admin\OpdController@store')->name('opd.store');
         Route::get('/edit/{id}', 'Admin\OpdController@edit')->name('opd.edit');
         Route::put('/update/{id}', 'Admin\OpdController@update')->name('opd.update');
@@ -37,7 +40,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'wilayah','middleware' => ['role:super-admin']],function(){
         Route::get('/','Admin\WilayahController@index')->name('wilayah.index');
         Route::get('/getWilayah','Admin\WilayahController@getWilayah')->name('wilayah.data');
-        Route::get('/getOpd','Admin\WilayahController@getOpd')->name('wilayah.getOpd');
         Route::post('/store','Admin\WilayahController@store')->name('wilayah.store');
         Route::get('/edit/{id}','Admin\WilayahController@edit')->name('wilayah.edit');
         Route::put('/update/{id}','Admin\WilayahController@update')->name('wilayah.update');

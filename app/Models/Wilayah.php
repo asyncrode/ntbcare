@@ -12,7 +12,7 @@ class Wilayah extends Model
     protected $table = 'wilayahs';
     protected $fillable = [
 
-        'id','nama_will', 'id_opd'
+        'id','nama_will',
     ];
 
     public function aduan()
@@ -23,7 +23,7 @@ class Wilayah extends Model
 
     public function opd()
     {
-        return $this->belongsTo(Opd::class, 'id_opd');
+        return $this->hasMany(Opd::class, 'id');
     }
 
     public function kecamatan()

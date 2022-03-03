@@ -15,6 +15,7 @@
                         <th class="text-center" style="width: 5%;">No</th>
                         <th class="text-center">nama</th>
                         <th class="d-none d-sm-table-cell text-center">admin opd</th>
+                        <th class="d-none d-sm-table-cell text-center">wilayah</th>
                         <th class="d-none d-sm-table-cell text-center" style="width: 15%;">terdaftar</th>
                         <th class="text-center" style="width: 15%;">action</th>
                     </tr>
@@ -49,6 +50,17 @@
                                     class="text-danger">*</span></label>
                             <div class="">
                                 <select class="js-select2 form-control" id="admin" name="admin" style="width: 100%;"
+                                    data-placeholder="Choose one..">
+                                    <option></option>
+                                    <!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="col-form-label" for="kelurahan">Wilayah<span
+                                    class="text-danger">*</span></label>
+                            <div class="">
+                                <select class="js-select2 form-control" id="wilayah" name="wilayah" style="width: 100%;"
                                     data-placeholder="Choose one..">
                                     <option></option>
                                     <!-- Required for data-placeholder attribute to work with Select2 plugin -->

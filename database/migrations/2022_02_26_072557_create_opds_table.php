@@ -16,8 +16,10 @@ class CreateOpdsTable extends Migration
         Schema::create('opds', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_admin');
+            $table->char('id_wilayah');
             $table->string('nama');
             $table->foreign('id_admin')->references('id')->on('admins')->onDelete('cascade');
+            $table->foreign('id_wilayah')->references('id')->on('wilayahs')->onDelete('cascade');
             $table->timestamps();
         });
     }

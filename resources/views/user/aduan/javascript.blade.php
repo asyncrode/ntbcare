@@ -50,33 +50,107 @@
             type:'GET',
             success:function(data){
                 console.log(data)
-                $.each(data.kategori,function(key, value)
+                $.each(data,function(key, value)
                 {
                     $("#kategori").append('<option value=' + value.id + '>' + value.kategori + '</option>');
                 });
-
-                $.each(data.sub,function(key, value)
+            }
+        })
+        $.ajax({
+            url:"{{ route('pengaduan.wilayah') }}",
+            type:'GET',
+            success:function(data){
+                console.log(data)
+                $.each(data,function(key, value)
                 {
-                    $("#subkategori").append('<option value=' + value.id + '>' + value.subkategori + '</option>');
-                });
-
-                $.each(data.wilayah,function(key, value)
-                {   
-                    console.log(value.id_wilayahs)
                     $("#wilayah").append('<option value=' + value.id + '>' + value.nama_will + '</option>');
-                });
-
-                $.each(data.kecamatan,function(key, value)
-                {
-                    $("#kecamatan").append('<option value=' + value.id + '>' + value.nama_kec + '</option>');
-                });
-
-                $.each(data.kelurahan,function(key, value)
-                {
-                    $("#kelurahan").append('<option value=' + value.id + '>' + value.nama_kel + '</option>');
                 });
             }
         })
+
+        $('#kategori').change(function(){
+            $("#subkategori").empty();
+            var id = $(this).val();
+            $.ajax({
+                url : "{{ route('pengaduan.subkategori') }}",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "id": id
+                    },
+                type: 'post',
+                dataType: 'json',
+                success: function( data )
+                {   
+                    console.log(data)
+                    $("#subkategori").append('<option>Pilih Subkategori</option>');
+                    $.each(data,function(key, value)
+                    {
+                        $("#subkategori").append('<option value=' + value.id + '>' + value.subkategori + '</option>');
+                    });
+                },
+                error: function()
+                {
+                    //handle errors
+                    alert('error...');
+                }
+            });
+        });
+
+        $('#wilayah').change(function(){
+            $("#kecamatan").empty();
+            var id = $(this).val();
+            $.ajax({
+                url : "{{ route('pengaduan.kecamatan') }}",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "id": id
+                    },
+                type: 'post',
+                dataType: 'json',
+                success: function( data )
+                {   
+                    console.log(data)
+                    $("#kecamatan").append('<option>Pilih Kecamaatan</option>');
+                    $.each(data,function(key, value)
+                    {
+                        $("#kecamatan").append('<option value=' + value.id + '>' + value.nama_kec + '</option>');
+                    });
+                },
+                error: function()
+                {
+                    //handle errors
+                    alert('error...');
+                }
+            });
+        });
+
+        $('#kecamatan').change(function(){
+            $("#kelurahan").empty();
+            var id = $(this).val();
+            $.ajax({
+                url : "{{ route('pengaduan.kelurahan') }}",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "id": id
+                    },
+                type: 'post',
+                dataType: 'json',
+                success: function( data )
+                {   
+                    console.log(data)
+                    $("#kelurahan").append('<option>Pilih Kelurahan</option>');
+                    $.each(data,function(key, value)
+                    {
+                        $("#kelurahan").append('<option value=' + value.id + '>' + value.nama_kel + '</option>');
+                    });
+                },
+                error: function()
+                {
+                    //handle errors
+                    alert('error...');
+                }
+            });
+        });
         // End Get Data
 
         // Store Pengaduan
@@ -91,7 +165,12 @@
                 contentType:false,
                 processData:false,
                 success: function(response){
-                    alert('sukses');
+                    Swal.fire({
+                        title : 'Berhasil !',
+                        icon: 'success',
+                        text  : 'Berhasil',
+                        showConfirmButton : true
+                    })
                     window.location.href = "http://localhost:8000/"
                     //perform operation
                 },
