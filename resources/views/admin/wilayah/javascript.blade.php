@@ -1,7 +1,4 @@
 <script>
-    $('#opd').select2({
-        theme: 'bootstrap4',
-    });
     $(document).ready(function(){
         var idEdit = 0;
 
@@ -12,14 +9,13 @@
         ajax: "{{ route('wilayah.data') }}",
         'columnDefs': [
         {
-            "targets": [0,1,5], // your case first column
+            "targets": [0,1,4], // your case first column
             "className": "text-center"
         }],
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'id', name: 'id'},
             {data: 'nama_will', name: 'nama_will'},
-            {data: 'id_opd', name: 'id_opd'},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
@@ -30,18 +26,6 @@
         $('#addWilayah').click(function () {
             $('#frm_wilayah').trigger("reset");
             $('#modalWilayah').modal('show');
-                $.ajax({
-                url:"{{ route('wilayah.getOpd') }}",
-                type:'GET',
-                success:function(res){
-                    console.log(res)
-                    $("#opd").empty();
-                    $.each(res.data,function(key, value)
-                    {
-                        $("#opd").append('<option value=' + value.id + '>' + value.nama + '</option>');
-                    });
-                }
-            })
         });
 
         // Store Data
@@ -100,13 +84,6 @@
                     $('#modalWilayah').modal('show');
                     $('#id').val(res.data.id);
                     $('#nama_will').val(res.data.nama_will);
-                    $("#opd").empty()
-                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
-                    $.each(res.opd,function(key, value)
-                    {
-                        $("#opd").append('<option value=' + value.id + '>' + value.nama + '</option>');
-                    });
-
                 }
             })
         })

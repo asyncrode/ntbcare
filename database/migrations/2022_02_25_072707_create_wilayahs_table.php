@@ -15,9 +15,7 @@ class CreateWilayahsTable extends Migration
     {
         Schema::create('wilayahs', function (Blueprint $table) {
             $table->char('id',5)->primary();
-            $table->unsignedBigInteger('id_opd');
             $table->string('nama_will');
-            $table->foreign('id_opd')->references('id')->on('opds')->onDelete('cascade');
             $table->timestamps();
         });
     }

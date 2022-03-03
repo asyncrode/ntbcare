@@ -23,19 +23,34 @@ class PengaduanController extends Controller
     public function getData()
     {
         $kategori = Kategori::all();
-        $kecamatan = Kecamatan::all();
-        $kelurahan = Kelurahan::all();
-        $sub = Subkategori::all();
-        $wilayah = Wilayah::all();
+        return response()->json($kategori, 200);
+    }
 
-        $data = [
-            'kategori' => $kategori,
-            'kecamatan' => $kecamatan,
-            'kelurahan' => $kelurahan,
-            'sub' => $sub,
-            'wilayah' => $wilayah
-        ];
-        return response()->json($data, 200);
+    public function getSubkategori(Request $request)
+    {
+        $kategori_id = $request->id;
+        $subkategori = Subkategori::where('id_kategori',$kategori_id)->get();
+        return response()->json($subkategori, 200);
+    }
+
+    public function getWilayah()
+    {
+        $wilayah = Wilayah::all();
+        return response()->json($wilayah, 200);
+    }
+
+    public function getKecamatan(Request $request)
+    {
+        $wilayah_id = $request->id;
+        $kecamatan = Kecamatan::where('id_wilayahs',$wilayah_id)->get();
+        return response()->json($kecamatan, 200);
+    }
+
+    public function getKelurahan(Request $request)
+    {
+        $kecamatan_id = $request->id;
+        $kelurahan = Kelurahan::where('id_kecamatans',$kecamatan_id)->get();
+        return response()->json($kelurahan, 200);
     }
 
     public function store(Request $request)

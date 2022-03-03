@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Opd;
+use App\Models\Wilayah;
 use App\Models\Admin;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
@@ -32,6 +33,11 @@ class OpdController extends Controller
                     return $opd->admin->nama;
                 }
             })
+            ->addColumn('id_wilayah', function ($opd) {
+                if ($opd->id_wilayah != null) {
+                    return $opd->wilayah->nama_will;
+                }
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 // $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="edit" class="edit btn btn-primary btn-sm">Edit</a>';
@@ -45,14 +51,16 @@ class OpdController extends Controller
             ->make(true);
     }
 
-    public function getUser()
+    public function getData()
     {
         $admin = Admin::all()->except(Auth::id());
+        $wilayah = Wilayah::all();
         // dd($admin);
         return response()->json(
             [
                 'status' => 'List Admin',
-                'data' => $admin
+                'data' => $admin,
+                'wilayah' => $wilayah
             ]
         );
     }
@@ -62,6 +70,7 @@ class OpdController extends Controller
         $opd = new Opd;
         $opd->nama = $request->nama;
         $opd->id_admin = $request->admin;
+        $opd->id_wilayah = $request->wilayah;
         $opd->save();
         return response()->json([
             'message' => 'Opd Berhasil Di Tambah'
@@ -72,10 +81,12 @@ class OpdController extends Controller
     {
         $opd = Opd::find($id);
         $admin = Admin::all()->except(Auth::id());
+        $wilayah = Wilayah::all();
         return response()->json([
             'message' => 'Opd Edit',
             'data'    => $opd,
-            'admin'   => $admin
+            'admin'   => $admin,
+            'wilayah' => $wilayah
         ], 200);
     }
 
@@ -84,6 +95,7 @@ class OpdController extends Controller
         $opd = Opd::find($id);
         $opd->nama = $request->nama;
         $opd->id_admin = $request->admin;
+        $opd->id_wilayah = $request->wilayah;
         $opd->save();
         return response()->json([
             'message' => 'Opd Berhasil Di Update'

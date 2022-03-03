@@ -5,29 +5,53 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Aduan;
+use App\Models\Admin;
 use App\Models\Kategori;
 use App\Models\Subkategori;
 use App\Models\User;
 use App\Models\Wilayah;
+use App\Models\Opd;
+use Auth;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
 
 class PengaduanController extends Controller
 {
     public function index()
     {
+        // $roles = Auth::user()->roles->pluck('name');
+        // dd($roles);
+        if(Auth::user()->roles->pluck('name')->first() == 'super-admin' )
+        {
+            
+            $aduan = Aduan::all()->sortByDesc('created_at');
+            $kategori = Kategori::all();
+            $user = User::all();
+            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
+        }else{
+            
+            $opd = Opd::where('id_admin',Auth::user()->id)->first();
+           
+            $aduan = Aduan::where('id_opd',$opd->id)->get();
+           
+            $kategori = Kategori::all();
+           
+            return view('admin.pengaduan.index', compact('aduan', 'kategori'));
+        }
+     
+        
+
         // $aduan = Aduan::join('users', 'users.id', '=', 'aduans.id_pelapor')
         //     ->join('kategoris', 'kategoris.id', '=', 'aduans.id_kategori')
         //     ->join('subkategoris', 'subkategoris.id', '=', 'aduans.id_subkategori')
         //     ->join('wilayahs', 'wilayahs.id', '=', 'aduans.id_wil')
         //     ->get();
-        $aduan = Aduan::all()->sortByDesc('created_at');
-        $kategori = Kategori::all();
-        $user = User::all();
-        return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
+        
     }
 
     public function detail($id)
     {
-        $aduan = Aduan::where('aduans.id', $id)->get();
+        $aduan = Aduan::where('aduans.id', $id)->first();
         $detail = Aduan::find($id);
         return view('admin.pengaduan.detailaduan', compact('detail', 'aduan'));
     }
@@ -84,11 +108,35 @@ class PengaduanController extends Controller
         ], 200);
     }
 
-    // public function editStat(Request $request, $id)
-    // {
-    //     $aduan = Aduan::find($id);
-    //     $aduan->status = $request->
-    // }
+    public function editstat(Request $request, $id)
+    {
+        $aduan = Aduan::find($id);
+        $aduan->status = $request->status;
+        $aduan->save();
+        return response()->json([
+            'message' => 'Status Pengaduan Berhasil Dirubah'
+        ], 200);
+        
+    }
+    
+    public function getOpd()
+    {
+        $opd = Opd::all();
+        return response()->json([
+            'message' => 'Data OPD',
+            'data'    => $opd
+        ]);
+    }
+
+    public function forward(Request $request,$id)
+    {
+        $aduan = Aduan::find($id);
+        $aduan->id_opd = $request->opd;
+        $aduan->save();
+        return response()->json([
+            'message' => 'Forward ke Opd Berhasil'
+        ], 200);
+    }
 
     public function delete($id)
     {

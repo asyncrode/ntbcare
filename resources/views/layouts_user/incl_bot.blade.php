@@ -10,6 +10,7 @@
 {{-- Kartik --}}
 <script src="{{asset('assets_user/js/plugins/kartik/js/fileinput.js')}}"></script>
 <script src="{{asset('assets_user/js/plugins/kartik/themes/fa/theme.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Page JS Helpers (Select2 plugin) -->
 <script>jQuery(function(){ Codebase.helpers('select2'); });</script>
 <script>

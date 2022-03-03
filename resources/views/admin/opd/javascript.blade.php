@@ -2,27 +2,31 @@
     $('#admin').select2({
         theme: 'bootstrap4',
     });
+    $('#wilayah').select2({
+        theme: 'bootstrap4',
+    });
     $(document).ready(function(){
         var idEdit = 0;
 
         // Show Data
         var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('opd.data') }}",
-        'columnDefs': [
-        {
-            "targets": [0,4], // your case first column
-            "className": "text-center"
-        }],
-        columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'nama', name: 'nama'},
-            {data: 'id_admin', name: 'id_admin'},
-            {data: 'created_at', name: 'created_at'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
-        ]
-    });
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('opd.opd') }}",
+            'columnDefs': [
+            {
+                "targets": [0,1,4], // your case first column
+                "className": "text-center"
+            }],
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'nama', name: 'nama'},
+                {data: 'id_admin', name: 'id_admin'},
+                {data: 'id_wilayah', name: 'id_wilayah'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ]
+        });
         // End Show
 
         // Create Modal
@@ -30,13 +34,18 @@
             $('#frm_add').trigger("reset");
             $('#modalOpd').modal('show');
                 $.ajax({
-                url:"{{ route('opd.getUser') }}",
+                url:"{{ route('opd.data') }}",
                 type:'GET',
                 success:function(res){
                     $("#admin").empty();
+                    $("#wilayah").empty();
                     $.each(res.data,function(key, value)
                     {
                         $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                    });
+                    $.each(res.wilayah,function(key, value)
+                    {
+                        $("#wilayah").append('<option value=' + value.id + '>' + value.nama_will + '</option>');
                     });
                 }
             })
@@ -98,10 +107,15 @@
                     $('#modalOpd').modal('show');
                     $('#nama').val(res.data.nama);
                     $("#admin").empty()
+                    $("#wilayah").empty()
                     // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
                     $.each(res.admin,function(key, value)
                     {
                         $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
+                    });
+                    $.each(res.admin,function(key, value)
+                    {
+                        $("#wilayah").append('<option value=' + value.id + '>' + value.nama_will + '</option>');
                     });
 
                 }
