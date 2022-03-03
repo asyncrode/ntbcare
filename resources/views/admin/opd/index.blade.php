@@ -12,11 +12,11 @@
             <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination data-table">
                 <thead>
                     <tr>
-                        <th class="text-center">id</th>
-                        <th>nama</th>
-                        <th class="d-none d-sm-table-cell">id_admin</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">create_at</th>
-                        <th class="col-md-12 text-center" style="width: 15%;">action</th>
+                        <th class="text-center" style="width: 5%;">No</th>
+                        <th class="text-center">nama</th>
+                        <th class="d-none d-sm-table-cell text-center">admin opd</th>
+                        <th class="d-none d-sm-table-cell text-center" style="width: 15%;">terdaftar</th>
+                        <th class="text-center" style="width: 15%;">action</th>
                     </tr>
                 </thead>
             </table>

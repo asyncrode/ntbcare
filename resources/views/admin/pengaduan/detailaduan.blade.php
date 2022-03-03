@@ -1,7 +1,7 @@
 @extends('layouts_admin.master')
 @section('content')
 <div class="content">
-    {{-- <h2 class="content-heading">Project X <small>Web Design and Development</small></h2> --}}
+    <h2 class="content-heading">Detail <small>Pengaduan</small></h2>
     <div class="block">
         <!-- Navigation -->
         <div class="block-content block-content-full border-b clearfix">
@@ -49,8 +49,8 @@
                         @endif --}}
             </div>
             
-            <a class="btn btn-secondary" href="be_pages_generic_project_list.php">
-                <i class="fa fa-th-large text-primary mr-5 "></i> All Projects
+            <a class="btn btn-secondary" href="{{route('pengaduan.index')}}">
+                <i class="fa fa-th-large text-primary mr-5 "></i> Semua Aduan
             </a>
             
         </div>
@@ -75,8 +75,6 @@
                 </div>
                 <div class="col-sm-6 nice-copy">
                     <!-- Project Description -->
-                    
-                    {{-- <h4 class="mt-10 mb-10">Deskripsi Aduan:</h4> --}}
                     <p>
                         <b> Pengaduan: <br> </b>
                         {{$d->pesan}}

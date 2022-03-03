@@ -10,6 +10,11 @@
         processing: true,
         serverSide: true,
         ajax: "{{ route('opd.data') }}",
+        'columnDefs': [
+        {
+            "targets": [0,4], // your case first column
+            "className": "text-center"
+        }],
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'nama', name: 'nama'},
@@ -145,6 +150,8 @@
             })
         })
     // End Delete
+
+
 
     })
 </script>

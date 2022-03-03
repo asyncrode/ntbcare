@@ -12,9 +12,9 @@
             <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableKategori">
                 <thead>
                     <tr>
-                        <th class="text-center">no</th>
-                        <th>kategori</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">created_at</th>
+                        <th class="text-center" style="width: 5%;">no</th>
+                        <th class="text-center">kategori</th>
+                        <th class="d-none d-sm-table-cell text-center" style="width: 35%;">Terdaftar</th>
                         <th class="text-center" style="width: 15%;">action</th>
                     </tr>
                 </thead>

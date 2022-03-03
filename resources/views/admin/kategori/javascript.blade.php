@@ -7,6 +7,11 @@
         processing: true,
         serverSide: true,
         ajax: "{{ route('kategori.data') }}",
+        'columnDefs': [
+        {
+            "targets": [0,3], // your case first column
+            "className": "text-center"
+        }],
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'kategori', name: 'kategori'},
