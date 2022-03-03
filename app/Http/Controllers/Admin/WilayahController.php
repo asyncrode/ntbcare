@@ -25,22 +25,20 @@ class WilayahController extends Controller
         $wilayah = Wilayah::all();
         return Datatables::of($wilayah)
             ->addIndexColumn()
-            ->addColumn('id_opd',function($wilayah){
-                if($wilayah->id_opd != null)
-                {
+            ->addColumn('id_opd', function ($wilayah) {
+                if ($wilayah->id_opd != null) {
                     return $wilayah->opd->nama;
                 }
             })
-            ->addColumn('action', function($row){
+            ->addColumn('action', function ($row) {
                 $btn = '';
-                $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="edit" class="edit btn btn-primary btn-sm">Edit</a>';
-                $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="delete" class="delete btn btn-danger btn-sm">Delete</a>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
 
-                 return $btn;
-         })
-         ->rawColumns(['action'])
-         ->make(true);
-        
+                return $btn;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 
     public function getOpd()
@@ -61,7 +59,7 @@ class WilayahController extends Controller
         $wilayah->save();
         return response()->json([
             'message' => 'Wilayah Berhasil Di Tambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -75,7 +73,7 @@ class WilayahController extends Controller
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $wilayah = Wilayah::find($id);
         $wilayah->id = $request->id;
@@ -84,7 +82,7 @@ class WilayahController extends Controller
         $wilayah->save();
         return response()->json([
             'message'   => 'Opd Berhasil Di Update'
-        ],200);
+        ], 200);
     }
 
     public function delete($id)
@@ -95,5 +93,4 @@ class WilayahController extends Controller
             'message'   => 'Wilayah Deleted'
         ]);
     }
-    
 }

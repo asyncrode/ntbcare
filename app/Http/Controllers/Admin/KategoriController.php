@@ -25,16 +25,15 @@ class KategoriController extends Controller
         $kategori = Kategori::all();
         return Datatables::of($kategori)
             ->addIndexColumn()
-            ->addColumn('action',function($row){
+            ->addColumn('action', function ($row) {
                 $btn = '';
-                $btn = $btn.'<a href = "javascript:void(0)" data-id = "'.$row->id.'" id = "edit" class = "edit btn btn-primary btn-sm">Edit</a>';
-                $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="delete" class="delete btn btn-danger btn-sm">Delete</a>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
 
                 return $btn;
             })
             ->rawColumns(['action'])
             ->make(true);
-        
     }
 
     public function store(Request $request)
@@ -44,7 +43,7 @@ class KategoriController extends Controller
         $kategori->save();
         return response()->json([
             'message' => 'Kategori Berhasil Di Tambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -56,14 +55,14 @@ class KategoriController extends Controller
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $kategori = Kategori::find($id);
         $kategori->kategori = $request->kategori;
         $kategori->save();
         return response()->json([
             'message' => 'Kategori Berhasil Di Update'
-        ],200);
+        ], 200);
     }
 
     public function delete($id)

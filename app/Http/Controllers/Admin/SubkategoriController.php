@@ -25,22 +25,20 @@ class SubkategoriController extends Controller
         $subkategori = Subkategori::all();
         return Datatables::of($subkategori)
             ->addIndexColumn()
-            ->addColumn('id_kategori',function($subkategori){
-                if($subkategori->id_kategori != null)
-                {
+            ->addColumn('id_kategori', function ($subkategori) {
+                if ($subkategori->id_kategori != null) {
                     return $subkategori->kategori->kategori;
                 }
             })
-            ->addColumn('action',function($row){
+            ->addColumn('action', function ($row) {
                 $btn = '';
-                $btn = $btn.'<a href = "javascript:void(0)" data-id = "'.$row->id.'" id = "edit" class = "edit btn btn-primary btn-sm">Edit</a>';
-                $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="delete" class="delete btn btn-danger btn-sm">Delete</a>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
 
                 return $btn;
             })
             ->rawColumns(['action'])
             ->make(true);
-        
     }
 
     public function getKategori()
@@ -60,7 +58,7 @@ class SubkategoriController extends Controller
         $subkategori->save();
         return response()->json([
             'message' => 'Subkategori Berhasil Di Tambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -74,7 +72,7 @@ class SubkategoriController extends Controller
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $subkategori = Subkategori::find($id);
         $subkategori->id_kategori = $request->kategori;
@@ -82,7 +80,7 @@ class SubkategoriController extends Controller
         $subkategori->save();
         return response()->json([
             'message' => 'Subkategori Berhasil Di Update'
-        ],200);
+        ], 200);
     }
 
     public function delete($id)
@@ -93,6 +91,4 @@ class SubkategoriController extends Controller
             'message' => 'Subkategori Deleted'
         ]);
     }
-
-
 }

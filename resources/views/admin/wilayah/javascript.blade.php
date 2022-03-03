@@ -10,6 +10,11 @@
         processing: true,
         serverSide: true,
         ajax: "{{ route('wilayah.data') }}",
+        'columnDefs': [
+        {
+            "targets": [0,1,5], // your case first column
+            "className": "text-center"
+        }],
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'id', name: 'id'},

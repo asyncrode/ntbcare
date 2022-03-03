@@ -25,22 +25,20 @@ class KecamatanController extends Controller
         $kecamatan = Kecamatan::all();
         return Datatables::of($kecamatan)
             ->addIndexColumn()
-            ->addColumn('id_wilayahs',function($kecamatan){
-                if($kecamatan->id_wilayahs != null)
-                {
+            ->addColumn('id_wilayahs', function ($kecamatan) {
+                if ($kecamatan->id_wilayahs != null) {
                     return $kecamatan->wilayah->nama_will;
                 }
             })
-            ->addColumn('action',function($row){
+            ->addColumn('action', function ($row) {
                 $btn = '';
-                $btn = $btn.'<a href = "javascript:void(0)" data-id = "'.$row->id.'" id = "edit" class = "edit btn btn-primary btn-sm">Edit</a>';
-                $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="delete" class="delete btn btn-danger btn-sm">Delete</a>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
 
                 return $btn;
             })
             ->rawColumns(['action'])
             ->make(true);
-        
     }
 
     public function getWilayah()
@@ -61,7 +59,7 @@ class KecamatanController extends Controller
         $kecamatan->save();
         return response()->json([
             'message' => 'Kecamatan Berhasil Di Tambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -75,7 +73,7 @@ class KecamatanController extends Controller
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $kecamatan = Kecamatan::find($id);
         $kecamatan->id = $request->id;
@@ -84,7 +82,7 @@ class KecamatanController extends Controller
         $kecamatan->save();
         return response()->json([
             'message' => 'Kecamatan Berhasil Di Update'
-        ],200);
+        ], 200);
     }
 
     public function delete($id)

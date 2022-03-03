@@ -74,9 +74,14 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="link-effect text-dual-primary-dark" href="op_auth_signin.html">
+                        <a class="link-effect text-dual-primary-dark" href="{{ route('adminpost.logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                             <i class="si si-logout"></i>
                         </a>
+                        <form id="logout-form" action="{{ route('adminpost.logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        
                     </li>
                 </ul>
             </div>
@@ -96,8 +101,8 @@
                         class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bubbles"></i><span
-                            class="sidebar-mini-hide">Kategori</span></a>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
+                            class="sidebar-mini-hide">List Kategori</span></a>   
                     <ul>
                         <li>
                             <a href="{{route('kategori.index')}}">Kategori</a>
@@ -120,13 +125,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-briefcase"></i><span
-                            class="sidebar-mini-hide">List OPD/Instansi</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{route('opd.index')}}">OPD</a>
-                        </li>
-                    </ul>
+                    <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>List OPD/Instansi</span></a>
+                    
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-map"></i><span
@@ -140,15 +140,6 @@
                         </li>
                         <li>
                             <a href="{{route('kelurahan.index')}}">Kelurahan</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
-                            class="sidebar-mini-hide">Manajemen Kategori</span></a>
-                    <ul>
-                        <li>
-                            <a href="be_layout_default.html">Test</a>
                         </li>
                     </ul>
                 </li>
