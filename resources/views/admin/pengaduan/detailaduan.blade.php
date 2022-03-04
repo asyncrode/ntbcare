@@ -87,8 +87,14 @@
             
             <p class="m-0" >
                 <b style="font-size: 150%">{{$aduan->user->name}} </b>
-                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
+                @if ($aduan->id_opd != null)
+                    <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
+                    <br>
+                @else
+                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan belum diteruskan"><i class="si si-info"></i></a> 
                 <br>
+                @endif
+                
                 @if ($aduan->status == 'Waiting')
                     <span class="badge badge-warning justify-content-center" ><i class="fa fa-fw fa-clock-o"></i> {{$aduan->status}}</span>
                 @else
@@ -169,9 +175,16 @@
                     <!-- END Project Description -->
                 </div>
                 <div class="col-sm-12 mt-10">
+                    @if ($aduan->id_opd != null)
                     <p>
                         <span><i class="si si-info"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span>
                     </p>
+                    @else
+                    <p>
+                        <span><i class="si si-info"></i> Aduan belum diteruskan</b></span>
+                    </p>
+                    @endif
+                   
                     <p class="mr-15">
                         <span class="float-right"><i class="si si-bubble"></i> 3</span>
                         <span class="float-right mr-10"><i class="si si-action-redo"></i> 1</span>
