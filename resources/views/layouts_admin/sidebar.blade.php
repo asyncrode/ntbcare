@@ -188,13 +188,8 @@
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bubbles"></i><span
-                            class="sidebar-mini-hide">Pengaduan</span></a>
-                    <ul>
-                        <li>
-                            <a href="be_layout_default.html">Test</a>
-                        </li>
-                    </ul>
+                    <a href="{{route('pengaduan.admin.index')}}"><i class="si si-bubbles"></i><span
+                        class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
             </ul>
         </div>

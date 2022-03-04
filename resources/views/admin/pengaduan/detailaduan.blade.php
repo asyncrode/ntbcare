@@ -13,49 +13,61 @@
                     <i class="si si-action-redo"></i>
                 </button>
             </div>
-            <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete"
-                data-id="{{$aduan->id}}"><i class="fa fa-trash"></i></button>
+            <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete" data-id="{{$aduan->id}}">
+                <i class="fa fa-trash"></i>
+            </button>
             <div class="btn-group float-right" role="group">
-                {{-- <button type="button" class="btn btn-primary dropdown-toggle" id="btnGroupDrop1"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{$aduan->status}}</button>
-                <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" x-placement="bottom-start"
-                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 34px, 0px);">
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        Approved
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        Rejected
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        On Proccess
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                        Completed
-                    </a>
-                </div> --}}
-
-                <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control float-right ml-5 mr-5">
-                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting">Waiting</option>
-                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved">Approved</option>
-                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected">Rejected</option>
-                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process">On Process
-                    </option>
-                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete">Complete</option>
+                @if ($aduan->status == 'Waiting')
+                <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-warning float-right ml-5 mr-5" style="color:beige; border-color:currentColor">
+                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
+                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
+                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
+                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
+                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
                 </select>
+                    @else
+                    @if ($aduan->status == 'Rejected')
+                    <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-danger float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                        <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
+                        <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
+                        <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
+                        <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
+                        <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
+                    </select>
+                        @else
+                        @if ($aduan->status == 'Approved')
+                        <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-info float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                            <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
+                            <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
+                            <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
+                            <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
+                            <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
+                        </select>
+                        @else
+                        <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-success float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                            <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
+                            <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
+                            <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
+                            <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
+                            <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
+                        </select>
+                        @endif
+                    @endif
+                @endif
             </div>
 
 
             <div class="btn-group float-right">
-                {{-- @if ($aduan->a_status == 'Waiting')
-                <div class="ribbon-box bg-warning text-uppercase" style="font-size: 60%;">{{$aduan->a_status}}</div>
+                {{-- @if ($aduan->status == 'Waiting')
+                <div class=" badge-warning text-uppercase" style="font-size: 60%;">{{$aduan->status}}</div>
                 @else
-                @if ($aduan->a_status == 'Rejected')
-                <div class="ribbon-box bg-danger text-uppercase" style="font-size: 60%;">{{$aduan->a_status}}</div>
+                @if ($aduan->status == 'Rejected')
+                <div class=" badge-danger text-uppercase" style="font-size: 60%;">{{$aduan->status}}</div>
                 @else
-                @if ($aduan->a_status == 'Approved')
-                <div class="ribbon-box bg-info text-uppercase" style="font-size: 60%;">{{$aduan->a_status}}</div>
+                @if ($aduan->status == 'Approved')
+                <div class=" badge-info text-uppercase" style="font-size: 60%;">{{$aduan->status}}</div>
                 @else
-                <div class="ribbon-box bg-success text-uppercase" style="font-size: 60%;">{{$aduan->a_status}}</div>
+                <div class=" badge-success text-uppercase" style="font-size: 60%;">{{$aduan->status}}</div>
                 @endif
                 @endif
                 @endif --}}
@@ -72,8 +84,35 @@
         <!-- Project -->
         
         <div class="block-content block-content-full">
-            <p class="text-muted m-0">
-                Diposting Tanggal: {{$aduan->created_at}}</p>
+            
+            <p class="m-0" >
+                <b style="font-size: 150%">{{$aduan->user->name}} </b>
+                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
+                <br>
+                @if ($aduan->status == 'Waiting')
+                    <span class="badge badge-warning justify-content-center" ><i class="fa fa-fw fa-clock-o"></i> {{$aduan->status}}</span>
+                @else
+                    @if ($aduan->status == 'Rejected')
+                        <span class="badge badge-danger" ><i class="fa fa-fw fa-times-circle"></i> {{$aduan->status}}</span>
+                    @else
+                        @if ($aduan->status == 'Approved')
+                            <span class="badge badge-info" ><i class="fa fa-fw fa-check"></i> {{$aduan->status}}</span>
+                        @else
+                            @if ($aduan->status == 'On process')
+                                <span class="badge badge-success" ><i class="fa fa-fw fa-hourglass-1"></i> {{$aduan->status}}</span>    
+                            @else
+                                <span class="badge badge-success" >
+                                    <i class="fa fa-fw fa-check-circle"></i> {{$aduan->status}}
+                                </span>    
+                            @endif
+                            @endif
+                    @endif
+                @endif
+                <br>
+                <small class="text-muted">Diposting Tanggal: {{$aduan->created_at}}</small>
+                <br>
+                
+            </p>
             <div class="row py-20">
                 <div class="col-sm-6 invisible" data-toggle="appear">
                     <!-- Image Slider (.js-slider class is initialized in Helpers.slick()) -->
@@ -128,6 +167,15 @@
                         </tbody>
                     </table>
                     <!-- END Project Description -->
+                </div>
+                <div class="col-sm-12 mt-10">
+                    <p>
+                        <span><i class="si si-info"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span>
+                    </p>
+                    <p class="mr-15">
+                        <span class="float-right"><i class="si si-bubble"></i> 3</span>
+                        <span class="float-right mr-10"><i class="si si-action-redo"></i> 1</span>
+                    </p>
                 </div>
             </div>
         </div>

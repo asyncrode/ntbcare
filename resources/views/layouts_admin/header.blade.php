@@ -124,7 +124,7 @@
             <!-- Notifications -->
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-flag"></i>
+                    <i class="fa fa-bell"></i>
                     <span class="badge badge-primary badge-pill">5</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-300" aria-labelledby="page-header-notifications">

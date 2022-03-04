@@ -56,7 +56,7 @@
                     text : 'Status Berhasil Di Update',
                     showConfirmButton :true
                 })
-                
+                setTimeout(location.reload.bind(location), 1500);
             }
         })
     })
