@@ -201,110 +201,35 @@
                 <div class="content content-full">
                     <div class="row justify-content-center py-30">
                         <div class="col-lg-8">
-                            <h3 class="font-w700 mb-50">Responses (5)</h3>
+                            <h3 class="font-w700 mb-50">Responses ({{$komentar->count()}})</h3>
                             <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar2.jpg"
-                                    alt="">
                                 <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Melissa Rice</a> Cras
-                                        sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                        sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                                        turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                                        felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">2 days</span>
-                                    </div>
-                                    <div class="media my-20">
+                                    @foreach ($komentar as $k)
+                                    <div class="media mb-30">
                                         <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="assets/media/avatars/avatar5.jpg" alt="">
+                                            src="assets/media/avatars/avatar13.jpg" alt="">
                                         <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Danielle
-                                                    Jones</a> Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                                                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                                                in faucibus.</p>
+                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> {{$k->komentar}}</p>
                                             <div class="font-size-sm">
-                                                <span class="badge badge-primary"><i class="fa fa-thumbs-up"></i>
-                                                    3</span>
-                                                <a class="link-effect" href="javascript:void(0)">Like</a>
-                                                <span role="presentation" aria-hidden="true"> · </span>
-                                                <a class="badge badge-secondary" href="javascript:void(0)"><i
-                                                        class="fa fa-comments"></i> 4</a>
-                                                <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                                <span role="presentation" aria-hidden="true"> · </span>
-                                                <span class="text-muted mr-5">1 day</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media my-20">
-                                        <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="assets/media/avatars/avatar11.jpg" alt="">
-                                        <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Thomas
-                                                    Riley</a> Purus odio, vestibulum in vulputate at, tempus viverra
-                                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                                                lacinia congue felis in faucibus.</p>
-                                            <div class="font-size-sm">
-                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i>
-                                                    1</span>
+                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
                                                 <a class="link-effect" href="javascript:void(0)">Like</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
                                                 <a class="link-effect" href="javascript:void(0)">Reply</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
-                                                <span class="text-muted mr-5">1 day</span>
+                                                <span class="text-muted mr-5">10 hrs</span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20"
-                                    src="assets/media/avatars/avatar13.jpg" alt="">
-                                <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> In
-                                        gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-                                        vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                                        nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">10 hrs</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar5.jpg"
-                                    alt="">
-                                <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Susan Day</a>
-                                        Vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                                        nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">3 hrs</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar0.jpg"
-                                    alt="">
-                                <div class="media-body">
-                                    <form action="be_pages_generic_story.html" method="post" onsubmit="return false;">
-                                        <textarea class="form-control mb-5" rows="5"
+                                    @endforeach
+                                   
+                                    <form action="" name="frm_komen" id="frm_komen" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
+                                        <textarea class="form-control mb-5" rows="5" name="komentar"
                                             placeholder="Write a response.."></textarea>
-                                        <button type="submit" class="btn btn-secondary">
-                                            <i class="fa fa-reply mr-5"></i>Respond
-                                        </button>
+                                            <button type="button" class="btn btn-alt-primary" id="komenBtn">
+                                                <i class="fa fa-check"></i> Forward
+                                            </button>
                                     </form>
                                 </div>
                             </div>
@@ -317,6 +242,7 @@
 
     </div>
 </div>
+
 <div class="modal fade" id="modalForward" tabindex="-1" role="dialog" aria-labelledby="modalForward" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

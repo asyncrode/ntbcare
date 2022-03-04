@@ -27,6 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::put('/pengaduan/status/{id}', 'Admin\PengaduanController@editstat')->middleware('auth:admin')->name('pengaduan.admin.stat');
     Route::delete('/delete/{id}', 'Admin\PengaduanController@delete')->middleware('auth:admin')->name('pengaduan.detailaduan.delete');
 
+    Route::post('/pengaduan/komentar', 'Admin\KomentarController@store')->middleware('auth:admin')->name('admin.komentar.store');
+
     Route::group(['prefix' => 'opd', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\OpdController@index')->name('opd.index');
         Route::get('/getOpd', 'Admin\OpdController@getOpd')->name('opd.opd');
