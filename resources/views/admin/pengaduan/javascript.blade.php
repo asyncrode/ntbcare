@@ -102,6 +102,7 @@
                 })
                 $('#frm_add').trigger("reset");
                 $('#modalOpd').modal('hide');
+                setTimeout(location.reload.bind(location), 1500);
                 
             }
         })
