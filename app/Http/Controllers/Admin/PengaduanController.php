@@ -21,32 +21,33 @@ class PengaduanController extends Controller
     {
         // $roles = Auth::user()->roles->pluck('name');
         // dd($roles);
-        if(Auth::user()->roles->pluck('name')->first() == 'super-admin' )
-        {
-            
+        if (Auth::user()->roles->pluck('name')->first() == 'super-admin') {
+
             $aduan = Aduan::all()->sortByDesc('created_at');
             $kategori = Kategori::all();
             $user = User::all();
             return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
-        }else{
-            
-            $opd = Opd::where('id_admin',Auth::user()->id)->first();
-           
-            $aduan = Aduan::where('id_opd',$opd->id)->get();
-           
+        } else {
+
+            $opd = Opd::where('id_admin', Auth::user()->id)->first();
+
+            $aduan = Aduan::where('id_opd', $opd->id)->get();
+
             $kategori = Kategori::all();
-           
-            return view('admin.pengaduan.index', compact('aduan', 'kategori'));
+
+            $sub = Subkategori::all();
+
+            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'sub'));
         }
-     
-        
+
+
 
         // $aduan = Aduan::join('users', 'users.id', '=', 'aduans.id_pelapor')
         //     ->join('kategoris', 'kategoris.id', '=', 'aduans.id_kategori')
         //     ->join('subkategoris', 'subkategoris.id', '=', 'aduans.id_subkategori')
         //     ->join('wilayahs', 'wilayahs.id', '=', 'aduans.id_wil')
         //     ->get();
-        
+
     }
 
     public function detail($id)
@@ -116,9 +117,8 @@ class PengaduanController extends Controller
         return response()->json([
             'message' => 'Status Pengaduan Berhasil Dirubah'
         ], 200);
-        
     }
-    
+
     public function getOpd()
     {
         $opd = Opd::all();
@@ -128,7 +128,7 @@ class PengaduanController extends Controller
         ]);
     }
 
-    public function forward(Request $request,$id)
+    public function forward(Request $request, $id)
     {
         $aduan = Aduan::find($id);
         $aduan->id_opd = $request->opd;

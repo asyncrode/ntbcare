@@ -18,7 +18,7 @@ class UseradminSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin123')
         ]);
-        
+
         $admin->assignRole('super-admin');
 
         $lombok = Admin::create([
@@ -26,7 +26,7 @@ class UseradminSeeder extends Seeder
             'email' => 'lombok@gmail.com',
             'password' => bcrypt('admin123')
         ]);
-        
+
         $lombok->assignRole('opd-lombok');
 
         $bima = Admin::create([
@@ -34,7 +34,15 @@ class UseradminSeeder extends Seeder
             'email' => 'bima@gmail.com',
             'password' => bcrypt('admin123')
         ]);
-        
+
         $bima->assignRole('opd-bima');
+
+        $mataram = Admin::create([
+            'nama' => 'OPD PU Mataram',
+            'email' => 'pu@gmail.com',
+            'password' => bcrypt('admin123')
+        ]);
+
+        $mataram->assignRole('opd-pu');
     }
 }

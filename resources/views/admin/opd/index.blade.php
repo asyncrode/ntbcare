@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%;">No</th>
-                        <th class="text-center">nama</th>
+                        <th class="text-center" style="width: 30%;">nama</th>
                         <th class="d-none d-sm-table-cell text-center">admin opd</th>
                         <th class="d-none d-sm-table-cell text-center">wilayah</th>
                         <th class="d-none d-sm-table-cell text-center" style="width: 15%;">terdaftar</th>
