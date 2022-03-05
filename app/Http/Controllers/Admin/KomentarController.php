@@ -21,6 +21,13 @@ class KomentarController extends Controller
         $komentar->save();
         return response()->json([
             'message' => 'Aduan Berhasil Di Input'
-        ],200);
+        ], 200);
+    }
+
+    public function delete($id)
+    {
+        $komentar = Komentar::find($id);
+        $komentar->delete();
+        return response()->json(200);
     }
 }

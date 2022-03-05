@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('/pengaduan', 'User\PengaduanController@index')->name('pengaduan.index');
 Route::get('/listaduan', 'User\ListaduanController@index')->name('listaduan.index');
 Route::get('/pengaduanku', 'User\ListaduanController@listaduan')->name('pengaduanku.index');
+Route::get('/untoldstory', 'User\HomeController@story')->name('user.story');
 
 // Get Data
 Route::get('/getData', 'User\PengaduanController@getData')->name('pengaduan.data');

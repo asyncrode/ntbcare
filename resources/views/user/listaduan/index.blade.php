@@ -98,8 +98,8 @@
                             <div class="media-body">
                                 <p class="mb-0">
                                     <a class="font-w700" href="javascript:void(0)">{{$a->user->name}}</a>
-                                    <a class="text-muted" href="javascript:void(0)">&bull; {{$a->wilayah->nama_will}}</a>
-                                    {{-- <a class="text-muted" id="time">&bull; </a> --}}
+                                    {{-- <a class="text-muted" href="javascript:void(0)">&bull; {{$a->wilayah->nama_will}}</a> --}}
+                                    <em><a class="text-muted" id="time">&bull; </a></em>
 
                                     {{-- <span class="text-muted"> {{$a->status}}</span> --}}
                                     @if ($a->status == 'Waiting')
@@ -124,8 +124,8 @@
                                                     
                                 </p>
                                 <p>
-                                    <small id="time" class="text-left" style="line-height: 2.6"></small>
-                                    {{-- <a class="text-muted" href="javascript:void(0)" style="line-height: 2">{{$a->wilayah->nama_will}}</a> --}}
+                                    {{-- <small id="time" class="text-left" style="line-height: 2.6"></small> --}}
+                                    <a class="text-muted" href="javascript:void(0)" style="line-height: 2">{{$a->wilayah->nama_will}}</a>
                                     <br>
                                     {{$a->pesan}}
                                 </p>

@@ -68,12 +68,14 @@
                             <div class="media-body">
                                 <p class="mb-0">
                                     <a class="font-w600" href="javascript:void(0)">John Smith</a>
-                                    <a class="text-muted" href="javascript:void(0)">&bull; Wilayah</a>
+                                    {{-- <a class="text-muted" href="javascript:void(0)">&bull; Wilayah</a> --}}
+                                    <em><a class="text-muted" id="time">&bull; </a></em>
                                     {{-- <a class="text-muted" href="javascript:void(0)">@j.smith</a> --}}
                                     <span class="badge badge-warning float-right" ><i class="fa fa-fw fa-clock-o"></i> Status</span>
                                 </p>
                                 <p>
-                                    <small id="time" class="text-left" style="line-height: 2.6"></small>
+                                    {{-- <small id="time" class="text-left" style="line-height: 2.6"></small> --}}
+                                    <a class="text-muted" href="javascript:void(0)">&bull; Wilayah</a>
                                     <br>
                                     {{-- pesan --}}
                                     Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.

@@ -33,23 +33,46 @@
             -->
             <ul class="nav-main">
                 <li>
-                    <a class="" href="">
-                        <i class="si si-home"></i>Home
+                    <a class="" href="{{route('landing')}}">
+                        <i class="fa fa-home"></i>Home
                     </a>
                 </li>
                 <li>
-                    <a class="" href="{{route('pengaduan.index')}}">
-                        <i class="si si-home"></i>Pengaduan
+                    <a class="pl-15" href="{{route('listaduan.index')}}">
+                        <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px"> Pengaduan
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{{route('user.story')}}">
+                        <i class="fa fa-book"></i> Untold Story
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="#">
+                        <i class="fa fa-newspaper-o"></i> Berita
                     </a>
                 </li>
                 @guest
                 <li>
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('register') }}">
+                        <i class="fa fa-user-plus"></i> Daftar
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
                 </li>
                 @else
                 <li>
+                    <a class="nav-link" href="{{ route('pengaduanku.index') }}">
+                        <i class="si si-paper-plane"></i>PengaduanKu
+                    </a>
+                </li>
+                <li>
                     <a class="nav-link" href="{{ route('login') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout
+                    document.getElementById('logout-form').submit();">
+                        <i class="si si-logout"></i>Logout
                     </a>
                     
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

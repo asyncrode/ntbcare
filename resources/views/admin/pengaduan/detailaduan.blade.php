@@ -185,18 +185,66 @@
                     </p>
                     @endif
                    
-                    <p class="mr-15">
-                        <span class="float-right"><i class="si si-bubble"></i> 3</span>
-                        <span class="float-right mr-10"><i class="si si-action-redo"></i> 1</span>
-                    </p>
+                    <h5>
+                        <a class="link-effect" href="javascript;void(0)">
+                        <span class="">
+                            <i class="fa fa-comment"></i>
+                            {{$komentar->count()}}
+                        </span> Responses
+                        </a>
+                        {{-- <span class="badge badge-light mr-5">Responses ({{$komentar->count()}})</span>  --}}
+                    </h5>
                 </div>
+                {{-- <h4>Responses ({{$komentar->count()}})</h4> --}}
+                    <div class="block-content-full  col-md-12 mt-10">
+                        <div class="bg-body-dark">
+                            <div class="content content-full">
+                                <div class="row justify-content-center ">
+                                    <div class="col-lg-8">
+                                        {{-- <h3 class="font-w700 mb-50">Responses ({{$komentar->count()}})</h3> --}}
+                                        <div class="media mb-30">
+                                            <div class="media-body">
+                                                @foreach ($komentar as $k)
+                                                <div class="media mb-30">
+                                                    <img class="img-avatar img-avatar48 d-flex mr-20"
+                                                        src="{{asset('assets/media/avatars/avatar13.jpg')}}" alt="">
+                                                    <div class="media-body">
+                                                        <p class="mb-5 "><a class="font-w600 text-capitalize" href="javascript:void(0)">{{$k->admin->nama}}</a> {{$k->komentar}}</p>
+                                                        <div class="font-size-sm">
+                                                            {{-- <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i></span> --}}
+                                                            <a class="link-effect" href="javascript:void(0)">Like</a>
+                                                            <span role="presentation" aria-hidden="true"> · </span>
+                                                            <a class="link-effect" href="javascript:void(0)">Reply</a>
+                                                            <span role="presentation" aria-hidden="true"> · </span>
+                                                            <span class="text-muted mr-5">{{$k->created_at}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                               
+                                                <form action="" name="frm_komen" id="frm_komen" method="post" class="form-material floating">
+                                                    @csrf
+                                                    <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
+                                                    <textarea id="material-textarea-small2" class="form-control mb-5" rows="2" name="komentar"></textarea>
+                                                    <label for="material-textarea-small2">Tuliskan respons anda</label>
+                                                    <button type="button" class="btn btn-alt-primary mt-10 float-right" id="komenBtn">
+                                                        <i class="fa fa-reply mr-5"></i> Respond
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
         
         <!-- END Project -->
 
         <!-- Key Features -->
-        <div class="block-content-full border-t">
+        {{-- <div class="block-content-full border-t">
             <div class="bg-body-dark">
                 <div class="content content-full">
                     <div class="row justify-content-center py-30">
@@ -207,16 +255,16 @@
                                     @foreach ($komentar as $k)
                                     <div class="media mb-30">
                                         <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="assets/media/avatars/avatar13.jpg" alt="">
+                                            src="{{asset('assets/media/avatars/avatar13.jpg')}}" alt="">
                                         <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> {{$k->komentar}}</p>
+                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">{{$k->admin->nama}}</a> {{$k->komentar}}</p>
                                             <div class="font-size-sm">
-                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
+                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i></span>
                                                 <a class="link-effect" href="javascript:void(0)">Like</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
                                                 <a class="link-effect" href="javascript:void(0)">Reply</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
-                                                <span class="text-muted mr-5">10 hrs</span>
+                                                <span class="text-muted mr-5">{{$k->created_at}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -228,7 +276,7 @@
                                         <textarea class="form-control mb-5" rows="5" name="komentar"
                                             placeholder="Write a response.."></textarea>
                                             <button type="button" class="btn btn-alt-primary" id="komenBtn">
-                                                <i class="fa fa-check"></i> Forward
+                                                <i class="fa fa-reply mr-5"></i> Respond
                                             </button>
                                     </form>
                                 </div>
@@ -237,7 +285,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- END Key Features -->
 
     </div>
