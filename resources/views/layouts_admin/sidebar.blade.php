@@ -125,6 +125,18 @@
                     </ul>
                 </li>
                 <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-follow"></i><span
+                            class="sidebar-mini-hide">User Admin Management</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('role.index')}}">Role</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.index')}}">Admin</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>List OPD/Instansi</span></a>
                     
                 </li>
