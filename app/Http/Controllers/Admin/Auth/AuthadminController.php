@@ -23,7 +23,7 @@ class AuthadminController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:5'
+            'password' => 'required'
         ]);
 
         if (auth()->guard('admin')->attempt($request->only('email', 'password'))) {

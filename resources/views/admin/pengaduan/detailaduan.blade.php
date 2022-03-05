@@ -88,7 +88,7 @@
             <p class="m-0" >
                 <b style="font-size: 150%">{{$aduan->user->name}} </b>
                 @if ($aduan->id_opd != null)
-                    <a href="javascript:void(0)" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah diteruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
+                    <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
                     <br>
                 @else
                 <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan belum diteruskan"><i class="si si-info"></i></a> 
@@ -177,7 +177,7 @@
                 <div class="col-sm-12 mt-10">
                     @if ($aduan->id_opd != null)
                     <p>
-                        <span><i class="si si-info"></i> Aduan telah diteruskan ke <b>{{$aduan->opd->nama}}</b></span>
+                        <span><i class="si si-info"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span>
                     </p>
                     @else
                     <p>
@@ -185,10 +185,10 @@
                     </p>
                     @endif
                    
-                    <h5 class="mr-15">
+                    <p class="mr-15">
                         <span class="float-right"><i class="si si-bubble"></i> 3</span>
-                        <span class="float-right mr-15"><i class="si si-action-redo"></i> 1</span>
-                    </h5>
+                        <span class="float-right mr-10"><i class="si si-action-redo"></i> 1</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -201,31 +201,15 @@
                 <div class="content content-full">
                     <div class="row justify-content-center py-30">
                         <div class="col-lg-8">
-                            <h5 class="font-w700 mb-20">Responses (5)</h5>
+                            <h3 class="font-w700 mb-50">Responses ({{$komentar->count()}})</h3>
                             <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20"
-                                    src="{{asset('assets/media/avatars/avatar5.jpg')}}" alt="">
                                 <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Melissa Rice</a> Cras
-                                        sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                        sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                                        turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                                        felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">2 days</span>
-                                    </div>
-                                    {{-- <div class="media mt-30">
+                                    @foreach ($komentar as $k)
+                                    <div class="media mb-30">
                                         <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="{{asset('assets/media/avatars/avatar2.jpg')}}" alt="">
+                                            src="assets/media/avatars/avatar13.jpg" alt="">
                                         <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> In
-                                                gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-                                                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                                                nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> {{$k->komentar}}</p>
                                             <div class="font-size-sm">
                                                 <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
                                                 <a class="link-effect" href="javascript:void(0)">Like</a>
@@ -235,19 +219,17 @@
                                                 <span class="text-muted mr-5">10 hrs</span>
                                             </div>
                                         </div>
-                                    </div>     --}}
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="{{asset('assets/media/avatars/avatar0.jpg')}}"
-                                    alt="">
-                                <div class="media-body">
-                                    <form action="be_pages_generic_story.html" method="post" onsubmit="return false;">
-                                        <textarea class="form-control mb-5" rows="5"
+                                    </div>
+                                    @endforeach
+                                   
+                                    <form action="" name="frm_komen" id="frm_komen" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
+                                        <textarea class="form-control mb-5" rows="5" name="komentar"
                                             placeholder="Write a response.."></textarea>
-                                        <button type="submit" class="btn btn-secondary">
-                                            <i class="fa fa-reply mr-5"></i>Respond
-                                        </button>
+                                            <button type="button" class="btn btn-alt-primary" id="komenBtn">
+                                                <i class="fa fa-check"></i> Forward
+                                            </button>
                                     </form>
                                 </div>
                             </div>
@@ -260,6 +242,7 @@
 
     </div>
 </div>
+
 <div class="modal fade" id="modalForward" tabindex="-1" role="dialog" aria-labelledby="modalForward" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

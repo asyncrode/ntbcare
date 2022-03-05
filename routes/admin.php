@@ -27,6 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::put('/pengaduan/status/{id}', 'Admin\PengaduanController@editstat')->middleware('auth:admin')->name('pengaduan.admin.stat');
     Route::delete('/delete/{id}', 'Admin\PengaduanController@delete')->middleware('auth:admin')->name('pengaduan.detailaduan.delete');
 
+    Route::post('/pengaduan/komentar', 'Admin\KomentarController@store')->middleware('auth:admin')->name('admin.komentar.store');
+
     Route::group(['prefix' => 'opd', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\OpdController@index')->name('opd.index');
         Route::get('/getOpd', 'Admin\OpdController@getOpd')->name('opd.opd');
@@ -83,5 +85,24 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/edit/{id}','Admin\SubkategoriController@edit')->name('subkategori.edit');
         Route::put('/update/{id}','Admin\SubkategoriController@update')->name('subkategori.update');
         Route::delete('/delete/{id}','Admin\SubkategoriController@delete')->name('subkategori.delete');
+    });
+
+    Route::group(['prefix' => 'role', 'middleware' => ['role:super-admin']],function(){
+        Route::get('/','Admin\RoleController@index')->name('role.index');
+        Route::get('/getRole','Admin\RoleController@getRole')->name('role.data');
+        Route::post('/store','Admin\RoleController@store')->name('role.store');
+        Route::get('/edit/{id}','Admin\RoleController@edit')->name('role.edit');
+        Route::put('/update/{id}','Admin\RoleController@update')->name('role.update');
+        Route::delete('/delete/{id}','Admin\RoleController@delete')->name('role.delete');
+    });
+
+    Route::group(['prefix' => 'admin', 'middleware' => ['role:super-admin']],function(){
+        Route::get('/','Admin\AdminController@index')->name('admin.index');
+        Route::get('/getAdmin','Admin\AdminController@getAdmin')->name('admin.data');
+        Route::get('/getRole','Admin\AdminController@getRole')->name('admin.role');
+        Route::post('/store','Admin\AdminController@store')->name('admin.store');
+        Route::get('/edit/{id}','Admin\AdminController@edit')->name('admin.edit');
+        Route::put('/update/{id}','Admin\AdminController@update')->name('admin.update');
+        Route::delete('/delete/{id}','Admin\AdminController@delete')->name('admin.delete');
     });
 });
