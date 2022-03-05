@@ -78,8 +78,7 @@
                         
                     </div> --}}
                     <div class="block-content">
-                        <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
-                            alt="Project 12 Promo">
+                        <img class="p-0 img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}" alt="">
                         <p class="mb-10 mt-10">
                             {{$d->pesan}} <br> <br>
                             <span class="text-muted text-left"><small> <?= date('l, d-M-Y \a\t h:i A', strtotime($d->created_at)); ?></small></span>
@@ -132,15 +131,15 @@
             <div class="row text-center">
                 <div class="col-sm-4 py-30">
                     <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="3">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Active</div>
+                    <div class="font-w600 text-muted text-uppercase">Approved</div>
                 </div>
                 <div class="col-sm-4 py-30">
                     <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="12">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Projects</div>
+                    <div class="font-w600 text-muted text-uppercase">On Process</div>
                 </div>
                 <div class="col-sm-4 py-30">
                     <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="9">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Clients</div>
+                    <div class="font-w600 text-muted text-uppercase">Completed</div>
                 </div>
             </div>
         </div>
@@ -184,12 +183,7 @@
                         <h3 class=" block-title">
                             {{$d->user->name}}
                         </h3>
-                        {{-- <div class="block-options text-center">
-                            <button type="button" class="btn-block-option" >
-                                <i class="si si-action-redo"></i>
-                            </button>
-                        </div> --}}
-                        {{-- <div class="ribbon-box bg-primary text-uppercase" style="font-size: 50%;">{{$d->kategori}}</div> --}}
+                        
                         @if ($d->status == 'Waiting')
                             <div class="ribbon-box bg-warning text-uppercase" style="font-size: 70%;"><i class="fa fa-fw fa-clock-o"></i> {{$d->status}}</div>
                         @else
@@ -272,15 +266,11 @@
             <div class="row text-center">
                 <div class="col-sm-4 py-30">
                     <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="3">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Active</div>
+                    <div class="font-w600 text-muted text-uppercase">On Process</div>
                 </div>
                 <div class="col-sm-4 py-30">
                     <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="12">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Projects</div>
-                </div>
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="9">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Clients</div>
+                    <div class="font-w600 text-muted text-uppercase">Completed</div>
                 </div>
             </div>
         </div>

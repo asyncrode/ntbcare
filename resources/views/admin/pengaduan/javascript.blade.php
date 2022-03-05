@@ -29,8 +29,7 @@
                             text : 'Data Berhasil Di Hapus',
                             showConfirmButton :true
                         })
-                    
-                        window.location.href='http://localhost:8000/admin/pengaduan'
+                        .then(result=>window.location.href='http://localhost:8000/admin/pengaduan')
                     }
                 })
             }else{
@@ -56,7 +55,8 @@
                     text : 'Status Berhasil Di Update',
                     showConfirmButton :true
                 })
-                setTimeout(location.reload.bind(location), 1500);
+                // setTimeout(location.reload.bind(location), 1500);
+                .then(result=>location.reload())
             }
         })
     })

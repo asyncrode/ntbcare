@@ -88,7 +88,7 @@
             <p class="m-0" >
                 <b style="font-size: 150%">{{$aduan->user->name}} </b>
                 @if ($aduan->id_opd != null)
-                    <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
+                    <a href="javascript:void(0)" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah diteruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
                     <br>
                 @else
                 <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan belum diteruskan"><i class="si si-info"></i></a> 
@@ -177,7 +177,7 @@
                 <div class="col-sm-12 mt-10">
                     @if ($aduan->id_opd != null)
                     <p>
-                        <span><i class="si si-info"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span>
+                        <span><i class="si si-info"></i> Aduan telah diteruskan ke <b>{{$aduan->opd->nama}}</b></span>
                     </p>
                     @else
                     <p>
@@ -185,10 +185,10 @@
                     </p>
                     @endif
                    
-                    <p class="mr-15">
+                    <h5 class="mr-15">
                         <span class="float-right"><i class="si si-bubble"></i> 3</span>
-                        <span class="float-right mr-10"><i class="si si-action-redo"></i> 1</span>
-                    </p>
+                        <span class="float-right mr-15"><i class="si si-action-redo"></i> 1</span>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -201,10 +201,10 @@
                 <div class="content content-full">
                     <div class="row justify-content-center py-30">
                         <div class="col-lg-8">
-                            <h3 class="font-w700 mb-50">Responses (5)</h3>
+                            <h5 class="font-w700 mb-20">Responses (5)</h5>
                             <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar2.jpg"
-                                    alt="">
+                                <img class="img-avatar img-avatar48 d-flex mr-20"
+                                    src="{{asset('assets/media/avatars/avatar5.jpg')}}" alt="">
                                 <div class="media-body">
                                     <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Melissa Rice</a> Cras
                                         sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
@@ -218,85 +218,28 @@
                                         <span role="presentation" aria-hidden="true"> · </span>
                                         <span class="text-muted mr-5">2 days</span>
                                     </div>
-                                    <div class="media my-20">
+                                    {{-- <div class="media mt-30">
                                         <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="assets/media/avatars/avatar5.jpg" alt="">
+                                            src="{{asset('assets/media/avatars/avatar2.jpg')}}" alt="">
                                         <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Danielle
-                                                    Jones</a> Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                                                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                                                in faucibus.</p>
+                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> In
+                                                gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+                                                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                                                nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                                             <div class="font-size-sm">
-                                                <span class="badge badge-primary"><i class="fa fa-thumbs-up"></i>
-                                                    3</span>
-                                                <a class="link-effect" href="javascript:void(0)">Like</a>
-                                                <span role="presentation" aria-hidden="true"> · </span>
-                                                <a class="badge badge-secondary" href="javascript:void(0)"><i
-                                                        class="fa fa-comments"></i> 4</a>
-                                                <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                                <span role="presentation" aria-hidden="true"> · </span>
-                                                <span class="text-muted mr-5">1 day</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media my-20">
-                                        <img class="img-avatar img-avatar48 d-flex mr-20"
-                                            src="assets/media/avatars/avatar11.jpg" alt="">
-                                        <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Thomas
-                                                    Riley</a> Purus odio, vestibulum in vulputate at, tempus viverra
-                                                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                                                lacinia congue felis in faucibus.</p>
-                                            <div class="font-size-sm">
-                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i>
-                                                    1</span>
+                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
                                                 <a class="link-effect" href="javascript:void(0)">Like</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
                                                 <a class="link-effect" href="javascript:void(0)">Reply</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
-                                                <span class="text-muted mr-5">1 day</span>
+                                                <span class="text-muted mr-5">10 hrs</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>     --}}
                                 </div>
                             </div>
                             <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20"
-                                    src="assets/media/avatars/avatar13.jpg" alt="">
-                                <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Jeffrey Shaw</a> In
-                                        gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-                                        vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                                        nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i> 10</span>
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">10 hrs</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar5.jpg"
-                                    alt="">
-                                <div class="media-body">
-                                    <p class="mb-5"><a class="font-w600" href="javascript:void(0)">Susan Day</a>
-                                        Vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                                        nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                                    <div class="font-size-sm">
-                                        <a class="link-effect" href="javascript:void(0)">Like</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                        <span role="presentation" aria-hidden="true"> · </span>
-                                        <span class="text-muted mr-5">3 hrs</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="media mb-30">
-                                <img class="img-avatar img-avatar48 d-flex mr-20" src="assets/media/avatars/avatar0.jpg"
+                                <img class="img-avatar img-avatar48 d-flex mr-20" src="{{asset('assets/media/avatars/avatar0.jpg')}}"
                                     alt="">
                                 <div class="media-body">
                                     <form action="be_pages_generic_story.html" method="post" onsubmit="return false;">

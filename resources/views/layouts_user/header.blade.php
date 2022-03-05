@@ -5,9 +5,9 @@
         <div class="content-header-section">
             <!-- Logo -->
             <div class="content-header-item">
-                <a class="link-effect font-w700 mr-5" href="">
-                    <i class="si si-fire text-primary"></i>
-                    <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
+                <a class="link-effect font-w700 mr-5" href="{{route('landing')}}">
+                    {{-- <i class="si si-fire text-primary"></i> --}}
+                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%"><span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                 </a>
             </div>
             <!-- END Logo -->
@@ -15,7 +15,7 @@
         <!-- END Left Section -->
 
         <!-- Right Section -->
-        <div class="content-header-section">
+        <div class="content-header-section ">
             <!-- Header Navigation -->
             <!--
             Desktop Navigation, mobile navigation can be found in #sidebar
@@ -26,35 +26,38 @@
             -->
             <ul class="nav-main-header nav-main-header-no-icons">
                 <li>
-                    <a class="" href="">
+                    <a class="text-primary" href="{{route('landing')}}">
                         <i class="si si-home"></i>Home
                     </a>
                 </li>
                 <li>
-                    <a class="" href="{{route('pengaduan.index')}}">
+                    <a class="text-primary" href="{{route('listaduan.index')}}">
                         <i class="si si-home"></i>Pengaduan
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
+                    <a class="text-primary" href="#">
                         <i class="si si-home"></i>Untold Story
                     </a>
                 </li>
                 <li>
-                    <a class="" href="#">
+                    <a class="text-primary" href="#">
                         <i class="si si-home"></i>Berita
                     </a>
                 </li>
                 @guest
                 <li>
-                    <a class="nav-link" href="#">Daftar</a>
+                    <a class="nav-link text-primary" href="{{ route('register') }}">Daftar</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link text-primary" href="{{ route('login') }}">Login</a>
                 </li>
                 @else
                 <li>
-                    <a class="nav-link" href="{{ route('login') }}" onclick="event.preventDefault();
+                    <li>
+                        <a class="nav-link text-primary" href="{{ route('pengaduanku.index') }}">PengaduanKu</a>
+                    </li>
+                    <a class="nav-link text-primary" href="{{ route('login') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">Logout
                     </a>
                     
