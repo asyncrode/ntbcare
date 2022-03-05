@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Kategori;
 use App\Models\Subkategori;
 use App\Models\User;
+use App\Models\Komentar;
 use App\Models\Wilayah;
 use App\Models\Opd;
 use Auth;
@@ -53,8 +54,9 @@ class PengaduanController extends Controller
     public function detail($id)
     {
         $aduan = Aduan::where('aduans.id', $id)->first();
+        $komentar = Komentar::where('id_aduan', $id)->get();
         $detail = Aduan::find($id);
-        return view('admin.pengaduan.detailaduan', compact('detail', 'aduan'));
+        return view('admin.pengaduan.detailaduan', compact('detail', 'aduan','komentar'));
     }
 
     public function getData()
