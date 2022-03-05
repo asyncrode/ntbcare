@@ -37,9 +37,9 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class="link-effect font-w700" href="index.html">
-                        <i class="si si-fire text-primary"></i>
-                        <span class="font-size-xl text-dual-primary-dark">ntb</span><span
-                            class="font-size-xl text-primary">care</span>
+                        {{-- <i class="si si-fire text-primary"></i> --}}
+                        <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
+                        <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                     </a>
                 </div>
                 <!-- END Logo -->

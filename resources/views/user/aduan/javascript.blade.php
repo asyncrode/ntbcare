@@ -171,8 +171,8 @@
                         text  : 'Berhasil',
                         showConfirmButton : true
                     })
-                    window.location.href = "http://localhost:8000/"
-                    //perform operation
+                    .then(result=>window.location.href = "http://localhost:8000/")
+                    // perform operation
                 },
                 error: function(json) {
                     alert('Error occurs!');

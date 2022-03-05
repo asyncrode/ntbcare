@@ -31,6 +31,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
         <link rel="stylesheet" id="css-main" href="{{asset('assets/css/codebase.min.css')}}">
 
+        <link rel="stylesheet" href="{{asset('assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
+        <link rel="stylesheet" href="{{asset('assets_user/js/plugins/select2/css/select2.css')}}">
+
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
         <!-- END Stylesheets -->
@@ -51,10 +54,10 @@
                                 <!-- Header -->
                                 <div class="py-30 text-center">
                                     <a class="link-effect font-w700" href="index.html">
-                                        <i class="si si-fire"></i>
-                                        <span class="font-size-xl text-primary-dark">ntb</span><span class="font-size-xl">care</span>
+                                        <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 15px">
+                                        <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                                     </a>
-                                    <h1 class="h4 font-w700 mt-30 mb-10">Welcome to Your Dashboard</h1>
+                                    <h1 class="h4 font-w700 mt-30 mb-10">Welcome to NTB Care Dashboard</h1>
                                     <h2 class="h5 font-w400 text-muted mb-0">It’s a great day today!</h2>
                                 </div>
                                 <!-- END Header -->
