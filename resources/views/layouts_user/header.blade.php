@@ -7,7 +7,8 @@
             <div class="content-header-item">
                 <a class="link-effect font-w700 mr-5" href="{{route('landing')}}">
                     {{-- <i class="si si-fire text-primary"></i> --}}
-                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%"><span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
+                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
+                    <span class="font-size-xl text-black-op">ntb</span><span class="font-size-xl text-primary">care</span>
                 </a>
             </div>
             <!-- END Logo -->
@@ -36,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="text-primary" href="#">
+                    <a class="text-primary" href="{{route('user.story')}}">
                         <i class="si si-home"></i>Untold Story
                     </a>
                 </li>

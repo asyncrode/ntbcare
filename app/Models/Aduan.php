@@ -46,4 +46,9 @@ class Aduan extends Model
     {
         return $this->belongsTo(Opd::class, 'id_opd');
     }
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'id');
+    }
 }

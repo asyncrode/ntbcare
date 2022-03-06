@@ -224,9 +224,12 @@
                             <button type="button" class="btn-block-option" >
                                 <i class="si si-action-redo"></i> 1
                             </button>
-                            <button type="button" class="btn-block-option" >
-                                <i class="si si-bubble"></i> 3
-                            </button>
+                            <a type="button" class="btn-block-option" >
+                                <span class="">
+                                    <i class="fa fa-comment"></i>
+                                    {{$komentar->count()}}
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </a>

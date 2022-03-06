@@ -25,8 +25,9 @@ class Admin extends Authenticable
     {
         return $this->hasOne(Opd::class, 'id');
     }
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'id');
+    }
 }
-    
-
-
-
