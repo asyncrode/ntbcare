@@ -160,7 +160,7 @@
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Rekap per Wilayah</a>
+                            <a href="{{route('laporan.index')}}">Rekap per Wilayah</a>
                         </li>
                         <li>
                             <a href="be_layout_default.html">Rekap per OPD/Instansi</a>
