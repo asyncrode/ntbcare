@@ -6,3 +6,32 @@
     // console.log(moment)
     $('#time').append(moment);
 </script>
+<script>
+    $(document).ready(function(){
+         // Add Komentar
+    $('#komenBtn').click(function(){
+        var id = $('#id_aduan').val()
+        var url = '{{ route("user.komentar.store") }}'
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : "{{csrf_token()}}"
+            },
+            type : 'POST',
+            url : url,
+            data : $('#frm_komen').serialize(),
+            success : function(response){
+                Swal.fire({
+                    title : 'Berhasil !',
+                    icon: 'success',
+                    text  : 'Komentar Berhasil',
+                    showConfirmButton : true
+                })
+                $('#frm_komen').trigger("reset");
+                setTimeout(location.reload.bind(location), 1500);
+                
+            }
+        })
+    });
+    // End Store Komentar
+    })
+</script>

@@ -75,7 +75,7 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->nama = $request->nama;
         $admin->email = $request->email;
-        $admin->assignRole($request->role);
+        $admin->syncRoles($request->role);
         $admin->save();
         return response()->json([
             'message' => 'Update Admin Berhasil'

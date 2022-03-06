@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Aduan::class, 'id');
     }
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'id');
+    }
 }

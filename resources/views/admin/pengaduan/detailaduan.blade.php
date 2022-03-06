@@ -5,54 +5,81 @@
     <div class="block">
         <!-- Navigation -->
         <div class="block-content block-content-full border-b clearfix">
-            
+
             <div class="float-right">
                 {{-- <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupDrop1"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Forward</button> --}}
-                <button type="button"  id="forward" data-toggle="modal" data-target="#modalForward" class="btn btn-outline-dark">
+                <button type="button" id="forward" data-toggle="modal" data-target="#modalForward"
+                    class="btn btn-outline-dark">
                     <i class="si si-action-redo"></i>
                 </button>
             </div>
-            <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete" data-id="{{$aduan->id}}">
+            <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete"
+                data-id="{{$aduan->id}}">
                 <i class="fa fa-trash"></i>
             </button>
             <div class="btn-group float-right" role="group">
                 @if ($aduan->status == 'Waiting')
-                <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-warning float-right ml-5 mr-5" style="color:beige; border-color:currentColor">
-                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
-                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
-                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
-                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
-                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
+                <select name="status" id="status" data-id="{{$aduan->id}}"
+                    class="form-control bg-warning float-right ml-5 mr-5"
+                    style="color:beige; border-color:currentColor">
+                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light"
+                        style="color: #282828">Waiting</option>
+                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved"
+                        class="bg-light" style="color: #282828">Approved</option>
+                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected"
+                        class="bg-light" style="color: #282828">Rejected</option>
+                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process"
+                        class="bg-light" style="color: #282828">On Process</option>
+                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete"
+                        class="bg-light" style="color: #282828">Complete</option>
                 </select>
-                    @else
-                    @if ($aduan->status == 'Rejected')
-                    <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-danger float-right ml-5 mr-5" style="border-color: beige; color:beige">
-                        <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
-                        <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
-                        <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
-                        <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
-                        <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
-                    </select>
-                        @else
-                        @if ($aduan->status == 'Approved')
-                        <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-info float-right ml-5 mr-5" style="border-color: beige; color:beige">
-                            <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
-                            <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
-                            <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
-                            <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
-                            <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
-                        </select>
-                        @else
-                        <select name="status" id="status" data-id="{{$aduan->id}}" class="form-control bg-success float-right ml-5 mr-5" style="border-color: beige; color:beige">
-                            <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light" style="color: #282828">Waiting</option>
-                            <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved" class="bg-light" style="color: #282828">Approved</option>
-                            <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected" class="bg-light" style="color: #282828">Rejected</option>
-                            <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process" class="bg-light" style="color: #282828">On Process</option>
-                            <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete" class="bg-light" style="color: #282828">Complete</option>
-                        </select>
-                        @endif
-                    @endif
+                @else
+                @if ($aduan->status == 'Rejected')
+                <select name="status" id="status" data-id="{{$aduan->id}}"
+                    class="form-control bg-danger float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light"
+                        style="color: #282828">Waiting</option>
+                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved"
+                        class="bg-light" style="color: #282828">Approved</option>
+                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected"
+                        class="bg-light" style="color: #282828">Rejected</option>
+                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process"
+                        class="bg-light" style="color: #282828">On Process</option>
+                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete"
+                        class="bg-light" style="color: #282828">Complete</option>
+                </select>
+                @else
+                @if ($aduan->status == 'Approved')
+                <select name="status" id="status" data-id="{{$aduan->id}}"
+                    class="form-control bg-info float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light"
+                        style="color: #282828">Waiting</option>
+                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved"
+                        class="bg-light" style="color: #282828">Approved</option>
+                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected"
+                        class="bg-light" style="color: #282828">Rejected</option>
+                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process"
+                        class="bg-light" style="color: #282828">On Process</option>
+                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete"
+                        class="bg-light" style="color: #282828">Complete</option>
+                </select>
+                @else
+                <select name="status" id="status" data-id="{{$aduan->id}}"
+                    class="form-control bg-success float-right ml-5 mr-5" style="border-color: beige; color:beige">
+                    <option {{old('status',$aduan->status)=="Waiting"? 'selected':''}} value="Waiting" class="bg-light"
+                        style="color: #282828">Waiting</option>
+                    <option {{old('status',$aduan->status)=="Approved"? 'selected':''}} value="Approved"
+                        class="bg-light" style="color: #282828">Approved</option>
+                    <option {{old('status',$aduan->status)=="Rejected"? 'selected':''}} value="Rejected"
+                        class="bg-light" style="color: #282828">Rejected</option>
+                    <option {{old('status',$aduan->status)=="On process"? 'selected':''}} value="On process"
+                        class="bg-light" style="color: #282828">On Process</option>
+                    <option {{old('status',$aduan->status)=="Complete"? 'selected':''}} value="Complete"
+                        class="bg-light" style="color: #282828">Complete</option>
+                </select>
+                @endif
+                @endif
                 @endif
             </div>
 
@@ -78,46 +105,49 @@
             </a>
 
         </div>
-       
+
         <!-- END Navigation -->
 
         <!-- Project -->
-        
+
         <div class="block-content block-content-full">
-            
-            <p class="m-0" >
+
+            <p class="m-0">
                 <b style="font-size: 150%">{{$aduan->user->name}} </b>
                 @if ($aduan->id_opd != null)
-                    <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a> 
-                    <br>
+                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right"
+                    title="Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b>"><i class="si si-info"></i></a>
+                <br>
                 @else
-                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Aduan belum diteruskan"><i class="si si-info"></i></a> 
+                <a href="#" data-toggle="tooltip" data-html="true" data-placement="right"
+                    title="Aduan belum diteruskan"><i class="si si-info"></i></a>
                 <br>
                 @endif
-                
+
                 @if ($aduan->status == 'Waiting')
-                    <span class="badge badge-warning justify-content-center" ><i class="fa fa-fw fa-clock-o"></i> {{$aduan->status}}</span>
+                <span class="badge badge-warning justify-content-center"><i class="fa fa-fw fa-clock-o"></i>
+                    {{$aduan->status}}</span>
                 @else
-                    @if ($aduan->status == 'Rejected')
-                        <span class="badge badge-danger" ><i class="fa fa-fw fa-times-circle"></i> {{$aduan->status}}</span>
-                    @else
-                        @if ($aduan->status == 'Approved')
-                            <span class="badge badge-info" ><i class="fa fa-fw fa-check"></i> {{$aduan->status}}</span>
-                        @else
-                            @if ($aduan->status == 'On process')
-                                <span class="badge badge-success" ><i class="fa fa-fw fa-hourglass-1"></i> {{$aduan->status}}</span>    
-                            @else
-                                <span class="badge badge-success" >
-                                    <i class="fa fa-fw fa-check-circle"></i> {{$aduan->status}}
-                                </span>    
-                            @endif
-                            @endif
-                    @endif
+                @if ($aduan->status == 'Rejected')
+                <span class="badge badge-danger"><i class="fa fa-fw fa-times-circle"></i> {{$aduan->status}}</span>
+                @else
+                @if ($aduan->status == 'Approved')
+                <span class="badge badge-info"><i class="fa fa-fw fa-check"></i> {{$aduan->status}}</span>
+                @else
+                @if ($aduan->status == 'On process')
+                <span class="badge badge-success"><i class="fa fa-fw fa-hourglass-1"></i> {{$aduan->status}}</span>
+                @else
+                <span class="badge badge-success">
+                    <i class="fa fa-fw fa-check-circle"></i> {{$aduan->status}}
+                </span>
+                @endif
+                @endif
+                @endif
                 @endif
                 <br>
                 <small class="text-muted">Diposting Tanggal: {{$aduan->created_at}}</small>
                 <br>
-                
+
             </p>
             <div class="row py-20">
                 <div class="col-sm-6 invisible" data-toggle="appear">
@@ -184,63 +214,77 @@
                         <span><i class="si si-info"></i> Aduan belum diteruskan</b></span>
                     </p>
                     @endif
-                   
+
                     <h5>
                         <a class="link-effect" href="javascript;void(0)">
-                        <span class="">
-                            <i class="fa fa-comment"></i>
-                            {{$komentar->count()}}
-                        </span> Responses
+                            <span class="">
+                                <i class="fa fa-comment"></i>
+                                {{$komentar->count()}}
+                            </span> Responses
                         </a>
-                        {{-- <span class="badge badge-light mr-5">Responses ({{$komentar->count()}})</span>  --}}
+                        {{-- <span class="badge badge-light mr-5">Responses ({{$komentar->count()}})</span> --}}
                     </h5>
                 </div>
                 {{-- <h4>Responses ({{$komentar->count()}})</h4> --}}
-                    <div class="block-content-full  col-md-12 mt-10">
-                        <div class="bg-body-dark">
-                            <div class="content content-full">
-                                <div class="row justify-content-center ">
-                                    <div class="col-lg-8">
-                                        {{-- <h3 class="font-w700 mb-50">Responses ({{$komentar->count()}})</h3> --}}
-                                        <div class="media mb-30">
-                                            <div class="media-body">
-                                                @foreach ($komentar as $k)
-                                                <div class="media mb-30">
-                                                    <img class="img-avatar img-avatar48 d-flex mr-20"
-                                                        src="{{asset('assets/media/avatars/avatar13.jpg')}}" alt="">
-                                                    <div class="media-body">
-                                                        <p class="mb-5 "><a class="font-w600 text-capitalize" href="javascript:void(0)">{{$k->admin->nama}}</a> {{$k->komentar}}</p>
-                                                        <div class="font-size-sm">
-                                                            {{-- <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i></span> --}}
-                                                            <a class="link-effect" href="javascript:void(0)">Like</a>
-                                                            <span role="presentation" aria-hidden="true"> · </span>
-                                                            <a class="link-effect" href="javascript:void(0)">Reply</a>
-                                                            <span role="presentation" aria-hidden="true"> · </span>
-                                                            <span class="text-muted mr-5">{{$k->created_at}}</span>
-                                                        </div>
+                <div class="block-content-full  col-md-12 mt-10">
+                    <div class="bg-body-dark">
+                        <div class="content content-full">
+                            <div class="row justify-content-center ">
+                                <div class="col-lg-8">
+                                    {{-- <h3 class="font-w700 mb-50">Responses ({{$komentar->count()}})</h3> --}}
+                                    <div class="media mb-30">
+                                        <div class="media-body">
+                                            @foreach ($komentar as $k)
+                                            <div class="media mb-30">
+                                                <img class="img-avatar img-avatar48 d-flex mr-20"
+                                                    src="{{asset('assets/media/avatars/avatar13.jpg')}}" alt="">
+                                                <div class="media-body">
+                                                    <p class="mb-5 ">
+                                                        @if ($k->id_admin != null)
+                                                        <a class="font-w600"
+                                                            href="javascript:void(0)">{{$k->admin->nama}}</a>
+                                                        {{$k->komentar}}
+                                                        @else
+                                                        <a class="font-w600"
+                                                            href="javascript:void(0)">{{$k->user->name}}</a>
+                                                        {{$k->komentar}}
+                                                        @endif
+                                                    </p>
+                                                    <div class="font-size-sm">
+                                                        {{-- <span class="badge badge-primary mr-5"><i
+                                                                class="fa fa-thumbs-up"></i></span> --}}
+                                                        <a class="link-effect" href="javascript:void(0)">Like</a>
+                                                        <span role="presentation" aria-hidden="true"> · </span>
+                                                        <a class="link-effect" href="javascript:void(0)">Reply</a>
+                                                        <span role="presentation" aria-hidden="true"> · </span>
+                                                        <span class="text-muted mr-5">{{$k->created_at}}</span>
                                                     </div>
                                                 </div>
-                                                @endforeach
-                                               
-                                                <form action="" name="frm_komen" id="frm_komen" method="post" class="form-material floating">
-                                                    @csrf
-                                                    <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
-                                                    <textarea id="material-textarea-small2" class="form-control mb-5" rows="2" name="komentar"></textarea>
-                                                    <label for="material-textarea-small2">Tuliskan respons anda</label>
-                                                    <button type="button" class="btn btn-alt-primary mt-10 float-right" id="komenBtn">
-                                                        <i class="fa fa-reply mr-5"></i> Respond
-                                                    </button>
-                                                </form>
                                             </div>
+                                            @endforeach
+
+                                            <form action="" name="frm_komen" id="frm_komen" method="post"
+                                                class="form-material floating">
+                                                @csrf
+                                                <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
+                                                <textarea id="material-textarea-small2" class="form-control mb-5"
+                                                    rows="2" name="komentar"></textarea>
+                                                <label for="material-textarea-small2">Tuliskan respons anda</label>
+                                                <button type="button" class="btn btn-alt-primary mt-10 float-right"
+                                                    id="komenBtn">
+                                                    <i class="fa fa-reply mr-5"></i> Respond
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-        
+
         <!-- END Project -->
 
         <!-- Key Features -->
@@ -257,9 +301,12 @@
                                         <img class="img-avatar img-avatar48 d-flex mr-20"
                                             src="{{asset('assets/media/avatars/avatar13.jpg')}}" alt="">
                                         <div class="media-body">
-                                            <p class="mb-5"><a class="font-w600" href="javascript:void(0)">{{$k->admin->nama}}</a> {{$k->komentar}}</p>
+                                            <p class="mb-5"><a class="font-w600"
+                                                    href="javascript:void(0)">{{$k->admin->nama}}</a> {{$k->komentar}}
+                                            </p>
                                             <div class="font-size-sm">
-                                                <span class="badge badge-primary mr-5"><i class="fa fa-thumbs-up"></i></span>
+                                                <span class="badge badge-primary mr-5"><i
+                                                        class="fa fa-thumbs-up"></i></span>
                                                 <a class="link-effect" href="javascript:void(0)">Like</a>
                                                 <span role="presentation" aria-hidden="true"> · </span>
                                                 <a class="link-effect" href="javascript:void(0)">Reply</a>
@@ -269,15 +316,15 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                   
+
                                     <form action="" name="frm_komen" id="frm_komen" method="post">
                                         @csrf
                                         <input type="hidden" name="id_aduan" value="{{$aduan->id}}">
                                         <textarea class="form-control mb-5" rows="5" name="komentar"
                                             placeholder="Write a response.."></textarea>
-                                            <button type="button" class="btn btn-alt-primary" id="komenBtn">
-                                                <i class="fa fa-reply mr-5"></i> Respond
-                                            </button>
+                                        <button type="button" class="btn btn-alt-primary" id="komenBtn">
+                                            <i class="fa fa-reply mr-5"></i> Respond
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -308,8 +355,7 @@
                         @csrf
                         <input type="hidden" value="{{$aduan->id}}" id="idAduan">
                         <div class="form-group ">
-                            <label class="col-form-label" for="opd">Nama OPD<span
-                                    class="text-danger">*</span></label>
+                            <label class="col-form-label" for="opd">Nama OPD<span class="text-danger">*</span></label>
                             <div class="">
                                 <select class="js-select2 form-control" id="opd" name="opd" style="width: 100%;"
                                     data-placeholder="Choose one..">
