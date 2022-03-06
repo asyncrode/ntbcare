@@ -97,68 +97,22 @@
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>                
                 <li>
-                    <a href="{{route('pengaduan.admin.index')}}"><i class="si si-bubbles"></i><span
-                        class="sidebar-mini-hide">Pengaduan</span></a>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
-                            class="sidebar-mini-hide">List Kategori</span></a>   
-                    <ul>
-                        <li>
-                            <a href="{{route('kategori.index')}}">Kategori</a>
-                        </li>
-                        <li>
-                            <a href="{{route('subkategori.index')}}">Subkategori</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span
-                            class="sidebar-mini-hide">List Pengguna</span></a>
-                    <ul>
-                        <li>
-                            <a href="be_layout_default.html">pelapor</a>
-                        </li>
-                        <li>
-                            <a href="be_layout_default.html">admin</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-follow"></i><span
-                            class="sidebar-mini-hide">User Admin Management</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{route('role.index')}}">Role</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.index')}}">Admin</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>List OPD/Instansi</span></a>
-                    
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-map"></i><span
-                            class="sidebar-mini-hide">List Wilayah</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{route('wilayah.index')}}">Kab/kota</a>
-                        </li>
-                        <li>
-                            <a href="{{route('kecamatan.index')}}">Kecamatan</a>
-                        </li>
-                        <li>
-                            <a href="{{route('kelurahan.index')}}">Kelurahan</a>
-                        </li>
-                    </ul>
+                    <a class="pl-15" href="{{route('pengaduan.admin.index')}}"><img src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px">
+                        <span class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Status</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Kategori</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Subkategori</a>
+                        </li>
                         <li>
                             <a href="be_layout_default.html">Rekap per Wilayah</a>
                         </li>
@@ -171,11 +125,70 @@
                     </ul>
                 </li>
                 <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
+                            class="sidebar-mini-hide">Management Kategori</span></a>   
+                    <ul>
+                        <li>
+                            <a href="{{route('kategori.index')}}">Kategori</a>
+                        </li>
+                        <li>
+                            <a href="{{route('subkategori.index')}}">Subkategori</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="si si-users"></i><span
+                            class="sidebar-mini-hide">Management User</span></a>
+                    {{-- <ul>
+                        <li>
+                            <a href="be_layout_default.html">Pelapor</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Admin</a>
+                        </li>
+                    </ul> --}}
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-follow"></i><span
+                            class="sidebar-mini-hide">Management User Admin</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('role.index')}}">Role</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.index')}}">Admin</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>OPD/Instansi</span></a>
+                    
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-map"></i><span
+                            class="sidebar-mini-hide">Management Wilayah</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('wilayah.index')}}">Kab/kota</a>
+                        </li>
+                        <li>
+                            <a href="{{route('kecamatan.index')}}">Kecamatan</a>
+                        </li>
+                        <li>
+                            <a href="{{route('kelurahan.index')}}">Kelurahan</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Test</a>
+                            <a href="be_layout_default.html">Post</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Manage</a>
                         </li>
                     </ul>
                 </li>
@@ -184,7 +197,10 @@
                             class="sidebar-mini-hide">News</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Test</a>
+                            <a href="be_layout_default.html">Post</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Manage</a>
                         </li>
                     </ul>
                 </li>
@@ -200,8 +216,23 @@
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="{{route('pengaduan.admin.index')}}"><i class="si si-bubbles"></i><span
-                        class="sidebar-mini-hide">Pengaduan</span></a>
+                    <a class="pl-15" href="{{route('pengaduan.admin.index')}}"><img src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px">
+                        <span class="sidebar-mini-hide">Pengaduan</span></a>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
+                            class="sidebar-mini-hide">Report Filtering</span></a>
+                    <ul>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Status</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per Subkategori</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rincian per Wilayah</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

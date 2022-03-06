@@ -27,7 +27,10 @@ class PengaduanController extends Controller
             $aduan = Aduan::all()->sortByDesc('created_at');
             $kategori = Kategori::all();
             $user = User::all();
-            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
+            $infra = Aduan::all()->where('id_kategori', '=', 1)->count();
+            $noninfra = Aduan::all()->where('id_kategori', '=', 2)->count();
+            $waiting = Aduan::all()->where('id_kategori', '=', 'Waiting')->count();
+            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user', 'infra', 'noninfra'));
         } else {
 
             $opd = Opd::where('id_admin', Auth::user()->id)->first();
@@ -56,7 +59,7 @@ class PengaduanController extends Controller
         $aduan = Aduan::where('aduans.id', $id)->first();
         $komentar = Komentar::where('id_aduan', $id)->get();
         $detail = Aduan::find($id);
-        return view('admin.pengaduan.detailaduan', compact('detail', 'aduan','komentar'));
+        return view('admin.pengaduan.detailaduan', compact('detail', 'aduan', 'komentar'));
     }
 
     public function getData()

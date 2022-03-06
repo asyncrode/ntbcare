@@ -145,7 +145,7 @@
                 @endif
                 @endif
                 <br>
-                <small class="text-muted">Diposting Tanggal: {{$aduan->created_at}}</small>
+                <small class="text-muted">{{$aduan->created_at}}</small>
                 <br>
 
             </p>
@@ -205,7 +205,7 @@
                     <!-- END Project Description -->
                 </div>
                 <div class="col-sm-12 mt-10">
-                    @if ($aduan->id_opd != null)
+                    {{-- @if ($aduan->id_opd != null)
                     <p>
                         <span><i class="si si-info"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span>
                     </p>
@@ -213,15 +213,21 @@
                     <p>
                         <span><i class="si si-info"></i> Aduan belum diteruskan</b></span>
                     </p>
-                    @endif
+                    @endif --}}
 
                     <h5>
-                        <a class="link-effect" href="javascript;void(0)">
+                        <a class="link-effect text-dark" href="javascript;void(0)" >
                             <span class="">
                                 <i class="fa fa-comment"></i>
                                 {{$komentar->count()}}
                             </span> Responses
                         </a>
+                            @if ($aduan->id_opd != null)
+                                <small><span class="ml-10"><i class="fa fa-info-circle"></i> Aduan telah di teruskan ke <b>{{$aduan->opd->nama}}</b></span></small>
+                            @else
+                                <small><span class="ml-10"><i class="fa fa-info-circle"></i> Aduan belum diteruskan</b></span></small>
+                            @endif
+                        
                         {{-- <span class="badge badge-light mr-5">Responses ({{$komentar->count()}})</span> --}}
                     </h5>
                 </div>
@@ -241,11 +247,11 @@
                                                 <div class="media-body">
                                                     <p class="mb-5 ">
                                                         @if ($k->id_admin != null)
-                                                        <a class="font-w600"
+                                                        <a class="font-w600 text-capitalize"
                                                             href="javascript:void(0)">{{$k->admin->nama}}</a>
                                                         {{$k->komentar}}
                                                         @else
-                                                        <a class="font-w600"
+                                                        <a class="font-w600 text-capitalize"
                                                             href="javascript:void(0)">{{$k->user->name}}</a>
                                                         {{$k->komentar}}
                                                         @endif
