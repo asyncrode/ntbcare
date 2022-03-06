@@ -94,6 +94,7 @@
         -->
        {{-- Include Bot --}}
         @include('layouts_admin.incl_bot')
+        @stack('scripts')
        {{-- End Include Bot --}}
     </body>
 </html>

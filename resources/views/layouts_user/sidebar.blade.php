@@ -14,8 +14,9 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class="link-effect font-w700" href="">
-                        <i class="si si-fire text-primary"></i>
-                        <span class="font-size-xl text-dual-primary-dark">code</span><span class="font-size-xl text-primary">base</span>
+                        {{-- <i class="si si-fire text-primary"></i> --}}
+                        <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 40%">
+                        <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                     </a>
                 </div>
                 <!-- END Logo -->
@@ -32,51 +33,53 @@
             -->
             <ul class="nav-main">
                 <li>
-                    <a class="active" href="">
-                        <i class="si si-home"></i>Home
-                    </a>
-                </li>
-                <li class="nav-main-heading">Heading</li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#">
-                        <i class="si si-puzzle"></i>Dropdown
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)">Link #1</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Link #2</a>
-                        </li>
-                        <li>
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#">Dropdown</a>
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0)">Link #1</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Link #2</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-main-heading">Vital</li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
+                    <a class="" href="{{route('landing')}}">
+                        <i class="fa fa-home"></i>Home
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
+                    <a class="pl-15" href="{{route('listaduan.index')}}">
+                        <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px"> Pengaduan
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <i class="si si-wrench"></i>Page
+                    <a class="" href="{{route('user.story')}}">
+                        <i class="fa fa-book"></i> Untold Story
                     </a>
                 </li>
+                <li>
+                    <a class="" href="#">
+                        <i class="fa fa-newspaper-o"></i> Berita
+                    </a>
+                </li>
+                @guest
+                <li>
+                    <a class="nav-link" href="{{ route('register') }}">
+                        <i class="fa fa-user-plus"></i> Daftar
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </li>
+                @else
+                <li>
+                    <a class="nav-link" href="{{ route('pengaduanku.index') }}">
+                        <i class="si si-paper-plane"></i>PengaduanKu
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ route('login') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="si si-logout"></i>Logout
+                    </a>
+                    
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
+                @endguest
             </ul>
         </div>
         <!-- END Side Main Navigation -->

@@ -1,0 +1,156 @@
+<script>
+    $('#kategori').select2({
+        theme: 'bootstrap4',
+    });
+    $(document).ready(function(){
+        var idEdit = 0;
+
+        // Show Data
+        var table = $('.tableSubkategori').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('subkategori.data') }}",
+            'columnDefs': [
+            {
+                "targets": [0,4], // your case first column
+                "className": "text-center"
+            }],
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'subkategori', name: 'subkategori'},
+                {data: 'id_kategori', name: 'id_kategori'},
+                {data: 'created_at', name: 'created_at'},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ]
+        });
+        // End Show
+
+        // Create Modal
+        $('#addSubkategori').click(function () {
+            $('#frm_subkategori').trigger("reset");
+            $('#modalSubkategori').modal('show');
+                $.ajax({
+                url:"{{ route('subkategori.getKategori') }}",
+                type:'GET',
+                success:function(res){
+                    console.log(res)
+                    $("#kategori").empty();
+                    $.each(res.data,function(key, value)
+                    {
+                        $("#kategori").append('<option value=' + value.id + '>' + value.kategori + '</option>');
+                    });
+                }
+            })
+        });
+
+        // Store Data
+        $('#saveBtn').click(function(){
+            var url;
+            var type;
+            
+            if(idEdit === 0)
+            {
+                url = "{{ route('subkategori.store') }}"
+                type = "POST"
+            }else{
+
+                url = '{{ route("subkategori.update", ":id") }}';
+                url = url.replace(':id', idEdit );
+                
+                type = "PUT"
+            }
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : "{{csrf_token()}}"
+                },
+                type : type,
+                url : url,
+                data : $('#frm_subkategori').serialize(),
+                success : function(response){
+                    Swal.fire({
+                        title : 'Berhasil !',
+                        icon: 'success',
+                        text  : 'Berhasil',
+                        showConfirmButton : true
+                    })
+                    idEdit = 0;
+                    $('#frm_subkategori').trigger("reset");
+                    $('#modalSubkategori').modal('hide');
+                    table.draw()
+                }
+            })
+        });
+        // End Store Data
+
+        
+        // EDIT DATA
+        $('body').on('click','#edit',function(){
+            var id = $(this).attr('data-id');
+            var url = '{{ route("subkategori.edit",":id") }}'
+            url = url.replace(':id',id)
+
+            $.ajax({
+                type : 'GET',
+                url : url,
+                success:function(res){
+                    console.log(res)
+                    idEdit = res.data.id;
+                    $('#frm_subkategori').trigger("reset");
+                    $('#modalSubkategori').modal('show');
+                    $('#nama').val(res.data.subkategori);
+                    $("#kategori").empty()
+                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
+                    $.each(res.kategori,function(key, value)
+                    {
+                        $("#kategori").append('<option value=' + value.id + '>' + value.kategori + '</option>');
+                    });
+
+                }
+            })
+        })
+        // END EDIT
+        
+        // Delete
+        $('body').on('click','#delete',function(){
+            var id = $(this).attr('data-id');
+            var url = '{{ route("subkategori.delete", ":id") }}';
+            url = url.replace(':id', id );
+            Swal.fire({
+                title : 'Anda Yakin ?',
+                text  : 'Data Yang Sudah Dihapus Tidak Akan Bisa Dikembalikan',
+                icon  : 'warning',
+                showConfirmButton : true,
+                showCancelButton :true,
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Tidak, Batalkan!',
+                allowOutsideClick: false,
+            })
+            .then((result)=>{
+                if(result.value) {
+                    $.ajax({
+                        headers:{
+                            'X-CSRF-TOKEN' : '{{csrf_token()}}'
+                        },
+                        type : 'DELETE',
+                        url:url,
+                        success:function(response){
+                        
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                icon : 'success',
+                                text : 'Data Berhasil Di Hapus',
+                                showConfirmButton :true
+                            })
+                        
+                            table.draw()
+                        }
+                    })
+                }else{
+                    Swal.close()
+                }
+            })
+        })
+    // End Delete
+
+    })
+</script>
