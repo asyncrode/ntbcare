@@ -179,7 +179,22 @@
                         </li>
                     </ul>
                 </li>
-                
+
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
+                            class="sidebar-mini-hide">Report Filtering</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('laporan.index')}}">Rekap per Wilayah</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rekap per OPD/Instansi</a>
+                        </li>
+                        <li>
+                            <a href="be_layout_default.html">Rincian per Wilayah</a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
                             class="sidebar-mini-hide">Untold Story</span></a>

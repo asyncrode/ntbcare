@@ -2,9 +2,8 @@
 /public/hot
 /public/storage
 /public/upload/aduan
-/storage/*.key
+#/storage/*.key
 /vendor
-.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
