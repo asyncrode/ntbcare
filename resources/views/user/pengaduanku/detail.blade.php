@@ -68,7 +68,7 @@
                             <img class="img-avatar img-avatar48 mr-20" src="{{asset('assets/media/avatars/avatar9.jpg')}}" alt="">
                             <div class="media-body">
                                 <p class="mb-0">
-                                    <a class="font-w600" href="javascript:void(0)">John Smith</a>
+                                    <a class="font-w600" href="javascript:void(0)">{{$aduan->user->name}}</a>
                                     {{-- <a class="text-muted" href="javascript:void(0)">&bull; Wilayah</a> --}}
                                     <em><a class="text-muted" id="time">&bull; </a></em>
                                     {{-- <a class="text-muted" href="javascript:void(0)">@j.smith</a> --}}
@@ -88,7 +88,7 @@
                                     <span class="float-right">2022-03-04 17:32:43</span>
                                 </p>
                                 <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary mr-10">
-                                    <i class="fa fa-fw fa-comment-o"></i> 2
+                                    <i class="fa fa-fw fa-comment-o"></i> {{$komentar->count()}}
                                 </button>
 
                             </div>

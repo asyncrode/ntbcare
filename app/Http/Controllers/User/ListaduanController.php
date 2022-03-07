@@ -33,7 +33,7 @@ class ListaduanController extends Controller
     }
     public function listaduan($id)
     {
-        $aduan = Aduan::where('id_pelapor',$id)->first();
+        $aduan = Aduan::find($id);
         $kategori = Kategori::all();
         $sub = Subkategori::all();
         $user = User::all();
