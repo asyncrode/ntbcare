@@ -27,10 +27,7 @@ class PengaduanController extends Controller
             $aduan = Aduan::all()->sortByDesc('created_at');
             $kategori = Kategori::all();
             $user = User::all();
-            $infra = Aduan::all()->where('id_kategori', '=', 1)->count();
-            $noninfra = Aduan::all()->where('id_kategori', '=', 2)->count();
-            $waiting = Aduan::all()->where('id_kategori', '=', 'Waiting')->count();
-            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user', 'infra', 'noninfra'));
+            return view('admin.pengaduan.index', compact('aduan', 'kategori', 'user'));
         } else {
 
             $opd = Opd::where('id_admin', Auth::user()->id)->first();

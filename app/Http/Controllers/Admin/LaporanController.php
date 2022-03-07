@@ -19,7 +19,7 @@ class LaporanController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        return view('admin.laporan.index',compact('kategori'));
+        return view('admin.laporan.index', compact('kategori'));
     }
 
     public function getLaporan(Request $request)
@@ -38,24 +38,27 @@ class LaporanController extends Controller
                         return $laporan->user->name;
                     }
                 })
+                ->addColumn('id_aduan', function ($laporan) {
+                    if ($laporan->id_aduan != null) {
+                        return $laporan->aduan->status;
+                    }
+                })
                 ->addColumn('action', function ($row) {
                     $btn = '';
                     $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
                     $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-    
+
                     return $btn;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('kategori'))) {
                         $instance->where('id_kategori', $request->get('kategori'))->latest();
-                    }else{
+                    } else {
                         $instance->select('*');
                     }
-                },true)
-                ->rawColumns(['action','kategori'])
+                }, true)
+                ->rawColumns(['action', 'kategori'])
                 ->make(true);
         }
-        
-       
     }
 }
