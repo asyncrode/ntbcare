@@ -24,27 +24,38 @@ class LaporanController extends Controller
 
     public function getLaporan(Request $request)
     {
-        $laporan = Aduan::all();
-        return Datatables::of($laporan)
-            ->addIndexColumn()
-            ->addColumn('id_pelapor', function ($laporan) {
-                if ($laporan->id_pelapor != null) {
-                    return $laporan->user->name;
-                }
-            })
-            ->addColumn('id_kategori', function ($laporan) {
-                if ($laporan->id_kategori != null) {
-                    return $laporan->kategori->kategori;
-                }
-            })
-            ->addColumn('action', function ($row) {
-                $btn = '';
-                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                return $btn;
-            })
-            ->rawColumns(['action'])
-            ->make(true);
+        if ($request->ajax()) {
+            $laporan = Aduan::select('*');
+            return Datatables::of($laporan)
+                ->addIndexColumn()
+                ->addColumn('id_kategori', function ($laporan) {
+                    if ($laporan->id_kategori != null) {
+                        return $laporan->kategori->kategori;
+                    }
+                })
+                ->addColumn('id_pelapor', function ($laporan) {
+                    if ($laporan->id_pelapor != null) {
+                        return $laporan->user->name;
+                    }
+                })
+                ->addColumn('action', function ($row) {
+                    $btn = '';
+                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
+                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
+    
+                    return $btn;
+                })
+                ->filter(function ($instance) use ($request) {
+                    if (!empty($request->get('kategori'))) {
+                        $instance->where('id_kategori', $request->get('kategori'))->latest();
+                    }else{
+                        $instance->select('*');
+                    }
+                },true)
+                ->rawColumns(['action','kategori'])
+                ->make(true);
+        }
+        
+       
     }
 }
