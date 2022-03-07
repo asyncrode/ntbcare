@@ -5,15 +5,28 @@
         <div class="block-header block-header-default">
             <h3 class="block-title">Laporan Pengaduan</h3>
         </div>
-        <div class="col-md-3 mt-5">
-            <label for="">Kategori</label>
-            <select name="kategori" id="kategori" class="form-control mb-5">
-                <option value="">All</option>
-                @foreach ($kategori as $k)
-                    <option value="{{$k->id}}">{{$k->kategori}}</option>
-                @endforeach
-            </select>
+        <div class="row ml-5">
+            <div class="col-md-3 mt-5">
+                <label for="">Kategori</label>
+                <select name="kategori" id="kategori" class="form-control mb-5">
+                    <option value="">All</option>
+                    @foreach ($kategori as $k)
+                        <option value="{{$k->id}}">{{$k->kategori}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-5 mt-5">
+                <label for="">Tanggal</label>
+                <div class="input-daterange input-group" id="datepicker">
+                    <input type="text" class="input-sm form-control" name="awal" id="awal" />
+                    <span class="input-group-addon">to</span>
+                    <input type="text" class="input-sm form-control" name="akhir" id="akhir"/>
+                </div>
+                
+            </div>
+            
         </div>
+       
         <div class="block-content block-content-full">
             
             

@@ -136,7 +136,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0)"><i class="si si-users"></i><span
+                    <a href="{{route('user.index')}}"><i class="si si-users"></i><span
                             class="sidebar-mini-hide">Management User</span></a>
                     {{-- <ul>
                         <li>
