@@ -162,7 +162,7 @@
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)">Rekap per Status</a>
+                            <a href="{{route('laporan.index.status')}}">Rekap per Status</a>
                         </li>
                         <li>
                             <a href="{{route('laporan.index')}}">Rekap per Kategori</a>

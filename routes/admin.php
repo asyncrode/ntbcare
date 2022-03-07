@@ -115,5 +115,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'laporan', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\LaporanController@index')->name('laporan.index');
         Route::get('/getLaporan', 'Admin\LaporanController@getLaporan')->name('laporan.data');
+        Route::get('/laporan/status', 'Admin\LaporanController@index_status')->name('laporan.index.status');
+        Route::get('/getLaporanStatus', 'Admin\LaporanController@getLaporanStatus')->name('laporan.data.status');
     });
 });
