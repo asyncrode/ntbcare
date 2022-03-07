@@ -95,58 +95,6 @@
                 <li>
                     <a href="{{route('dashboard.index')}}"><i class="si si-bar-chart"></i><span
                             class="sidebar-mini-hide">Dashboard</span></a>
-                </li>                
-                <li>
-                    <a class="pl-15" href="{{route('pengaduan.admin.index')}}"><img src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px">
-                        <span class="sidebar-mini-hide">Pengaduan</span></a>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
-                            class="sidebar-mini-hide">Report Filtering</span></a>
-                    <ul>
-                        <li>
-                            <a href="">Rekap per Status</a>
-                        </li>
-                        <li>
-                            <a href="{{route('laporan.index')}}">Rekap per Kategori</a>
-                        </li>
-                        <li>
-                            <a href="">Rekap per Subkategori</a>
-                        </li>
-                        <li>
-                            <a href="">Rekap per Wilayah</a>
-                        </li>
-                        <li>
-                            <a href="">Rekap per OPD/Instansi</a>
-                        </li>
-                        <li>
-                            <a href="">Rincian per Wilayah</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
-                            class="sidebar-mini-hide">Management Kategori</span></a>   
-                    <ul>
-                        <li>
-                            <a href="{{route('kategori.index')}}">Kategori</a>
-                        </li>
-                        <li>
-                            <a href="{{route('subkategori.index')}}">Subkategori</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="si si-users"></i><span
-                            class="sidebar-mini-hide">Management User</span></a>
-                    {{-- <ul>
-                        <li>
-                            <a href="">Pelapor</a>
-                        </li>
-                        <li>
-                            <a href="">Admin</a>
-                        </li>
-                    </ul> --}}
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-follow"></i><span
@@ -159,10 +107,6 @@
                             <a href="{{route('admin.index')}}">Admin</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>OPD/Instansi</span></a>
-                    
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-map"></i><span
@@ -180,14 +124,73 @@
                     </ul>
                 </li>
                 <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span
+                            class="sidebar-mini-hide">Management Kategori</span></a>   
+                    <ul>
+                        <li>
+                            <a href="{{route('kategori.index')}}">Kategori</a>
+                        </li>
+                        <li>
+                            <a href="{{route('subkategori.index')}}">Subkategori</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="si si-users"></i><span
+                            class="sidebar-mini-hide">Management User</span></a>
+                    {{-- <ul>
+                        <li>
+                            <a href="">Pelapor</a>
+                        </li>
+                        <li>
+                            <a href="">Admin</a>
+                        </li>
+                    </ul> --}}
+                </li>
+                
+                <li>
+                    <a href="{{route('opd.index')}}"><i class="si si-briefcase"></i>Management OPD</span></a>
+                    
+                </li>
+                          
+                <li>
+                    <a class="pl-15" href="{{route('pengaduan.admin.index')}}"><img src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px">
+                        <span class="sidebar-mini-hide">Pengaduan</span></a>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
+                            class="sidebar-mini-hide">Report Filtering</span></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Status</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index')}}">Rekap per Kategori</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Subkategori</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Wilayah</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rekap per OPD/Instansi</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rincian per Wilayah</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="">Post</a>
+                            <a href="javascript:void(0)">Post</a>
                         </li>
                         <li>
-                            <a href="">Manage</a>
+                            <a href="javascript:void(0)">Manage</a>
                         </li>
                     </ul>
                 </li>
@@ -196,10 +199,10 @@
                             class="sidebar-mini-hide">News</span></a>
                     <ul>
                         <li>
-                            <a href="">Post</a>
+                            <a href="javascript:void(0)">Post</a>
                         </li>
                         <li>
-                            <a href="">Manage</a>
+                            <a href="javascript:void(0)">Manage</a>
                         </li>
                     </ul>
                 </li>
