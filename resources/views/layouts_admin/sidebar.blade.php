@@ -105,22 +105,22 @@
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Rekap per Status</a>
+                            <a href="">Rekap per Status</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Rekap per Kategori</a>
+                            <a href="{{route('laporan.index')}}">Rekap per Kategori</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Rekap per Subkategori</a>
+                            <a href="">Rekap per Subkategori</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Rekap per Wilayah</a>
+                            <a href="">Rekap per Wilayah</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Rekap per OPD/Instansi</a>
+                            <a href="">Rekap per OPD/Instansi</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Rincian per Wilayah</a>
+                            <a href="">Rincian per Wilayah</a>
                         </li>
                     </ul>
                 </li>
@@ -141,10 +141,10 @@
                             class="sidebar-mini-hide">Management User</span></a>
                     {{-- <ul>
                         <li>
-                            <a href="be_layout_default.html">Pelapor</a>
+                            <a href="">Pelapor</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Admin</a>
+                            <a href="">Admin</a>
                         </li>
                     </ul> --}}
                 </li>
@@ -179,31 +179,15 @@
                         </li>
                     </ul>
                 </li>
-
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
-                            class="sidebar-mini-hide">Report Filtering</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{route('laporan.index')}}">Rekap per Wilayah</a>
-                        </li>
-                        <li>
-                            <a href="be_layout_default.html">Rekap per OPD/Instansi</a>
-                        </li>
-                        <li>
-                            <a href="be_layout_default.html">Rincian per Wilayah</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Post</a>
+                            <a href="">Post</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Manage</a>
+                            <a href="">Manage</a>
                         </li>
                     </ul>
                 </li>
@@ -212,10 +196,10 @@
                             class="sidebar-mini-hide">News</span></a>
                     <ul>
                         <li>
-                            <a href="be_layout_default.html">Post</a>
+                            <a href="">Post</a>
                         </li>
                         <li>
-                            <a href="be_layout_default.html">Manage</a>
+                            <a href="">Manage</a>
                         </li>
                     </ul>
                 </li>
@@ -233,21 +217,6 @@
                 <li>
                     <a class="pl-15" href="{{route('pengaduan.admin.index')}}"><img src="{{asset('assets/media/favicons/favicon2.png')}}" style="max-height: 14px">
                         <span class="sidebar-mini-hide">Pengaduan</span></a>
-                </li>
-                <li>
-                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
-                            class="sidebar-mini-hide">Report Filtering</span></a>
-                    <ul>
-                        <li>
-                            <a href="be_layout_default.html">Rekap per Status</a>
-                        </li>
-                        <li>
-                            <a href="be_layout_default.html">Rekap per Subkategori</a>
-                        </li>
-                        <li>
-                            <a href="be_layout_default.html">Rincian per Wilayah</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>
