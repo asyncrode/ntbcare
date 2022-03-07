@@ -107,6 +107,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/delete/{id}', 'Admin\AdminController@delete')->name('admin.delete');
     });
 
+    Route::group(['prefix' => 'user', 'middleware' => ['role:super-admin']], function () {
+        Route::get('/', 'Admin\UserController@index')->name('user.index');
+        Route::get('/getUser', 'Admin\UserController@getUser')->name('user.data');
+    });
+
     Route::group(['prefix' => 'laporan', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\LaporanController@index')->name('laporan.index');
         Route::get('/getLaporan', 'Admin\LaporanController@getLaporan')->name('laporan.data');

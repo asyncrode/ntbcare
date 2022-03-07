@@ -28,6 +28,11 @@ class LaporanController extends Controller
             $laporan = Aduan::select('*');
             return Datatables::of($laporan)
                 ->addIndexColumn()
+                ->addColumn('created_at', function ($laporan) {
+                   
+                        return date('d-m-Y', strtotime( $laporan->created_at));
+                    
+                })
                 ->addColumn('id_kategori', function ($laporan) {
                     if ($laporan->id_kategori != null) {
                         return $laporan->kategori->kategori;
@@ -54,6 +59,14 @@ class LaporanController extends Controller
                     if (!empty($request->get('kategori'))) {
                         $instance->where('id_kategori', $request->get('kategori'))->latest();
                     } else {
+                        $instance->select('*');
+                    }
+                    $awal = $request->get('awal');
+                    $akhir = $request->get('akhir');
+                    
+                    if (!empty($awal) and !empty($akhir)) {
+                        $instance->whereBetween('created_at', [$awal, $akhir])->latest();;
+                    }else{
                         $instance->select('*');
                     }
                 }, true)
