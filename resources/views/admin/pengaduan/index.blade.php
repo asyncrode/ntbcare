@@ -2,11 +2,101 @@
 @section('content')
 <div class="content content-full">
     <!-- Images Filtering -->
-    <h2 class="content-heading">List Pengaduan <small></small></h2>
+    {{-- <h2 class="content-heading">List Pengaduan <small></small></h2> --}}
 
     <!-- Project Filtering (.js-filter class is initialized in Helpers.contentFilter()) -->
     <!-- If data-numbers="true" is added, then the number of the items of each category will be auto added to each category link -->
     @hasrole('super-admin')
+
+    <div class="bg-white push">
+        <div class="row text-center">
+            <div class="col-sm-2 py-20 bg-dark">
+                <div class="font-size-h1 font-w700 text-white pb-2" data-toggle="countTo" data-to="{{$aduan->count()}}">0</div>
+                <div class="font-w700 text-light text-uppercase">Total</div>
+            </div>
+
+            <div class="col-sm-2 py-20 text-warning">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Waiting</div>
+            </div>
+            <div class="col-sm-2 py-20 text-danger">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Rejected</div>
+            </div>
+            <div class="col-sm-2 py-20 text-info">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Approved</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">On Process</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Complete')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Completed</div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="bg-white push">
+        <div class="row text-center">
+            <div class="col-sm-2 py-20">
+                <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 1)->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Infrastruktur</div>
+            </div>
+            <div class="col-sm-2 py-20 text-warning">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Waiting</div>
+            </div>
+            <div class="col-sm-2 py-20 text-danger">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Rejected</div>
+            </div>
+            <div class="col-sm-2 py-20 text-info">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Approved</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">On Process</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Completed')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Completed</div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="bg-white push">
+        <div class="row text-center">
+            <div class="col-sm-2 py-20">
+                <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 2)->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Infrastruktur</div>
+            </div>
+            <div class="col-sm-2 py-20 text-warning">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Waiting</div>
+            </div>
+            <div class="col-sm-2 py-20 text-danger">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Rejected</div>
+            </div>
+            <div class="col-sm-2 py-20 text-info">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Approved</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">On Process</div>
+            </div>
+            <div class="col-sm-2 py-20 text-success">
+                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Completed')->count()}}">0</div>
+                <div class="font-w600 text-muted text-uppercase">Completed</div>
+            </div>
+            
+        </div>
+    </div> --}}
+
+
     <div class="js-filter">
         <!-- Navigation -->
         <div class="p-10 bg-white push">
@@ -19,7 +109,9 @@
                 @foreach ($kategori as $k)
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-category-link={{$k->id}}>
-                        <i class="fa fa-fw fa-th"></i> {{$k->kategori}}
+                        {{-- <i class="fa fa-fw fa-th"></i>  --}}
+                        <span class="text-light badge badge-dark" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', $k->id)->count()}}">0</span>
+                        {{$k->kategori}}
                     </a>
                 </li>
                 @endforeach
@@ -127,22 +219,47 @@
         <!-- Quick Stats -->
         <!-- CountTo ([data-toggle="countTo"] is initialized in Helpers.coreAppearCountTo()) -->
         <!-- For more info and examples you can check out https://github.com/mhuggins/jquery-countTo -->
-        <div class="bg-white push">
+        {{-- <div class="bg-white push">
             <div class="row text-center">
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="3">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Approved</div>
+                <div class="col-sm-4 py-20">
+                    <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->count()}}">0</div>
+                    <div class="font-w700 text-muted text-uppercase">Total</div>
                 </div>
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="12">0</div>
-                    <div class="font-w600 text-muted text-uppercase">On Process</div>
+                <div class="col-sm-4 py-20">
+                    <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 1)->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Infrastruktur</div>
                 </div>
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="9">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Completed</div>
+                <div class="col-sm-4 py-20">
+                    <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 2)->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Non-Infrastruktur</div>
                 </div>
             </div>
         </div>
+        <div class="bg-white push">
+            <div class="row text-center">
+                <div class="col-sm-2 py-20 text-warning">
+                    <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Waiting</div>
+                </div>
+                <div class="col-sm-2 py-20 text-danger">
+                    <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Rejected</div>
+                </div>
+                <div class="col-sm-2 py-20 text-info">
+                    <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Approved</div>
+                </div>
+                <div class="col-sm-2 py-20 text-success">
+                    <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">On Process</div>
+                </div>
+                <div class="col-sm-4 py-20 text-success">
+                    <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Completed')->count()}}">0</div>
+                    <div class="font-w600 text-muted text-uppercase">Completed</div>
+                </div>
+                
+            </div>
+        </div> --}}
         <!-- END Quick Stats -->
     </div>
     @else

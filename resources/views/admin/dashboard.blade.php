@@ -1,68 +1,261 @@
 @extends('layouts_admin.master')
 @section('content')
 <div class="content">
+    <!-- Status -->
+    <div class="block-header block-header-default border-b mb-10">
+        <h3 class="block-title">
+            Total <small>Pengaduan Seluruhnya</small>
+        </h3>
+        <div class="block-options">
+            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                <i class="si si-refresh"></i>
+            </button>
+        </div>
+    </div>
     <div class="row invisible" data-toggle="appear">
         <!-- Row #1 -->
-        <div class="col-6 col-xl-3">
-            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
-                <div class="block-content block-content-full clearfix">
-                    <div class="float-right mt-15 d-none d-sm-block">
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow bg-dark" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix text-center">
+                    {{-- <div class="float-right mt-15 d-none d-sm-block">
                         <i class="si si-bag fa-2x text-primary-light"></i>
-                    </div>
-                    <div class="font-size-h3 font-w600 text-primary" data-toggle="countTo" data-speed="1000" data-to="1500">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Sales</div>
+                    </div> --}}
+                    <div class="font-size-h3 font-w600 text-white pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-light text-uppercase">Pengaduan</div>
                 </div>
             </a>
         </div>
-        <div class="col-6 col-xl-3">
+        <div class="col-4 col-xl-2">
             <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-right mt-15 d-none d-sm-block">
-                        <i class="si si-wallet fa-2x text-earth-light"></i>
+                        {{-- <i class="si si-wallet fa-2x text-earth-light"></i> --}}
+                        <i class="fa fa-clock-o fa-2x text-warning" ></i>
                     </div>
-                    <div class="font-size-h3 font-w600 text-earth">$<span data-toggle="countTo" data-speed="1000" data-to="780">0</span></div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Earnings</div>
+                    <div class="font-size-h3 font-w600 text-warning pb-2"><span data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</span></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Waiting</div>
                 </div>
             </a>
         </div>
-        <div class="col-6 col-xl-3">
+        <div class="col-4 col-xl-2">
             <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-right mt-15 d-none d-sm-block">
-                        <i class="si si-envelope-open fa-2x text-elegance-light"></i>
+                        {{-- <i class="si si-envelope-open fa-2x text-elegance-light"></i> --}}
+                        <i class="fa fa-times-circle fa-2x text-danger"></i>
                     </div>
-                    <div class="font-size-h3 font-w600 text-elegance" data-toggle="countTo" data-speed="1000" data-to="15">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Messages</div>
+                    <div class="font-size-h3 font-w600 text-danger pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Rejected</div>
                 </div>
             </a>
         </div>
-        <div class="col-6 col-xl-3">
+        <div class="col-4 col-xl-2">
             <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
                 <div class="block-content block-content-full clearfix">
                     <div class="float-right mt-15 d-none d-sm-block">
-                        <i class="si si-users fa-2x text-pulse"></i>
+                        <i class="fa fa-check fa-2x text-info"></i>
                     </div>
-                    <div class="font-size-h3 font-w600 text-pulse" data-toggle="countTo" data-speed="1000" data-to="4252">0</div>
-                    <div class="font-size-sm font-w600 text-uppercase text-muted">Online</div>
+                    <div class="font-size-h3 font-w600 text-info pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Approved</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-hourglass-1 fa-2x text-earth-light"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-earth-light pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">On Process</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-check-circle fa-2x text-success"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-success pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('status', '=', 'Complete')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Completed</div>
                 </div>
             </a>
         </div>
         <!-- END Row #1 -->
     </div>
+
+    <!-- kategori -->
+    <div class="block-header block-header-default border-b mb-10">
+        <h3 class="block-title">
+            Total <small>Pengaduan Berdasarkan Kategori</small>
+        </h3>
+        <div class="block-options">
+            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                <i class="si si-refresh"></i>
+            </button>
+        </div>
+    </div>
+    <div class="row invisible" data-toggle="appear">
+        <!-- Row #1 -->
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow bg-dark" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix text-center">
+                    {{-- <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="si si-bag fa-2x text-primary-light"></i>
+                    </div> --}}
+                    <div class="font-size-h3 font-w600 text-white pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-light text-uppercase">Infrastruktur</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        {{-- <i class="si si-wallet fa-2x text-earth-light"></i> --}}
+                        <i class="fa fa-clock-o fa-2x text-warning" ></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-warning pb-2"><span data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->where('status', '=', 'Rejected')->count()}}">0</span></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Waiting</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        {{-- <i class="si si-envelope-open fa-2x text-elegance-light"></i> --}}
+                        <i class="fa fa-times-circle fa-2x text-danger"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-danger pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->where('status', '=', 'Rejected')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Rejected</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-check fa-2x text-info"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-info pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->where('status', '=', 'Approved')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Approved</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-hourglass-1 fa-2x text-earth-light"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-earth-light pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->where('status', '=', 'On process')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">On Process</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-check-circle fa-2x text-success"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-success pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 1)->where('status', '=', 'Complete')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Completed</div>
+                </div>
+            </a>
+        </div>
+        <!-- END Row #1 -->
+    </div>
+    
+
+    <!-- kategori 2 -->
+    <div class="row invisible" data-toggle="appear">
+        <!-- Row #1 -->
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow bg-dark" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix text-center">
+                    {{-- <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="si si-bag fa-2x text-primary-light"></i>
+                    </div> --}}
+                    <div class="font-size-h3 font-w600 text-white pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-light text-uppercase">Non-Infrastruktur</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        {{-- <i class="si si-wallet fa-2x text-earth-light"></i> --}}
+                        <i class="fa fa-clock-o fa-2x text-warning" ></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-warning pb-2"><span data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->where('status', '=', 'Rejected')->count()}}">0</span></div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Waiting</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        {{-- <i class="si si-envelope-open fa-2x text-elegance-light"></i> --}}
+                        <i class="fa fa-times-circle fa-2x text-danger"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-danger pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->where('status', '=', 'Rejected')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Rejected</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-check fa-2x text-info"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-info pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->where('status', '=', 'Approved')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Approved</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-hourglass-1 fa-2x text-earth-light"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-earth-light pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->where('status', '=', 'On process')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">On Process</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-4 col-xl-2">
+            <a class="block block-rounded block-bordered block-link-shadow" href="javascript:void(0)">
+                <div class="block-content block-content-full clearfix">
+                    <div class="float-right mt-15 d-none d-sm-block">
+                        <i class="fa fa-check-circle fa-2x text-success"></i>
+                    </div>
+                    <div class="font-size-h3 font-w600 text-success pb-2" data-toggle="countTo" data-speed="1000" data-to="{{$aduan->where('id_kategori', '=', 2)->where('status', '=', 'Complete')->count()}}">0</div>
+                    <div class="font-size-sm font-w600 text-uppercase text-muted">Completed</div>
+                </div>
+            </a>
+        </div>
+        <!-- END Row #1 -->
+    </div>
+    
+    
     <div class="row invisible" data-toggle="appear">
         <!-- Row #2 -->
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="block block-rounded block-bordered">
                 <div class="block-header block-header-default border-b">
                     <h3 class="block-title">
-                        Sales <small>This week</small>
+                        Total Pengaduan <small>This week</small>
                     </h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
                             <i class="si si-refresh"></i>
-                        </button>
-                        <button type="button" class="btn-block-option">
-                            <i class="si si-wrench"></i>
                         </button>
                     </div>
                 </div>
@@ -100,7 +293,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="block block-rounded block-bordered">
                 <div class="block-header block-header-default border-b">
                     <h3 class="block-title">
@@ -148,10 +341,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- END Row #2 -->
     </div>
-    <div class="row invisible" data-toggle="appear">
+    {{-- <div class="row invisible" data-toggle="appear">
         <!-- Row #3 -->
         <div class="col-md-6">
             <div class="block block-rounded block-bordered">
@@ -552,6 +745,6 @@
             </div>
         </div>
         <!-- END Row #3 -->
-    </div>
+    </div> --}}
 </div>
 @endsection
