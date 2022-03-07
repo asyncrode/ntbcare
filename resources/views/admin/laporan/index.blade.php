@@ -6,6 +6,7 @@
             <h3 class="block-title">Laporan Pengaduan</h3>
         </div>
         <div class="col-md-3 mt-5">
+            <label for="">Kategori</label>
             <select name="kategori" id="kategori" class="form-control mb-5">
                 <option value="">All</option>
                 @foreach ($kategori as $k)
