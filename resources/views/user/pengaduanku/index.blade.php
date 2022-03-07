@@ -6,10 +6,10 @@
             <i class="si si-bubbles text-muted mr-5"></i> Pengaduanku
         </h2>
         <h3 class="h5 text-muted mb-0">
-            Saat ini kamu memiliki {{$aduan->count()}} Aduan <a href="{{route('pengaduan.index')}}">Add a new one</a>.
+            Saat ini kamu memiliki {{$aduan->count()}} Aduan <a href="{{route('pengaduan.index')}}">Buat Pengaduan Baru</a>.
         </h3>
     </div>
-    <div class="row">
+    <div class="row row-deck">
         @foreach ($aduan as $d)
         <div class="col-md-6 col-xl-4 invisible" data-toggle="appear">
             <!-- Property -->
@@ -23,21 +23,22 @@
                     <h4 class="font-size-h5 mb-10">{{$d->status}}</h4>
                     <h5 class="font-size-h1 font-w300 mb-5">{{$d->pesan}}</h5>
                     <p class="text-muted">
-                        <i class="fa fa-map-pin mr-5"></i> {{$d->wilayah->nama_will}}
+                        {{-- <i class="fa fa-map-pin mr-5"></i>  --}}
+                        {{$d->wilayah->nama_will}}
                     </p>
                 </div>
                 <div class="block-content border-bottom">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <p>
                                <strong>{{$d->kategori->kategori}}</strong> 
                             </p>
                         </div>
-                        <div class="col-6">
+                        {{-- <div class="col-6">
                             <p>
                                 <strong>{{$d->kategori->kategori}}</strong> 
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="block-content block-content-full">
