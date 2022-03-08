@@ -113,7 +113,7 @@
                     {
                         $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');
                     });
-                    $.each(res.admin,function(key, value)
+                    $.each(res.wilayah,function(key, value)
                     {
                         $("#wilayah").append('<option value=' + value.id + '>' + value.nama_will + '</option>');
                     });

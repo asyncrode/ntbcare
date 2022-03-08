@@ -136,7 +136,7 @@
                     <div class="block-header block-header-default ribbon ribbon-info">
                         <img class="img-avatar img-avatar48 mr-10" src="{{asset('assets_user/media/avatars/avatar9.jpg')}}" alt="">
                         <h3 class="block-title" style="line-height: 1.3">
-                            <b class="text-capitalize">{{$d->user->name}}</b>
+                            <small class="text-capitalize text-dark"><b >{{$d->user->name}}</b><small>
                             <small class="text-muted">&bull; <?= date('d-m-Y', strtotime($d->created_at)); ?></small>
                             <br>
                             <small class="text-muted mt-0">{{$d->wilayah->nama_will}}</small>
