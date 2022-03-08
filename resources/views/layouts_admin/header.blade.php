@@ -105,7 +105,7 @@
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user d-sm-none"></i>
-                    <span class="d-none d-sm-inline-block">{{Auth::user()->nama}}</span>
+                    <span class="d-none d-sm-inline-block text-capitalize">{{Auth::user()->nama}}</span>
                     <i class="fa fa-angle-down ml-5"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
@@ -125,7 +125,7 @@
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell"></i>
-                    <span class="badge badge-primary badge-pill">5</span>
+                    <span class="badge badge-primary badge-pill">1</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-300" aria-labelledby="page-header-notifications">
                     <h5 class="h6 text-center py-10 mb-0 border-b text-uppercase">Notifications</h5>
@@ -133,11 +133,11 @@
                         <li>
                             <a class="text-body-color-dark media mb-15" href="javascript:void(0)">
                                 <div class="ml-5 mr-15">
-                                    <i class="fa fa-fw fa-check text-success"></i>
+                                    <i class="fa fa-fw fa-info-circle text-success"></i>
                                 </div>
                                 <div class="media-body pr-10">
-                                    <p class="mb-0">You’ve upgraded to a VIP account successfully!</p>
-                                    <div class="text-muted font-size-sm font-italic">15 min ago</div>
+                                    <p class="mb-0"><b>Jack Richer : </b> Mohon bantuannya mengenai jalan rusak di Dasan Geres.</p>
+                                    <div class="text-muted font-size-sm font-italic pt-10">15 min ago</div>
                                 </div>
                             </a>
                         </li>

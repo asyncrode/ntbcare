@@ -11,7 +11,7 @@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">no</th>
-                        <th class="text-center" style="width: 5%">nama</th>
+                        <th class="text-center" style="width: 45%">nama</th>
                         <th class="text-center">email</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">terdaftar</th>
                         <th class="text-center" style="width: 15%;">action</th>
