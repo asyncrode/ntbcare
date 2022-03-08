@@ -15,7 +15,7 @@
             ajax: "{{ route('opd.opd') }}",
             'columnDefs': [
             {
-                "targets": [0,1,4], // your case first column
+                "targets": [0,1,5], // your case first column
                 "className": "text-center"
             }],
             columns: [

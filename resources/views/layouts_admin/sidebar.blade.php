@@ -11,14 +11,14 @@
 -->
 <nav id="sidebar">
     <!-- Sidebar Content -->
-    <div class="sidebar-content">
+    <div class="sidebar-content enable-cookies">
         <!-- Side Header -->
         <div class="content-header content-header-fullrow px-15">
             <!-- Mini Mode -->
             <div class="content-header-section sidebar-mini-visible-b">
                 <!-- Logo -->
                 <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
-                    <span class="text-dual-primary-dark">c</span><span class="text-primary">b</span>
+                    <span class="text-dual-primary-dark">n</span><span class="text-primary">c</span>
                 </span>
                 <!-- END Logo -->
             </div>
@@ -36,7 +36,7 @@
 
                 <!-- Logo -->
                 <div class="content-header-item">
-                    <a class="link-effect font-w700" href="index.html">
+                    <a class=" font-w700" href="javascript:void(0)">
                         {{-- <i class="si si-fire text-primary"></i> --}}
                         <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
                         <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
@@ -49,7 +49,7 @@
         <!-- END Side Header -->
 
         <!-- Side User -->
-        <div class="content-side content-side-full content-side-user px-10 align-parent">
+        <div class="content-side content-side-full content-side-user px-10 py-10 align-parent">
             <!-- Visible only in mini mode -->
             <div class="sidebar-mini-visible-b align-v animated fadeIn">
                 <img class="img-avatar img-avatar32" src="{{asset('assets/media/avatars/avatar15.jpg')}}" alt="">
@@ -58,14 +58,16 @@
 
             <!-- Visible only in normal mode -->
             <div class="sidebar-mini-hidden-b text-center">
-                <a class="img-link" href="be_pages_generic_profile.html">
+                <a class="img-link" href="javascript:void(0)">
                     <img class="img-avatar" src="{{asset('assets/media/avatars/avatar15.jpg')}}" alt="">
                 </a>
                 <ul class="list-inline mt-10">
                     <li class="list-inline-item">
-                        <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase"
-                            href="be_pages_generic_profile.html">{{Auth::user()->nama}}</a>
+                        <a class="text-dual-primary-dark font-size-s font-w600 text-uppercase pb-10"
+                            href="javascript:void(0)">{{Auth::user()->nama}}</a>
                     </li>
+                </ul>
+                <ul class="list-inline mb-10">
                     <li class="list-inline-item">
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                         <a class="link-effect text-dual-primary-dark" data-toggle="layout"
@@ -98,13 +100,13 @@
                 </li>
                 <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-follow"></i><span
-                            class="sidebar-mini-hide">Management User Admin</span></a>
+                            class="sidebar-mini-hide" style="font-size: 99%">Management User Admin</span></a>
                     <ul>
                         <li>
-                            <a href="{{route('role.index')}}">Role</a>
+                            <a href="{{route('role.index')}}" style="font-size: 99%"><span class="sidebar-mini-hide">Role</span></a>
                         </li>
                         <li>
-                            <a href="{{route('admin.index')}}">Admin</a>
+                            <a href="{{route('admin.index')}}"><span class="sidebar-mini-hide">Admin</span></a>
                         </li>
                     </ul>
                 </li>
@@ -214,7 +216,7 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li>
-                    <a href="be_pages_dashboard.html"><i class="si si-bar-chart"></i><span
+                    <a href="{{route('dashboard.index')}}"><i class="si si-bar-chart"></i><span
                             class="sidebar-mini-hide">Dashboard</span></a>
                 </li>
                 <li>

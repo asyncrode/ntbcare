@@ -13,7 +13,7 @@
         ajax: "{{ route('admin.data') }}",
         'columnDefs': [
         {
-            // "targets": [0,1,4], // your case first column
+            "targets": [0,2,4], // your case first column
             "className": "text-center"
         }],
         columns: [
