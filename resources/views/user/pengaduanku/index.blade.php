@@ -3,7 +3,7 @@
 <div class="content">
     <div class="my-50 text-center">
         <h2 class="font-w700 text-black mb-10">
-            <i class="fa fa-comment text-muted mr-5"></i> Pengaduanku
+            <i class="fa fa-fw fa-commenting text-dark"></i>Pengaduanku
         </h2>
         <h3 class="h5 text-muted mb-0">
             Saat ini kamu memiliki {{$aduan->count()}} Aduan <a href="{{route('pengaduan.index')}}">Buat Pengaduan Baru</a>.
@@ -68,8 +68,8 @@
                     <div class="block-header block-header-default ribbon ribbon-info">
                         <img class="img-avatar img-avatar48 mr-10" src="{{asset('assets_user/media/avatars/avatar9.jpg')}}" alt="">
                         <h3 class="block-title" style="line-height: 1.3">
-                            <b class="text-capitalize">{{$d->user->name}}</b>
-                            <small class="text-muted">&bull; <?= date('d-m-Y', strtotime($d->created_at)); ?></small>
+                            <small class="text-capitalize text-dark"><b>{{$d->user->name}}</b></small>
+                            <small><span class="text-muted">&bull; <?= date('d-m-Y', strtotime($d->created_at)); ?></span></small>
                             <br>
                             <small class="text-muted mt-0">{{$d->wilayah->nama_will}}</small>
                             <br>

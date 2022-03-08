@@ -29,7 +29,7 @@
                             text : 'Data Berhasil Di Hapus',
                             showConfirmButton :true
                         })
-                        .then(result=>window.location.href='http://localhost:8000/admin/pengaduan')
+                        .then(result=>window.location.href='https://ntbcare.asyncrode.id/admin/pengaduan')
                     }
                 })
             }else{

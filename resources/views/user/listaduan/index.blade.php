@@ -97,9 +97,9 @@
                             <img class="img-avatar img-avatar48 mr-20" src="assets/media/avatars/avatar9.jpg" alt="">
                             <div class="media-body">
                                 <p class="mb-0">
-                                    <a class="font-w700" href="javascript:void(0)">{{$a->user->name}}</a>
+                                    <a class="font-w700 text-capitalize" href="javascript:void(0)">{{$a->user->name}}</a>
                                     {{-- <a class="text-muted" href="javascript:void(0)">&bull; {{$a->wilayah->nama_will}}</a> --}}
-                                    <em><a class="text-muted">&bull; {{$a->created_at}}</a></em>
+                                    <small><a class="text-muted">&bull; {{$a->created_at}}</a></small>
 
                                     {{-- <span class="text-muted"> {{$a->status}}</span> --}}
                                     @if ($a->status == 'Waiting')
@@ -133,9 +133,9 @@
                                 <p>
                                     <span class="float-right"><small style="line-height: 2.6"><?= date('l, d-M-Y \a\t h:i:s A', strtotime($a->created_at)); ?></small></span>
                                 </p>
-                                <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary mr-10">
+                                {{-- <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary mr-10">
                                     <i class="fa fa-fw fa-comment-o"></i>
-                                </button>
+                                </button> --}}
                                 {{-- <button type="button" class="btn btn-sm btn-rounded btn-alt-secondary mr-10">
                                     <i class="fa fa-fw fa-retweet"></i>
                                 </button>

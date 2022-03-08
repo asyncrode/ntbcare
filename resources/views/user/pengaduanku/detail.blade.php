@@ -138,7 +138,7 @@
                                                     <span role="presentation" aria-hidden="true"> · </span>
                                                     <a class="link-effect" href="javascript:void(0)">Reply</a>
                                                     <span role="presentation" aria-hidden="true"> · </span>
-                                                    <span class="text-muted mr-5">3 hrs</span>
+                                                    <span class="text-muted mr-5"><?= date('d-m-Y h:i:s', strtotime($k->created_at)); ?></span>
                                                 </div>
                                             </div>
                                         </div>
