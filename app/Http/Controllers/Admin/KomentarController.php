@@ -12,6 +12,10 @@ use Auth;
 
 class KomentarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function store(Request $request)
     {
         $komentar = new Komentar;
