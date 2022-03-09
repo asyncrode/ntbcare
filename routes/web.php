@@ -20,10 +20,11 @@ Route::get('/pengaduan', 'User\PengaduanController@index')->name('pengaduan.inde
 Route::get('/listaduan', 'User\ListaduanController@index')->name('listaduan.index');
 Route::get('/pengaduanku', 'User\ListaduanController@listpengaduanku')->name('pengaduanku.index');
 Route::get('/pengaduanku/{id}', 'User\ListaduanController@listaduan')->name('pengaduanku.detail');
-Route::get('/untoldstory', 'User\HomeController@story')->name('user.story');
+Route::get('/untoldstory', 'User\StoryController@index')->name('user.story.index');
+Route::get('/untoldstory/detail/{id}', 'User\StoryController@detailStory')->name('user.story.detail');
 
 // Komentar
-Route::post('/komentar','User\KomentarController@store')->name('user.komentar.store');
+Route::post('/komentar', 'User\KomentarController@store')->name('user.komentar.store');
 
 // Get Data
 Route::get('/getData', 'User\PengaduanController@getData')->name('pengaduan.data');

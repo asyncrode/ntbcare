@@ -1,7 +1,7 @@
 @extends('layouts_user.master')
 @section('content_user')
-<div class="bg-white">
-    <div class="content content-full">
+<div class="bg-white ">
+    <div class="content content-full mt-50">
         {{-- <h2 class="content-heading">Pengaduan</h2> --}}
         <div class="block shadow-lg">
             <div class="block-header block-header-default">
