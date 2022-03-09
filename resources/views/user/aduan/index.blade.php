@@ -2,7 +2,7 @@
 @section('content_user')
 <div class="bg-white">
     <div class="content content-full">
-        <h2 class="content-heading">Pengaduan</h2>
+        {{-- <h2 class="content-heading">Pengaduan</h2> --}}
         <div class="block shadow-lg">
             <div class="block-header block-header-default">
                 <h3 class="block-title">Formulir Pengaduan</h3>

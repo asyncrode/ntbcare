@@ -31,7 +31,7 @@
         <div class="modal-content">
             <div class="block block-themed block-transparent mb-0">
                 <div class="block-header bg-primary-dark">
-                    <h3 class="block-title">Add Opd</h3>
+                    <h3 class="block-title">Add/Edit Opd</h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
                             <i class="si si-close"></i>
@@ -50,7 +50,7 @@
                                     class="text-danger">*</span></label>
                             <div class="">
                                 <select class="js-select2 form-control" id="admin" name="admin" style="width: 100%;"
-                                    data-placeholder="Choose one..">
+                                    data-placeholder="Pilih Admin..">
                                     <option></option>
                                     <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                 </select>
@@ -61,7 +61,7 @@
                                     class="text-danger">*</span></label>
                             <div class="">
                                 <select class="js-select2 form-control" id="wilayah" name="wilayah" style="width: 100%;"
-                                    data-placeholder="Choose one..">
+                                    data-placeholder="Pilih Kabupaten/Kota..">
                                     <option></option>
                                     <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                 </select>

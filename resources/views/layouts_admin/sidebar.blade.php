@@ -164,23 +164,23 @@
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
                         <li>
-                            <a href="{{route('laporan.index.status')}}">Rekap per Status</a>
+                            <a href="{{route('laporan.index.status')}}">Rincian per Status</a>
                         </li>
                         <li>
-                            <a href="{{route('laporan.index')}}">Rekap per Kategori</a>
+                            <a href="{{route('laporan.index')}}">Rincian per Kategori</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rekap per Subkategori</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Rekap per Wilayah</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Rekap per OPD/Instansi</a>
+                            <a href="javascript:void(0)">Rincian per Subkategori</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Rincian per Wilayah</a>
                         </li>
+                        <li>
+                            <a href="javascript:void(0)">Rincian per OPD/Instansi</a>
+                        </li>
+                        {{-- <li>
+                            <a href="javascript:void(0)">Rincian per Wilayah</a>
+                        </li> --}}
                     </ul>
                 </li>
                 
