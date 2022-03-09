@@ -57,7 +57,7 @@
                                     class="text-danger">*</span></label>
                             <div class="">
                                 <select class="js-select2 form-control" id="role" name="role" style="width: 100%;"
-                                    data-placeholder="Choose one..">
+                                    data-placeholder="Pilih Role..">
                                     <option></option>
                                     <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                 </select>

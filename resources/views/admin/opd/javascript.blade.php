@@ -108,7 +108,7 @@
                     $('#nama').val(res.data.nama);
                     $("#admin").empty()
                     $("#wilayah").empty()
-                    // $("#admin").append('<option value="'+res.data.id+'">Default=='+data.default.name+'</option>');
+                    // $("#admin").append('<option value="'+res.data.id+'">Default='+data.default.name+'</option>');
                     $.each(res.admin,function(key, value)
                     {
                         $("#admin").append('<option value=' + value.id + '>' + value.nama + '</option>');

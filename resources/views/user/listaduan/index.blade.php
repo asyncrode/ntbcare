@@ -99,7 +99,7 @@
                                 <p class="mb-0">
                                     <a class="font-w700 text-capitalize" href="javascript:void(0)">{{$a->user->name}}</a>
                                     {{-- <a class="text-muted" href="javascript:void(0)">&bull; {{$a->wilayah->nama_will}}</a> --}}
-                                    <small><a class="text-muted">&bull; {{$a->created_at}}</a></small>
+                                    <small><a class="text-muted">&bull; <?= date('d-m-Y', strtotime($a->created_at)); ?></a></small>
 
                                     {{-- <span class="text-muted"> {{$a->status}}</span> --}}
                                     @if ($a->status == 'Waiting')
