@@ -2,16 +2,8 @@
 @section('content')
 <div class="bg-white">
     <div class="content content-full">
-        <h2 class="content-heading">Pengaduan</h2>
+        <h2 class="content-heading">Post Untold Story Video</h2>
         <div class="block shadow-lg">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">Formulir Pengaduan</h3>
-                <div class="block-options">
-                    <button type="button" class="btn-block-option">
-                        <i class="si si-wrench"></i>
-                    </button>
-                </div>
-            </div>
             <div class="block-content">
                 <form class="js-validation-bootstrap" id="frm_add" method="post" enctype="multipart/form-data">
                     @csrf
@@ -25,17 +17,13 @@
                                 <label for="">Short Description</label>
                                 <textarea name="shortdesc" id="shortdesc" class="form-control" cols="30" rows="10" placeholder="Deskripsi Untold Story" ></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="">Description</label>
-                                <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Deskripsi Untold Story" ></textarea>
-                            </div>
                         </div>
                     </div>
                     <div class="col-xl-12">
                         <div class="form-group ">
-                            <label class="col-form-label" for="Gambar">Gambar</label>
+                            <label class="col-form-label" for="Video">Video</label>
                             <div class="file-loading">
-                                <input type="file" name="gambar" id="gambar">
+                                <input type="file" name="video" id="video">
                             </div>
                         </div>
                     </div>
@@ -51,5 +39,5 @@
 </div>
 @endsection
 @push('scripts')
-@include('admin.untold.javascript')
+@include('admin.untold.javascript_video')
 @endpush

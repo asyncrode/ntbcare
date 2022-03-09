@@ -1,14 +1,4 @@
-<!--
-    Helper classes
 
-    Adding .sidebar-mini-hide to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
-    Adding .sidebar-mini-show to an element will make it visible (opacity: 1) when the sidebar is in mini mode
-        If you would like to disable the transition, just add the .sidebar-mini-notrans along with one of the previous 2 classes
-
-    Adding .sidebar-mini-hidden to an element will hide it when the sidebar is in mini mode
-    Adding .sidebar-mini-visible to an element will show it only when the sidebar is in mini mode
-        - use .sidebar-mini-visible-b if you would like to be a block when visible (display: block)
--->
 <nav id="sidebar">
     <!-- Sidebar Content -->
     <div class="sidebar-content enable-cookies">
@@ -189,7 +179,10 @@
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="{{route('untold.admin.index')}}">Post</a>
+                            <a href="{{route('untold.admin.index')}}">Post Gambar</a>
+                        </li>
+                        <li>
+                            <a href="{{route('untold.admin.video')}}">Post Video</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Manage</a>

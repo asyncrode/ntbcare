@@ -20,6 +20,11 @@ class UntoldController extends Controller
         return view('admin.untold.post');
     }
 
+    public function index_video()
+    {
+        return view('admin.untold.post_video');
+    }
+
     public function getUntold()
     {
 
@@ -27,11 +32,6 @@ class UntoldController extends Controller
 
     public function store(Request $request)
     {
-        
-
-       
-
-        
         $untold = new Untold;
         $untold->judul = $request->judul;
         $untold->shortdesc = $request->shortdesc;
@@ -53,6 +53,18 @@ class UntoldController extends Controller
             $gambar_data->save();
         }
 
+        return response()->json([
+            'message' => 'Untold Berhasil Di Tambah'
+        ],200);
+    }
+
+    public function store_video(Request $request)
+    {
+        $untold = new Untold;
+        $untold->judul = $request->judul;
+        $untold->shortdesc = $request->shortdesc;
+        $untold->save();
+        
         if($request->hasfile('video'))
         {
             $video = $request->video;
