@@ -34,11 +34,11 @@
             <table  class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableLaporan">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 5%">pelapor</th>
+                        <th class="text-center">pelapor</th>
                         <th class="text-center">pesan</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">kategori</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">status</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">terdaftar</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">dikirim pada</th>
                         <th class="text-center" style="width: 15%;">action</th>
                     </tr>
                 </thead>

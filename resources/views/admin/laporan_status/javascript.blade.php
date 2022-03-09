@@ -21,7 +21,7 @@
             },
             'columnDefs': [
             {
-                "targets": [0,2,3,5], // your case first column
+                "targets": [0,2,3,4,5], // your case first column
                 "className": "text-center"
             }],
             columns: [
