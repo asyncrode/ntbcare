@@ -22,31 +22,11 @@
             <div class="row items-push py-30">
                 <!-- Posts -->
                 <div class="col-xl-8">
+                    <!-- content -->
                     <div class="mb-50">
                         <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo3@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">The new version is now live!</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 16, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>News
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo7@2x.jpg" alt="">
+                            <a class="img-link" href="javascript:void(0)">
+                                <img class="img-fluid" src="{{asset('assets/media/photos/photo7@2x.jpg')}}" alt="">
                             </a>
                         </div>
                         <h3 class="h4 font-w700 text-uppercase mb-5">How to work from home more efficiently</h3>
@@ -54,58 +34,22 @@
                             <span class="mr-15">
                                 <i class="fa fa-fw fa-calendar mr-5"></i>July 10, 2017
                             </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
+                            {{-- <a class="text-muted mr-15" href="be_pages_generic_profile.html">
                                 <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
+                            </a> --}}
+                            {{-- <a class="text-muted" href="javascript:void(0)">
                                 <i class="fa fa-fw fa-tag mr-5"></i>Inpiration
-                            </a>
+                            </a> --}}
                         </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
+                        <p>
+                            <!--shortDesc-->
+                            Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.
+                        </p>
+                        <a class="link-effect font-w600" href="{{route('user.story.detail')}}">
+                            Read More..
+                        </a>
                     </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo28@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">Travel the world and feel alive</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 5, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>Travel
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo30@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">Believe in your dreams and start working</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 1, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>Motivation
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
+                    <!-- endContent -->
                     <nav class="clearfix push">
                         <a class="btn btn-secondary min-width-100 float-right" href="javascript:void(0)">
                             Next <i class="fa fa-arrow-right ml-5"></i>
@@ -123,7 +67,7 @@
                     <!-- Twitter Feed -->
                     <div class="block block-transparent">
                         <div class="block-header">
-                            <h3 class="block-title text-uppercase">Twitter Feed</h3>
+                            <h3 class="block-title text-uppercase">Testimony</h3>
                             <div class="block-options">
                                 <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
                                     <i class="si si-social-twitter mr-5"></i> Follow Us
@@ -171,7 +115,7 @@
                     <!-- END Twitter Feed -->
 
                     <!-- Categories -->
-                    <div class="block block-transparent">
+                    {{-- <div class="block block-transparent">
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">
                                 <i class="fa fa-fw fa-list mr-5"></i> Categories
@@ -217,11 +161,11 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- END Categories -->
 
                     <!-- Tag Cloud -->
-                    <div class="block block-transparent">
+                    {{-- <div class="block block-transparent">
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">
                                 <i class="fa fa-fw fa-tags mr-5"></i> Tag Cloud
@@ -268,41 +212,13 @@
                                 <i class="fa fa-tag text-muted mr-5"></i>freebies
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- END Tag Cloud -->
                 </div>
                 <!-- END Sidebar -->
             </div>
         </div>
         <!-- END Blog and Sidebar -->
-
-        <!-- Inspiring Quotes -->
-
-        {{-- <div class="bg-body-dark">
-            <div class="content content-full text-center">
-                <div class="py-30 invisible" data-toggle="appear">
-                    <!-- Quotes Slider (.js-slider class is initialized in Helpers.slick()) -->
-                    <!-- For more info and examples you can check out http://kenwheeler.github.io/slick/ -->
-                    <div class="js-slider slick-nav-black" data-autoplay="true" data-autoplay-speed="6000">
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Strive not to be a success, but rather to be of value &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Albert Einstein</em></div>
-                        </div>
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Success is where preparation and opportunity meet &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Bobby Unser</em></div>
-                        </div>
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Life is really simple, but we insist on making it complicated &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Confucius</em></div>
-                        </div>
-                    </div>
-                    <!-- END Quotes Slider -->
-                </div>
-            </div>
-        </div> --}}
-
-        <!-- END Inspiring Quotes -->
 
     </main>
     <!-- END Main Container -->

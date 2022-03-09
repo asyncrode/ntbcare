@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="text-primary" href="{{route('user.story')}}">
+                    <a class="text-primary" href="{{route('user.story.index')}}">
                         <i class="si si-home"></i>Untold Story
                     </a>
                 </li>

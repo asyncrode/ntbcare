@@ -24,8 +24,10 @@
         <!-- END Icons -->
 
         <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="{{asset('assets_user/js/core/jquery.min.js')}}">
         <link rel="stylesheet" href="{{asset('assets_user/js/plugins/select2/css/select2.css')}}">
         <link href="{{asset('assets_user/js/plugins/kartik/css/fileinput.css')}}" media="all" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{asset('assets_user/js/plugins/magnific-popup/magnific-popup.css')}}">
 
         <!-- Stylesheets -->
         <!-- Fonts and Codebase framework -->

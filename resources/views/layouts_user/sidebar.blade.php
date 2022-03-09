@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="" href="{{route('user.story')}}">
+                    <a class="" href="{{route('user.story.index')}}">
                         <i class="fa fa-book"></i> Untold Story
                     </a>
                 </li>

@@ -118,20 +118,19 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h3 class="h5 font-w700">Company LTD</h3>
+                            <h3 class="h5 font-w700">DISKOMINFOTIK</h3>
                             <div class="font-size-sm mb-30">
-                                1080 Sunshine Valley, Suite 2563<br>
-                                San Francisco, CA 85214<br>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
+                                Jln. Udayana No. 14 Mataram<br>
+                                <abbr title="Phone">(0370) 644264</abbr>
                             </div>
-                            <h3 class="h5 font-w700">Our Newsletter</h3>
+                            <h3 class="h5 font-w700">Keep in touch with us</h3>
                             <form>
-                                <div class="input-group">
+                                {{-- <div class="input-group">
                                     <input type="email" class="form-control" id="ld-subscribe-email" name="ld-subscribe-email" placeholder="Your email..">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-secondary">Subscribe</button>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
                     </div>

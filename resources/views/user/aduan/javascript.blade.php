@@ -171,7 +171,7 @@
                         text  : 'Berhasil',
                         showConfirmButton : true
                     })
-                    .then(result=>window.location.href = "https://ntbcare.asyncrode.id/")
+                    .then(result=>window.location.href = "{{route('landing')}}")
                     // perform operation
                 },
                 error: function(json) {
