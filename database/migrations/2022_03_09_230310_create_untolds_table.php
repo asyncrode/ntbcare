@@ -18,7 +18,7 @@ class CreateUntoldsTable extends Migration
             $table->string('judul');
             $table->longText('shortdesc')->nullable();
             $table->longText('description')->nullable();
-            $table->longText('views');
+            $table->longText('views')->nullable();
             $table->timestamps();
         });
     }

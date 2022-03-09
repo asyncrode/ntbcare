@@ -121,6 +121,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {
         Route::get('/', 'Admin\UntoldController@index')->name('untold.admin.index');
+        Route::get('/video', 'Admin\UntoldController@index_video')->name('untold.admin.video');
         Route::post('/store', 'Admin\UntoldController@store')->name('untold.admin.store');
+        Route::post('/store-video', 'Admin\UntoldController@store_video')->name('untold.admin.store.video');
     });
 });
