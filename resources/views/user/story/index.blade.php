@@ -23,32 +23,33 @@
                 <!-- Posts -->
                 <div class="col-xl-8">
                     <!-- content -->
+                    @foreach ($gambar as $g)
                     <div class="mb-50">
                         <div class="overflow-hidden rounded mb-20" style="height: 200px;">
+                            {{-- {{var_dump($u->gambar)}} --}}
                             <a class="img-link" href="javascript:void(0)">
-                                <img class="img-fluid" src="{{asset('assets/media/photos/photo7@2x.jpg')}}" alt="">
+                                <img class="img-fluid" src="{{ asset('upload/untold_gambar/'.$g->gambar) }}" alt="">
                             </a>
                         </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">How to work from home more efficiently</h3>
+                        <h3 class="h4 font-w700 text-uppercase mb-5">{{$g->untold->judul}}</h3>
                         <div class="text-muted mb-10">
                             <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 10, 2017
+                                <i class="fa fa-fw fa-calendar mr-5"></i>{{$g->untold->created_at}}
                             </span>
-                            {{-- <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a> --}}
+                            
                             {{-- <a class="text-muted" href="javascript:void(0)">
                                 <i class="fa fa-fw fa-tag mr-5"></i>Inpiration
                             </a> --}}
                         </div>
                         <p>
                             <!--shortDesc-->
-                            Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.
+                            {!!Str::limit($g->untold->description, 500)!!}
                         </p>
-                        <a class="link-effect font-w600" href="{{route('user.story.detail')}}">
+                        {{-- <a class="link-effect font-w600" href="{{route('user.story.detail')}}">
                             Read More..
-                        </a>
+                        </a> --}}
                     </div>
+                    @endforeach
                     <!-- endContent -->
                     <nav class="clearfix push">
                         <a class="btn btn-secondary min-width-100 float-right" href="javascript:void(0)">
