@@ -10,4 +10,9 @@ class UntoldVideo extends Model
     protected $fillable = [
         'video', 'id_untold'
     ];
+
+    public function untold()
+    {
+        return $this->belongsTo(Untold::class, 'id_untold');
+    }
 }
