@@ -18,6 +18,11 @@ use Spatie\Permission\Models\Role;
 
 class PengaduanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index()
     {
         // $roles = Auth::user()->roles->pluck('name');

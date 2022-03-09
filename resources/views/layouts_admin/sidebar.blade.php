@@ -189,7 +189,7 @@
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)">Post</a>
+                            <a href="{{route('untold.admin.index')}}">Post</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Manage</a>
@@ -201,7 +201,7 @@
                             class="sidebar-mini-hide">News</span></a>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)">Post</a>
+                            <a href="">Post</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Manage</a>

@@ -118,4 +118,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/laporan/status', 'Admin\LaporanController@index_status')->name('laporan.index.status');
         Route::get('/getLaporanStatus', 'Admin\LaporanController@getLaporanStatus')->name('laporan.data.status');
     });
+
+    Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {
+        Route::get('/', 'Admin\UntoldController@index')->name('untold.admin.index');
+        Route::post('/store', 'Admin\UntoldController@store')->name('untold.admin.store');
+    });
 });
