@@ -101,9 +101,7 @@ class LaporanController extends Controller
                 })
                 ->addColumn('id_opd', function ($laporan) {
                     if ($laporan->id_opd != null) {
-                        return $laporan->opd->nama;
-                    }else{
-                        return 'Opd Belum Di Input';
+                        return $laporan->opd;
                     }
                 })
                 ->addColumn('id_aduan', function ($laporan) {
