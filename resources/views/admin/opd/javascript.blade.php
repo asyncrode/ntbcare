@@ -156,6 +156,9 @@
                             })
                         
                             table.draw()
+                        },
+                        error: function(json) {
+                            alert('Data Opd Telah Mendapat Aduan,Data Opd Tidak Bisa Di Hapus');
                         }
                     })
                 }else{
