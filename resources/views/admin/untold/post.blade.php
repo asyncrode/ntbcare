@@ -2,16 +2,16 @@
 @section('content')
 <div class="bg-white">
     <div class="content content-full">
-        <h2 class="content-heading">Pengaduan</h2>
+        <h2 class="content-heading">Post Article <small>for Untold Story</small></h2>
         <div class="block shadow-lg">
-            <div class="block-header block-header-default">
+            {{-- <div class="block-header block-header-default">
                 <h3 class="block-title">Formulir Pengaduan</h3>
                 <div class="block-options">
                     <button type="button" class="btn-block-option">
                         <i class="si si-wrench"></i>
                     </button>
                 </div>
-            </div>
+            </div> --}}
             <div class="block-content">
                 <form class="js-validation-bootstrap" id="frm_add" method="post" enctype="multipart/form-data">
                     @csrf
@@ -19,7 +19,7 @@
                         <div class="col-xl-12">
                             <div class="form-group">
                                 <label for="nama">Judul</label>
-                                <input type="text" class="form-control" id="judul" name="judul" placeholder="Nama Subkategori">
+                                <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul Artikel">
                             </div>
                             <div class="form-group">
                                 <label for="">Short Description</label>

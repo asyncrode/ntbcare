@@ -5,8 +5,8 @@
     <main id="main-container">
 
         <!-- Hero -->
-        <div class="bg-image overflow-hidden" style="background-image: url('{{asset("assets/media/photos/banner.png")}}');">
-            <div class="bg-black-op-25" >
+        <div class="bg-image overflow-hidden" style="background-image: url('{{asset("assets/media/photos/banner.jpg")}}');">
+            <div class="bg-black-op-90" >
                 <div class="content content-top text-center">
                     <div class="py-50">
                         <h1 class="font-w700 text-light mb-10">Untold Story</h1>
@@ -19,36 +19,68 @@
 
         <!-- Blog and Sidebar -->
         <div class="content">
-            <div class="row items-push py-30">
-                <!-- Posts -->
-                <div class="col-xl-8">
+            <div class="row items-push py-30"><div class="col-xl-8">
+                    <div class=" mb-50 invisible" data-toggle="appear" data-class="animated fadeInLeft">
+                        <div class="header header-default mb-20">
+                            <h3 class="block-title"><i class="fa fa-play fa-fw text-primary"></i> Videos</h3>
+                        </div>
+                        <div class="js-slider slick-nav-white slick-nav-hover" data-dots="true" data-arrows="true">
+                            @foreach ($video as $v)
+                            <div class="embed-responsive embed-responsive-16by9 fx-overlay-slide-top">
+                                
+                                    <video class="img-fluid" min-width="320" min-height="240" controls>
+                                        <source src="{{ asset('upload/untold_video/'.$v->video) }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="options-overlay bg-black-op">
+                                        <div class="options-overlay-content">
+                                            <h3 class="h4 text-white mb-5 ml-5">{{$v->untold->judul}}</h3>
+                                            <h4 class="h6 text-white-op mb-15 ml-5">{!!$v->untold->shortdesc!!}</h4>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            @endforeach
+                            {{-- <div class="d-flex justify-content-center">
+                                <img class="img-fluid" src="assets/media/photos/photo14.jpg" alt="">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img class="img-fluid" src="assets/media/photos/photo24.jpg" alt="">
+                            </div> --}}
+                        </div>
+                    </div>
                     <!-- content -->
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="javascript:void(0)">
-                                <img class="img-fluid" src="{{asset('assets/media/photos/photo7@2x.jpg')}}" alt="">
+                    <div class="header header-default mb-20">
+                        <h3 class="block-title"><i class="fa fa-play fa-fw text-primary"></i> Stories</h3>
+                    </div>
+                    @foreach ($gambar as $g)
+                    <div class="mb-50 ">
+                        
+                        <div class="overflow-hidden rounded mb-20 d-flex " style="max-height: 300px;">
+                            {{-- {{var_dump($u->gambar)}} --}}
+                            <a class="img-link invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">
+                                <img class="img-fluid" src="{{ asset('upload/untold_gambar/'.$g->gambar) }}" alt="">
                             </a>
                         </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">How to work from home more efficiently</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 10, 2017
+                        <h3 class="h4 font-w700 text-uppercase mb-5 invisible" data-toggle="appear" data-class="animated fadeInUp">{{$g->untold->judul}}</h3>
+                        <div class="text-muted mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp">
+                            <span class="mr-15 ">
+                                <i class="fa fa-fw fa-calendar mr-5"></i><?= date('M d, Y', strtotime($g->untold->created_at));?>
                             </span>
-                            {{-- <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a> --}}
+                            
                             {{-- <a class="text-muted" href="javascript:void(0)">
                                 <i class="fa fa-fw fa-tag mr-5"></i>Inpiration
                             </a> --}}
                         </div>
                         <p>
                             <!--shortDesc-->
-                            Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.
+                            {!!Str::limit($g->untold->description, 500)!!}
                         </p>
-                        <a class="link-effect font-w600" href="{{route('user.story.detail')}}">
+                        <a class="link-effect font-w600" href="{{route('user.story.detail', $g->untold->id)}}">
                             Read More..
                         </a>
                     </div>
+                    @endforeach
                     <!-- endContent -->
                     <nav class="clearfix push">
                         <a class="btn btn-secondary min-width-100 float-right" href="javascript:void(0)">
@@ -62,6 +94,8 @@
                 </div>
                 <!-- END Posts -->
 
+                
+
                 <!-- Sidebar -->
                 <div class="col-xl-4">
                     <!-- Twitter Feed -->
@@ -69,13 +103,14 @@
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">Testimony</h3>
                             <div class="block-options">
-                                <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
+                                {{-- <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
                                     <i class="si si-social-twitter mr-5"></i> Follow Us
-                                </a>
+                                </a> --}}
+                                <a href="https://twitter.com/intent/tweet?button_hashtag=ntbcare&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="true">Tweet #movie</a>
                             </div>
                         </div>
                         <div class="block-content">
-                            <div class="media mb-20">
+                            {{-- <div class="media mb-20">
                                 <img class="img-avatar img-avatar32 d-flex mr-20" src="assets/media/avatars/avatar13.jpg" alt="">
                                 <div class="media-body">
                                     <p class="mb-5">In gravida nulla. Nulla vel metus scelerisque ante sollicitudin. <a class="text-elegance" href="javascript:void(0)">#startup</a> <a class="text-elegance" href="javascript:void(0)">#life</a></p>
@@ -109,7 +144,12 @@
                                     <p class="mb-5">Vestibulum in vulputate at, tempus viverra turpis. Fusce <a href="javascript:void(0)">condimentum</a> nunc ac nisi vulputate fringilla.</p>
                                     <div class="font-size-sm text-muted">1 week ago</div>
                                 </div>
-                            </div>
+                            </div> --}}
+
+                            {{-- <a href="https://twitter.com/intent/tweet?button_hashtag=ntbcare&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="true">Tweet #movie</a> --}}
+
+                            {{-- <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F10154009990506729%2F&width=500&show_text=true&height=274&appId" width="500" height="274" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> --}}
+
                         </div>
                     </div>
                     <!-- END Twitter Feed -->
@@ -228,3 +268,5 @@
 
 @endsection
 @push('scripts')
+@include('user.story.javascript')
+@endpush

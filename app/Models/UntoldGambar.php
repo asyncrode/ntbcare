@@ -10,4 +10,9 @@ class UntoldGambar extends Model
     protected $fillable = [
         'gambar', 'id_untold'
     ];
+
+    public function untold()
+    {
+        return $this->belongsTo(Untold::class, 'id_untold');
+    }
 }

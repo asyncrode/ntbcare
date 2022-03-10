@@ -72,7 +72,7 @@
                     <!-- Footer Navigation -->
                     <div class="row items-push-2x mt-30">
                         <div class="col-6 col-md-4">
-                            <h3 class="h5 font-w700">Heading</h3>
+                            <h3 class="h5 font-w700">Popular Story</h3>
                             <ul class="list list-simple-mini font-size-sm">
                                 <li>
                                     <a class="link-effect font-w600" href="javascript:void(0)">Link #1</a>
@@ -118,10 +118,15 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h3 class="h5 font-w700">DISKOMINFOTIK</h3>
-                            <div class="font-size-sm mb-30">
-                                Jln. Udayana No. 14 Mataram<br>
-                                <abbr title="Phone">(0370) 644264</abbr>
+                            <a class="link-effect font-w700 mr-5 mb-10" href="{{route('landing')}}">
+                                {{-- <i class="si si-fire text-primary"></i> --}}
+                                <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 30px">
+                                <span class="font-size-xl text-black-op" style="height: 50px">ntb</span><span class="font-size-xl text-primary" style="height: 50px">care</span>
+                            </a>
+                            <div class="font-size-sm mb-30 mt-10">
+                                Jl. Pejanggik No.12, Pejanggik, Kec. Mataram, Kota Mataram,<br> 
+                                Nusa Tenggara Bar. 83122<br>
+                                <abbr title="Phone">(0370) 631000</abbr>
                             </div>
                             <h3 class="h5 font-w700">Keep in touch with us</h3>
                             <form>

@@ -21,3 +21,5 @@
     });
 </script>
 
+<script src="{{asset('assets_user/js/plugins/slick/slick.min.js')}}"></script>
+
