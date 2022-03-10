@@ -16,6 +16,10 @@ use Auth;
 
 class ListaduanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $aduan = Aduan::all()->sortByDesc('created_at');
