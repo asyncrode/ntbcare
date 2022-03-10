@@ -46,4 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Komentar::class, 'id');
     }
+
+    public function social() {
+
+        return $this->hasMany(Social::class,'id');
+
+     }
 }

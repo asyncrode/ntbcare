@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('user.home');
 })->name('landing');
+
 Route::get('/pengaduan', 'User\PengaduanController@index')->name('pengaduan.index');
 Route::get('/listaduan', 'User\ListaduanController@index')->name('listaduan.index');
 Route::get('/pengaduanku', 'User\ListaduanController@listpengaduanku')->name('pengaduanku.index');
@@ -40,3 +41,5 @@ Route::post('/store', 'User\PengaduanController@store')->name('pengaduan.store')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
