@@ -38,6 +38,8 @@
                     <tr>
                         <th class="text-center">pelapor</th>
                         <th class="text-center">pesan</th>
+                        <th class="text-center">alamat</th>
+                        <th class="text-center">OPD/Instansi</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">kategori</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">status</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">dikirim pada</th>

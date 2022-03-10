@@ -179,7 +179,7 @@
                             class="sidebar-mini-hide">Untold Story</span></a>
                     <ul>
                         <li>
-                            <a href="{{route('untold.admin.index')}}">Post Gambar</a>
+                            <a href="{{route('untold.admin.index')}}">Post Articles</a>
                         </li>
                         <li>
                             <a href="{{route('untold.admin.video')}}">Post Video</a>

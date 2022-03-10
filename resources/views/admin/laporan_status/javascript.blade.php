@@ -27,6 +27,8 @@
             columns: [
                 {data: 'id_pelapor', name: 'id_pelapor'},
                 {data: 'pesan', name: 'pesan'},
+                {data: 'alamat', name: 'alamat'},
+                {data: 'id_opd', name: 'id_opd'},
                 {data: 'id_kategori', name: 'id_kategori'},
                 {data: 'status', name: 'status'},
                 {data: 'created_at', name: 'created_at'},

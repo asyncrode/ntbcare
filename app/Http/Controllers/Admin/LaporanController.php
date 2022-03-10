@@ -29,9 +29,8 @@ class LaporanController extends Controller
             return Datatables::of($laporan)
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
-                   
-                        return date('d-m-Y', strtotime( $laporan->created_at));
-                    
+
+                    return date('d-m-Y', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_kategori', function ($laporan) {
                     if ($laporan->id_kategori != null) {
@@ -63,10 +62,10 @@ class LaporanController extends Controller
                     }
                     $awal = $request->get('awal');
                     $akhir = $request->get('akhir');
-                    
+
                     if (!empty($awal) and !empty($akhir)) {
                         $instance->whereBetween('created_at', [$awal, $akhir])->latest();;
-                    }else{
+                    } else {
                         $instance->select('*');
                     }
                 }, true)
@@ -87,9 +86,8 @@ class LaporanController extends Controller
             return Datatables::of($laporan)
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
-                   
-                        return date('d-m-Y', strtotime( $laporan->created_at));
-                    
+
+                    return date('d-m-Y h:i ', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_kategori', function ($laporan) {
                     if ($laporan->id_kategori != null) {
@@ -101,9 +99,15 @@ class LaporanController extends Controller
                         return $laporan->user->name;
                     }
                 })
+                ->addColumn('id_opd', function ($laporan) {
+                    if ($laporan->id_opd != null) {
+                        return $laporan->opd->nama;
+                    }
+                })
                 ->addColumn('id_aduan', function ($laporan) {
                     if ($laporan->id_aduan != null) {
                         return $laporan->aduan->status;
+                        return $laporan->aduan->alamat;
                     }
                 })
                 ->addColumn('action', function ($row) {
@@ -121,10 +125,10 @@ class LaporanController extends Controller
                     }
                     $awal = $request->get('awal');
                     $akhir = $request->get('akhir');
-                    
+
                     if (!empty($awal) and !empty($akhir)) {
                         $instance->whereBetween('created_at', [$awal, $akhir])->latest();;
-                    }else{
+                    } else {
                         $instance->select('*');
                     }
                 }, true)

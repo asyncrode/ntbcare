@@ -49,7 +49,7 @@
             <div class="row items-push py-30">
                 <!-- Posts -->
                 <div class="col-xl-8">
-                    <div class="mb-50">
+                    {{-- <div class="mb-50">
                         <div class="overflow-hidden rounded mb-20" style="height: 200px;">
                             <a class="img-link" href="be_pages_generic_story.html">
                                 <img class="img-fluid" src="assets/media/photos/photo3@2x.jpg" alt="">
@@ -132,13 +132,11 @@
                         </div>
                         <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
                         <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
+                    </div> --}}
+                    
                     <nav class="clearfix push">
-                        <a class="btn btn-secondary min-width-100 float-right" href="javascript:void(0)">
-                            Next <i class="fa fa-arrow-right ml-5"></i>
-                        </a>
-                        <a class="btn btn-secondary min-width-100 float-left" href="javascript:void(0)">
-                            <i class="fa fa-arrow-left mr-5"></i> Prev
+                        <a class="btn btn-secondary min-width-100 float-right" href="{{route('user.story.index')}}">
+                            See More
                         </a>
                     </nav>
                     <hr class="d-xl-none">
@@ -148,7 +146,7 @@
                 <!-- Sidebar -->
                 <div class="col-xl-4">
                     <!-- Twitter Feed -->
-                    <div class="block block-transparent">
+                    {{-- <div class="block block-transparent">
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">Twitter Feed</h3>
                             <div class="block-options">
@@ -194,11 +192,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- END Twitter Feed -->
 
                     <!-- Categories -->
-                    <div class="block block-transparent">
+                    {{-- <div class="block block-transparent">
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">
                                 <i class="fa fa-fw fa-list mr-5"></i> Categories
@@ -244,11 +242,11 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- END Categories -->
 
                     <!-- Tag Cloud -->
-                    <div class="block block-transparent">
+                    {{-- <div class="block block-transparent">
                         <div class="block-header">
                             <h3 class="block-title text-uppercase">
                                 <i class="fa fa-fw fa-tags mr-5"></i> Tag Cloud
@@ -295,7 +293,7 @@
                                 <i class="fa fa-tag text-muted mr-5"></i>freebies
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- END Tag Cloud -->
                 </div>
                 <!-- END Sidebar -->
