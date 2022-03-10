@@ -19,9 +19,15 @@ class StoryController extends Controller
         return view('user.story.index', compact('untold', 'gambar', 'video'));
     }
 
-    public function detailStory()
+    public function detailStory($id)
     {
+        // $aduan = Aduan::where('aduans.id', $id)->first();
+        $untold = Untold::where('untolds.id', $id)->first();
+        $gambar = UntoldGambar::where('id_untold', $id)->get();
+        $gambarD = UntoldGambar::all();
+        $video = UntoldVideo::all();
+        $detail = Untold::find($id);
 
-        return view('user.story.detail');
+        return view('user.story.detail', compact('detail', 'untold', 'gambar', 'video', 'gambarD'));
     }
 }

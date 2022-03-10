@@ -199,6 +199,14 @@
                                     <td>{{$aduan->wilayah->nama_will}}</td>
                                 </tr>
                                 <tr>
+                                    <td class="font-w600">Kecamatan</td>
+                                    <td>{{$aduan->kec->nama_kec}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-w600">Kelurahan</td>
+                                    <td>{{$aduan->kel->nama_kel}}</td>
+                                </tr>
+                                <tr>
                                     <td class="font-w600">Lampiran</td>
                                     <td><a href="{{ asset('upload/aduan/'.$aduan->bukti_2) }}"
                                             target="_blank">{{$aduan->bukti_2}}</a></td>

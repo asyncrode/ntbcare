@@ -1,18 +1,20 @@
 @extends('layouts_user.master')
 @section('content_user')
-<main id="main-container">
+<main id="main-container ">
 
     <!-- Hero -->
     <div class="bg-image" style="background-image: url('{{asset("assets_user/media/photos/photo7@2x.jpg")}}');">
         <div class="bg-black-op-75">
             <div class="content content-top text-center">
                 <div class="py-100">
-                    <h1 class="font-w700 text-white mb-10">How to work from home more efficiently</h1>
+                    
+                    <h1 class="font-w700 text-white mb-10">{{$untold->judul}}</h1>
+                    
                     {{-- <h2 class="h4 font-w400 text-white-op">Explore the world and provide value at the same time.</h2> --}}
                     <div class="font-size-md text-muted">
                         {{-- <a class="text-body-bg-dark" href="be_pages_generic_profile.html">John Smith</a> &bull; June 5, 2017 --}}
                         <span class="mr-15">
-                            <i class="fa fa-fw fa-calendar mr-5"></i>July 10, 2017
+                            <i class="fa fa-fw fa-calendar mr-5"></i><?= date('M d, Y', strtotime($untold->created_at)); ?>
                         </span>
                     </div>
                 </div>
@@ -25,27 +27,15 @@
     <div class="content content-full nice-copy-story">
         <div class="row justify-content-center py-30">
             <div class="col-lg-8">
-                <!-- Deskripsi-->
-                <h3>Getting out there</h3>
-                <p>
-                    Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.
-                </p>
-                <p>
-                    Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.
-                </p>
-
-                <h3>Chase your dreams</h3>
-                <p>
-                    Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.
-                </p>
-
                 <!-- Image -->
-                <div class="row no-gutters push js-gallery img-fluid-100">
-                    <div class="animated fadeIn">
-                        <a class="img-link img-link-simple img-link-zoom-in img-lightbox" href="{{asset('assets/media/photos/photo31@2x.jpg')}}">
-                            <img class="img-fluid" src="{{asset('assets/media/photos/photo31.jpg')}}" alt="">
+                <div class="row no-gutters push js-gallery img-fluid-100 justify-content-center">
+                    @foreach ($gambar as $p)
+                    <div class="animated fadeIn text-center">
+                        <a class="img-link img-link-simple img-link-zoom-in img-lightbox" href="{{ asset('upload/untold_gambar/'.$p->gambar) }}">
+                            <img class="img-fluid" src="{{ asset('upload/untold_gambar/'.$p->gambar) }}" alt="">
                         </a>
                     </div>
+                    @endforeach
                     {{-- <div class="col-4 animated fadeIn">
                         <a class="img-link img-link-simple img-link-zoom-in img-lightbox" href="assets/media/photos/photo33@2x.jpg">
                             <img class="img-fluid" src="assets/media/photos/photo33.jpg" alt="">
@@ -73,6 +63,11 @@
                     </div> --}}
                 </div>
                 <!-- END Simple Gallery -->
+
+                <!-- Deskripsi-->
+                <p>
+                    {!!$untold->description!!}
+                </p>
             </div>
         </div>
         <div class="row justify-content-center py-30">
@@ -85,24 +80,28 @@
                 </button>
             </div>
         </div>
-        
-        <h2 class="content-heading border-t pt-10">Baca <small>Untold Story lainnya</small></h2>
-        <div class="row">
+        <div class="content">
+        <h2 class="content-heading border-t pt-10 ">Baca <small>Untold Story lainnya</small></h2>
+        <div class="row ">
             <!-- Row #1 -->
+            @foreach ($gambarD as $g)
+                
             <div class="col-md-6 col-xl-4">
-                <a class="block block-transparent border-left border-5x border-primary bg-image" style="background-image: url('{{asset("assets/media/photos/photo20.jpg")}}');" href="javascript:void(0)">
+                <a class="block block-transparent border-left border-5x border-primary bg-image" style="background-image: url('{{asset("upload/untold_gambar/".$g->gambar)}}');" href="{{route('user.story.detail', $g->untold->id)}}"> {{--{{route('user.story.detail', $g->untold->id)}}--}}
                     <div class="block-content block-content-full bg-black-op">
                         <div class="pt-100">
-                            <h3 class="h4 text-white font-w700 mb-10">10 ways to build your own business</h3>
+                            <h3 class="h4 text-white font-w700 mb-10">{{$g->untold->judul}}</h3>
                             <h4 class="text-white-op font-size-default mb-0">
                                 <span class="mr-10">
-                                    <i class="fa fa-clock-o"></i> July 10, 2017
+                                    <i class="fa fa-clock-o"></i> <?= date('M d, Y', strtotime($g->untold->created_at));?>
                                 </span>
                             </h4>
                         </div>
                     </div>
                 </a>
             </div>
+
+            @endforeach
             {{-- <div class="col-md-6 col-xl-4">
                 <a class="block block-transparent border-left border-5x border-success bg-image" style="background-image: url('assets/media/photos/photo26.jpg');" href="javascript:void(0)">
                     <div class="block-content block-content-full bg-black-op">
@@ -137,6 +136,8 @@
                     </div>
                 </a>
             </div> --}}
+        </div>
+        </div>   
     </div>
     <!-- END Story -->
 

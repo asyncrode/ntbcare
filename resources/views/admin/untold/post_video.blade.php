@@ -2,7 +2,7 @@
 @section('content')
 <div class="bg-white">
     <div class="content content-full">
-        <h2 class="content-heading">Post Untold Story Video</h2>
+        <h2 class="content-heading">Post Video <small>for Untold Story</small></h2>
         <div class="block shadow-lg">
             <div class="block-content">
                 <form class="js-validation-bootstrap" id="frm_add" method="post" enctype="multipart/form-data">
@@ -11,7 +11,7 @@
                         <div class="col-xl-12">
                             <div class="form-group">
                                 <label for="nama">Judul</label>
-                                <input type="text" class="form-control" id="judul" name="judul" placeholder="Nama Subkategori">
+                                <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul Video">
                             </div>
                             <div class="form-group">
                                 <label for="">Short Description</label>
