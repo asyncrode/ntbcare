@@ -5,18 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+    <title>NTB Care | User Login</title>
 
-    <meta name="description"
-        content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
-    <meta name="author" content="pixelcave">
+    <meta name="description" content="Caring society with integrity.">
+    <meta name="author" content="asyncrode">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework">
-    <meta property="og:site_name" content="Codebase">
-    <meta property="og:description"
-        content="Codebase - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta property="og:title" content="NTB Care">
+    <meta property="og:site_name" content="ntbcare">
+    <meta property="og:description" content="Caring society with integrity.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -91,22 +89,21 @@
         <main id="main-container">
 
             <!-- Page Content -->
-            <div class="bg-gd-dusk">
-                <div class="hero-static content content-full bg-white invisible" data-toggle="appear">
+            <div class="bg-image overflow-hidden" style="background-image: url('{{asset('assets/media/photos/bg-mosq.jpg')}}')">
+                <div class="hero-static content-full bg-white-op-90" >
                     <!-- Header -->
-                    <div class="py-30 px-5 text-center">
-                        <a class="link-effect font-w700" href="index.html">
-                            <i class="si si-fire"></i>
-                            <span class="font-size-xl text-primary-dark">code</span><span
-                                class="font-size-xl">base</span>
-                        </a>
-                        <h1 class="h2 font-w700 mt-50 mb-10">Welcome to Your Dashboard</h1>
-                        <h2 class="h4 font-w400 text-muted mb-0">Please sign in</h2>
+                    <div class="py-50 px-5 text-center">
+                        <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
+                            <a class="link-effect" href="{{route('landing')}}">
+                                <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span>
+                            </a>
+                        </h1>
+                        <h2 class="h4 font-w400 text-muted mb-0 invisible" data-toggle="appear" data-class="animated fadeInUp">Please sign in</h2>
                     </div>
                     <!-- END Header -->
 
                     <!-- Sign In Form -->
-                    <div class="row justify-content-center px-5">
+                    <div class="row justify-content-center px-5 invisible" data-toggle="appear" data-class="animated fadeInUp">
                         <div class="col-sm-8 col-md-6 col-xl-4">
                             <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _es6/pages/op_auth_signin.js -->
                             <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
@@ -146,18 +143,15 @@
                                     <div class="col-12 mb-10">
                                         <button type="submit"
                                             class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary">
-                                            <i class="si si-login mr-10"></i> Sign In
+                                            <i class="fa fa-fw fa-sign-in"></i> Sign In
                                         </button>
                                     </div>
-                                    <div class="col-sm-6 mb-5">
-                                        <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary"
-                                            href="op_auth_signup.html">
-                                            <i class="fa fa-plus text-muted mr-5"></i> New Account
-                                        </a>
+                                    <div class="col-12 mb-10">
+                                        <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Login with Google+</a>
                                     </div>
                                     @if (Route::has('password.request'))
-                                    <div class="col-sm-6 mb-5">
-                                        <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary"
+                                    <div class="col-sm-12 mb-5">
+                                        <a class="btn btn-block btn-noborder btn-rounded "
                                             href="{{ route('password.request') }}">
                                             <i class="fa fa-warning text-muted mr-5"></i> Forgot password
                                         </a>

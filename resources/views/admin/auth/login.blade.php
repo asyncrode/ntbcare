@@ -51,11 +51,12 @@
                     <div class="hero-static content content-full bg-white invisible" data-toggle="appear">
                         <!-- Header -->
                         <div class="py-30 text-center">
-                            <a class="link-effect font-w700" href="{{route('landing')}}">
-                                <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 15px">
-                                <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
-                            </a>
-                            <h1 class="h4 font-w700 mt-30 mb-10">Welcome to NTB Care Dashboard</h1>
+                            <h1>
+                                <a class="link-effect font-w700" href="{{route('landing')}}">
+                                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 15px">
+                                    <span class="text-dual-primary-dark">ntb</span><span class="text-primary">care</span>
+                                </a>
+                            </h1>
                             <h2 class="h4 font-w400 text-muted mb-0">Please sign in</h2>
                         </div>
                         <!-- END Header -->
