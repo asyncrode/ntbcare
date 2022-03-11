@@ -15,6 +15,10 @@ use Auth;
 
 class PengaduanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('user.aduan.index');
@@ -29,7 +33,7 @@ class PengaduanController extends Controller
     public function getSubkategori(Request $request)
     {
         $kategori_id = $request->id;
-        $subkategori = Subkategori::where('id_kategori',$kategori_id)->get();
+        $subkategori = Subkategori::where('id_kategori', $kategori_id)->get();
         return response()->json($subkategori, 200);
     }
 
@@ -42,14 +46,14 @@ class PengaduanController extends Controller
     public function getKecamatan(Request $request)
     {
         $wilayah_id = $request->id;
-        $kecamatan = Kecamatan::where('id_wilayahs',$wilayah_id)->get();
+        $kecamatan = Kecamatan::where('id_wilayahs', $wilayah_id)->get();
         return response()->json($kecamatan, 200);
     }
 
     public function getKelurahan(Request $request)
     {
         $kecamatan_id = $request->id;
-        $kelurahan = Kelurahan::where('id_kecamatans',$kecamatan_id)->get();
+        $kelurahan = Kelurahan::where('id_kecamatans', $kecamatan_id)->get();
         return response()->json($kelurahan, 200);
     }
 

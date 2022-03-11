@@ -70,7 +70,7 @@
                             <div class="media-body">
                                 <p class="mb-0">
                                     <a class="font-w600 text-capitalize" href="javascript:void(0)">{{$aduan->user->name}}</a>
-                                    <em><small><a class="text-muted" href="javascript:void(0)">&bull; <?= date('d-m-Y h:i A', strtotime($aduan->created_at)); ?></a></small></em>
+                                    <small><a class="text-muted" href="javascript:void(0)">&bull; <?= date('d-m-Y h:i A', strtotime($aduan->created_at)); ?></a></small>
                                     {{-- <em><a class="text-muted" id="time">&bull; </a></em> --}}
                                     {{-- <a class="text-muted" href="javascript:void(0)">@j.smith</a> --}}
                                     @if ($aduan->status == 'Waiting')
@@ -99,7 +99,7 @@
                                     <br>
                                 </p>
                                 <img class="img-fluid push mb-10" src="{{ asset('upload/aduan/'.$aduan->bukti) }}" alt="">
-                                <p>
+                                <p style="text-align: justify">
                                     <b>Deskripsi : </b>{{$aduan->pesan}}
                                 </p>
                             </div>

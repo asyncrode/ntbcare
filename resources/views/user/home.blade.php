@@ -48,7 +48,7 @@
         <div class="content pt-0 mt-0">
             <div class="row items-push py-30">
                 <!-- Posts -->
-                <div class="col-xl-8">
+                <div class="col-xl-12">
                     {{-- <div class="mb-50">
                         <div class="overflow-hidden rounded mb-20" style="height: 200px;">
                             <a class="img-link" href="be_pages_generic_story.html">
@@ -133,9 +133,201 @@
                         <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
                         <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
                     </div> --}}
+
+                    <h2 class="content-heading">Gallery <small>Advanced</small></h2>
+                    <div class="row items-push js-gallery">
+                        
+                        @foreach ($gambar as $u)
+                        {{-- {{var_dump($u->gambar)}} --}}
+                            <div class="col-md-6 col-lg-3  animated fadeIn">
+                                <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                    <img class="img-fluid img-responsive options-item" src="{{ asset('upload/untold_gambar/'.$u->gambar) }}" alt="" style="height: 200px; width:100%; object-fit:fill; display:">
+                                    <div class="options-overlay bg-black-op-75">
+                                        <div class="options-overlay-content">
+                                            <h3 class="h4 text-white mb-5">Image</h3>
+                                            <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                            <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo16@2x.jpg">
+                                                <i class="fa fa-search-plus"></i> View
+                                            </a>
+                                            <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                        {{-- <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo15.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo15@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo14.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo14@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo13.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo13@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo12.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo12@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo11.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo11@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo10.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo10@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo9.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo9@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo8.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo8@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo7.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo7@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo6.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo6@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4  animated fadeIn">
+                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <img class="img-fluid options-item" src="assets/media/photos/photo5.jpg" alt="">
+                                <div class="options-overlay bg-black-op-75">
+                                    <div class="options-overlay-content">
+                                        <h3 class="h4 text-white mb-5">Image</h3>
+                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo5@2x.jpg">
+                                            <i class="fa fa-search-plus"></i> View
+                                        </a>
+                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
                     
-                    <nav class="clearfix push">
-                        <a class="btn btn-secondary min-width-100 float-right" href="{{route('user.story.index')}}">
+                    <nav class="clearfix push text-center">
+                        {{-- <a class="btn btn-secondary min-width-100 float-right" href="{{route('user.story.index')}}">
+                            See More
+                        </a> --}}
+                        <a class="btn btn-noborder btn-rounded btn-info mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('user.story.index')}}">
                             See More
                         </a>
                     </nav>
@@ -376,4 +568,21 @@
 </div> --}}
 <!-- END Call to Action -->  
  @endsection
+ @push('scripts')
+    <script src="assets/js/codebase.core.min.js"></script>
+
+    <!--
+        Codebase JS
+
+        Custom functionality including Blocks/Layout API as well as other vital and optional helpers
+        webpack is putting everything together at assets/_es6/main/app.js
+    -->
+    <script src="assets/js/codebase.app.min.js"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Page JS Helpers (Magnific Popup plugin) -->
+    <script>jQuery(function(){ Codebase.helpers('magnific-popup'); });</script>
+ @endpush
  

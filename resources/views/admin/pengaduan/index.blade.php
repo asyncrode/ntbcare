@@ -177,8 +177,14 @@
                         <div class="d-flex align-item-center" style="height: 290px">
                             <img class="p-0 img-fluid img-thumb " src="{{ asset('upload/aduan/'.$d->bukti) }}" alt="">
                         </div>
-                        <p class="mb-10 mt-10">
-                            {{$d->pesan}} <br> <br>
+                        <p class="mb-10 mt-10 mr-10" style="text-align: justify">
+                            {!!Str::limit($d->pesan, 200)!!}
+                            <em>
+                                <b class="link-effect font-w600" href="{{route('pengaduan.detailaduan',$d->id)}}">
+                                    see more.
+                                </b>
+                            </em>
+                            <br>
                         </p>
                     </div>
                     

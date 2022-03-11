@@ -16,10 +16,10 @@ use Auth;
 
 class ListaduanController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
         $aduan = Aduan::all()->sortByDesc('created_at');
@@ -30,7 +30,7 @@ class ListaduanController extends Controller
 
     public function listpengaduanku()
     {
-        $aduan = Aduan::where('id_pelapor',Auth::user()->id)->get();
+        $aduan = Aduan::where('id_pelapor', Auth::user()->id)->get();
         $kategori = Kategori::all();
         $sub = Subkategori::all();
         return view('user.pengaduanku.index', compact('aduan', 'kategori', 'sub'));
@@ -42,7 +42,7 @@ class ListaduanController extends Controller
         $sub = Subkategori::all();
         $user = User::all();
         $komentar = Komentar::where('id_aduan', $id)->orderBy('created_at')->get();
-        
-        return view('user.pengaduanku.detail', compact('aduan', 'kategori', 'sub', 'user','komentar'));
+
+        return view('user.pengaduanku.detail', compact('aduan', 'kategori', 'sub', 'user', 'komentar'));
     }
 }
