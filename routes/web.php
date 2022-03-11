@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.home');
-})->name('landing');
+Route::get('/', 'User\HomeController@index')->name('landing');
 
 Route::get('/pengaduan', 'User\PengaduanController@index')->name('pengaduan.index');
 Route::get('/listaduan', 'User\ListaduanController@index')->name('listaduan.index');
-Route::get('/pengaduanku', 'User\ListaduanController@listpengaduanku')->name('pengaduanku.index');
-Route::get('/pengaduanku/{id}', 'User\ListaduanController@listaduan')->name('pengaduanku.detail');
+Route::get('/pengaduanku', 'User\ListaduanController@listpengaduanku')->middleware('auth')->name('pengaduanku.index');
+Route::get('/pengaduanku/{id}', 'User\ListaduanController@listaduan')->middleware('auth')->name('pengaduanku.detail');
 Route::get('/untoldstory', 'User\StoryController@index')->name('user.story.index');
 Route::get('/untoldstory/detail/{id}', 'User\StoryController@detailStory')->name('user.story.detail');
 
