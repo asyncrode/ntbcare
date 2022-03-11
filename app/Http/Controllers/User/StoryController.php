@@ -12,11 +12,9 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $untold = Untold::all()->sortByDesc('created_at');
-        $gambar = UntoldGambar::all();
-        $video = UntoldVideo::all();
-
-        return view('user.story.index', compact('untold', 'gambar', 'video'));
+        $untold = Untold::with('gambar')->has('gambar')->orderBy('created_at','desc')->simplePaginate(3);
+        $video =  Untold::with('video')->has('video')->orderBy('created_at','desc')->get();
+        return view('user.story.index', compact('untold','video'));
     }
 
     public function detailStory($id)

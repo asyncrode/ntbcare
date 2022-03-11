@@ -13,11 +13,11 @@ class Untold extends Model
 
     public function gambar()
     {
-        return $this->hasMany(UntoldGambar::class, 'id');
+        return $this->hasMany(UntoldGambar::class,'id_untold');
     }
 
     public function video()
     {
-        return $this->hasMany(UntoldVideo::class, 'id');
+        return $this->hasMany(UntoldVideo::class, 'id_untold');
     }
 }

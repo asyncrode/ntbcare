@@ -13,6 +13,6 @@ class UntoldGambar extends Model
 
     public function untold()
     {
-        return $this->belongsTo(Untold::class, 'id_untold');
+        return $this->belongsTo(Untold::class,'id');
     }
 }
