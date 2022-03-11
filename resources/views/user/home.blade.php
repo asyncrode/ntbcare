@@ -41,9 +41,9 @@
     <!-- END Hero -->
 
     <main id="main-container">
-        <div class="text-center pt-30 pb-0 mb-0">  
+        {{-- <div class="text-center pt-30 pb-0 mb-0">  
             <h3 class="font-w700 text-dark">Untold Story</h3>
-        </div>
+        </div> --}}
         <!-- Blog and Sidebar -->
         <div class="content pt-0 mt-0">
             <div class="row items-push py-30">
@@ -134,26 +134,37 @@
                         <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
                     </div> --}}
 
-                    <h2 class="content-heading">Gallery <small>Advanced</small></h2>
-                    <div class="row items-push js-gallery">
+                    <h2 class="font-w700 content-heading mt-10" data-toggle="appear" data-class="animated fadeInRight" style="font-size: 190%"><span class="text-dual-primary-dark px-0">untold</span><span class="text-primary">story</span></h2>
+                    <div class="row items-push js-gallery ">
                         
-                        @foreach ($gambar as $u)
+                        @foreach ($untold as $u)
+                        @if ($u->gambar->isEmpty())
+
+                        @else
                         {{-- {{var_dump($u->gambar)}} --}}
-                            <div class="col-md-6 col-lg-3  animated fadeIn">
+                            <div class="col-md-6 col-lg-3  invisible" data-toggle="appear" data-class="animated fadeInRight">
                                 <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                    <img class="img-fluid img-responsive options-item" src="{{ asset('upload/untold_gambar/'.$u->gambar) }}" alt="" style="height: 200px; width:100%; object-fit:fill; display:">
+                                    <img class="img-fluid img-responsive options-item" src="{{ asset('upload/untold_gambar/'.$u->gambar[0]['gambar']) }}" alt="" style="height: 200px; width:100%; object-fit:fill; display:">
                                     <div class="options-overlay bg-black-op-75">
                                         <div class="options-overlay-content">
-                                            <h3 class="h4 text-white mb-5">Image</h3>
-                                            <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                            <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo16@2x.jpg">
-                                                <i class="fa fa-search-plus"></i> View
+                                            <h3 class="h5 text-white mb-10">{{$u->judul}}</h3>
+                                            <h4 class="h6 text-white-op mb-15">
+                                                <span class="mr-15 ">
+                                                    
+                                                        <i class="fa fa-fw fa-calendar"></i>
+                                                        <?= date('M d, Y', strtotime($u->created_at));?>
+                                                    
+                                                </span>
+                                            </h4>
+                                            <a class="btn btn-sm btn-rounded btn-noborder btn-success min-width-60 img-lightbox" href="{{route('user.story.detail', $u->id)}}">
+                                                Read
                                             </a>
-                                            <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                            {{-- <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a> --}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        @endif
                         @endforeach
                         
                         {{-- <div class="col-md-6 col-lg-4  animated fadeIn">
@@ -323,11 +334,11 @@
                         </div> --}}
                     </div>
                     
-                    <nav class="clearfix push text-center">
+                    <nav class="clearfix push">
                         {{-- <a class="btn btn-secondary min-width-100 float-right" href="{{route('user.story.index')}}">
                             See More
                         </a> --}}
-                        <a class="btn btn-noborder btn-rounded btn-info mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('user.story.index')}}">
+                        <a class="btn btn-noborder btn-rounded btn-primary mr-5 mb-10 float-right invisible" data-toggle="appear" data-class="animated fadeInLeft" href="{{route('user.story.index')}}">
                             See More
                         </a>
                     </nav>

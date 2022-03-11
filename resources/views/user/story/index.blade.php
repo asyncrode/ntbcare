@@ -46,12 +46,6 @@
                         </div>
 
                         @endforeach
-                        {{-- <div class="d-flex justify-content-center">
-                            <img class="img-fluid" src="assets/media/photos/photo14.jpg" alt="">
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <img class="img-fluid" src="assets/media/photos/photo24.jpg" alt="">
-                        </div> --}}
                     </div>
                 </div>
                 <!-- content -->
