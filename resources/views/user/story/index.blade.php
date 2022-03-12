@@ -58,8 +58,8 @@
                 @else
                 <div class="mb-50 ">
 
-                    <div class="overflow-hidden rounded mb-20 d-flex " style="max-height: 300px;">
-                        <a class="img-link invisible" data-toggle="appear" data-class="animated fadeInUp"
+                    <div class="overflow-hidden rounded mb-20 d-flex invisible" data-toggle="appear" data-class="animated fadeInUp" style="max-height: 300px;">
+                        <a class="img-link " >
                             href="javascript:void(0)">
                             <img class="img-fluid" src="{{ asset('upload/untold_gambar/'.$g->gambar[0]['gambar']) }}"
                                 alt="">

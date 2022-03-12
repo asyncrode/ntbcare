@@ -143,7 +143,7 @@
                         @else
                         {{-- {{var_dump($u->gambar)}} --}}
                             <div class="col-md-6 col-lg-3  invisible" data-toggle="appear" data-class="animated fadeInRight">
-                                <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
+                                <div class="options-container fx-overlay-slide-down">
                                     <img class="img-fluid img-responsive options-item" src="{{ asset('upload/untold_gambar/'.$u->gambar[0]['gambar']) }}" alt="" style="height: 200px; width:100%; object-fit:fill; display:">
                                     <div class="options-overlay bg-black-op-75">
                                         <div class="options-overlay-content">
@@ -156,7 +156,7 @@
                                                     
                                                 </span>
                                             </h4>
-                                            <a class="btn btn-sm btn-rounded btn-noborder btn-success min-width-60 img-lightbox" href="{{route('user.story.detail', $u->id)}}">
+                                            <a class="btn btn-sm btn-rounded btn-noborder btn-success min-width-60 " href="{{route('user.story.detail', $u->id)}}">
                                                 Read
                                             </a>
                                             {{-- <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a> --}}

@@ -12,20 +12,19 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $untold = Untold::with('gambar')->has('gambar')->orderBy('created_at','desc')->simplePaginate(3);
-        $video =  Untold::with('video')->has('video')->orderBy('created_at','desc')->get();
-        return view('user.story.index', compact('untold','video'));
+        $untold = Untold::with('gambar')->has('gambar')->orderBy('created_at', 'desc')->simplePaginate(3);
+        $video =  Untold::with('video')->has('video')->orderBy('created_at', 'desc')->get();
+        return view('user.story.index', compact('untold', 'video'));
     }
 
     public function detailStory($id)
     {
         // $aduan = Aduan::where('aduans.id', $id)->first();
-        $untold = Untold::where('untolds.id', $id)->first();
-        $gambar = UntoldGambar::where('id_untold', $id)->get();
-        $gambarD = UntoldGambar::all();
-        $video = UntoldVideo::all();
+        $untold = Untold::with('gambar')->has('gambar')->orderBy('created_at', 'desc')->get();
+        $video =  Untold::with('video')->has('video')->orderBy('created_at', 'desc')->get();
         $detail = Untold::find($id);
+        $gambar = UntoldGambar::all();
 
-        return view('user.story.detail', compact('detail', 'untold', 'gambar', 'video', 'gambarD'));
+        return view('user.story.detail', compact('detail', 'untold', 'video', 'gambar'));
     }
 }
