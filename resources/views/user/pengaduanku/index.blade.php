@@ -6,7 +6,7 @@
             <i class="fa fa-fw fa-commenting text-dark"></i>Pengaduanku
         </h6>
         <h6 class="text-muted mb-0">
-            Saat ini kamu memiliki {{$aduan->count()}} Aduan <a href="{{route('pengaduan.index')}}">Buat Pengaduan Baru</a>.
+            Halo {{Auth::user()->name}} saat ini kamu memiliki {{$aduan->count()}} Aduan <a href="{{route('pengaduan.index')}}">Buat Pengaduan Baru</a>.
         </h6>
     </div>
     <div class="js-filter">

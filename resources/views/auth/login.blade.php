@@ -149,6 +149,9 @@
                                     <div class="col-12 mb-10">
                                         <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Login with Google+</a>
                                     </div>
+                                    <div class="col-12 mb-10">
+                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary btn-facebook"  ><i class="fa fa-fw fa-facebook fa-1x"></i> Login with Facebook</a>
+                                    </div>
                                     @if (Route::has('password.request'))
                                     <div class="col-sm-12 mb-5">
                                         <a class="btn btn-block btn-noborder btn-rounded "
