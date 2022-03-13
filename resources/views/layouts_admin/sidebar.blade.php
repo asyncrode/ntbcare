@@ -166,11 +166,11 @@
                             <a href="{{route('laporan.index.wilayah')}}">Rincian per Wilayah</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rincian per OPD/Instansi</a>
+                            <a href="{{route('laporan.index.opd')}}">Rincian per OPD/Instansi</a>
                         </li>
-                        {{-- <li>
-                            <a href="javascript:void(0)">Rincian per Wilayah</a>
-                        </li> --}}
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Status</a>
+                        </li>
                     </ul>
                 </li>
                 
