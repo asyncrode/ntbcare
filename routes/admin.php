@@ -125,4 +125,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/store', 'Admin\UntoldController@store')->name('untold.admin.store');
         Route::post('/store-video', 'Admin\UntoldController@store_video')->name('untold.admin.store.video');
     });
+
+    Route::group(['prefix' => 'sosmed', 'middleware' => ['role:super-admin']], function () {
+        Route::get('/', 'Admin\PengaduanSosmedController@get')->name('');
+    });
 });
