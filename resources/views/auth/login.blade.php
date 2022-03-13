@@ -35,6 +35,39 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
     <!-- END Stylesheets -->
+    <style>
+            .strike {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap; 
+        }
+
+        .strike > span {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .strike > span:before,
+        .strike > span:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 150px;
+            height: 1px;
+            background: #989898;
+        }
+
+        .strike > span:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        .strike > span:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -109,7 +142,7 @@
                             <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="form-group row">
+                                <div class="form-group row mx-5">
                                     <div class="col-12">
                                         <div class="form-material floating">
                                             <input id="email" type="email"
@@ -124,7 +157,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row mx-5 mb-30">
                                     <div class="col-12">
                                         <div class="form-material floating">
                                             <input d="password" type="password"
@@ -139,18 +172,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row gutters-tiny">
+                                <div class="form-group row gutters-tiny mx-5">
                                     <div class="col-12 mb-10">
                                         <button type="submit"
                                             class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary">
-                                            <i class="fa fa-fw fa-sign-in"></i> Sign In
+                                            Login
                                         </button>
                                     </div>
-                                    <div class="col-12 mb-10">
-                                        <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Login with Google+</a>
+                                    <div class="col-12 mt-10 mb-20 strike">
+                                        <span>or Login with</span>
                                     </div>
-                                    <div class="col-12 mb-10">
-                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary btn-facebook"  ><i class="fa fa-fw fa-facebook fa-1x"></i> Login with Facebook</a>
+                                    <div class="col-6 mb-10">
+                                        <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Google+</a>
+                                    </div>
+                                    <div class="col-6 mb-10">
+                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-primary btn-facebook"  ><i class="fa fa-fw fa-facebook fa-1x"></i> Facebook</a>
                                     </div>
                                     @if (Route::has('password.request'))
                                     <div class="col-sm-12 mb-5">
