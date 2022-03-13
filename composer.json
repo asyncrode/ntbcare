@@ -16,6 +16,7 @@
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
+        "scottybo/laravel-facebook-sdk": "^5.1",
         "spatie/laravel-permission": "^5.5",
         "yajra/laravel-datatables-oracle": "^9.19"
     },
