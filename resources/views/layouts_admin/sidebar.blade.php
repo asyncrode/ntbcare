@@ -160,10 +160,10 @@
                             <a href="{{route('laporan.index')}}">Rincian per Kategori</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rincian per Subkategori</a>
+                            <a href="{{route('laporan.index.subkategori')}}">Rincian per Subkategori</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rincian per Wilayah</a>
+                            <a href="{{route('laporan.index.wilayah')}}">Rincian per Wilayah</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Rincian per OPD/Instansi</a>

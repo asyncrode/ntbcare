@@ -22,7 +22,7 @@ class Aduan extends Model
         return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
-    public function sub()
+    public function subkategori()
     {
         return $this->belongsTo(Subkategori::class, 'id_subkategori');
     }

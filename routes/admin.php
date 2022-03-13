@@ -117,6 +117,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/getLaporan', 'Admin\LaporanController@getLaporan')->name('laporan.data');
         Route::get('/laporan/status', 'Admin\LaporanController@index_status')->name('laporan.index.status');
         Route::get('/getLaporanStatus', 'Admin\LaporanController@getLaporanStatus')->name('laporan.data.status');
+        Route::get('/laporan/subkategori', 'Admin\LaporanController@index_subkategori')->name('laporan.index.subkategori');
+        Route::get('/getLaporanSub', 'Admin\LaporanController@getLaporanSub')->name('laporan.data.subkategori');
+        Route::get('/laporan/wilayah', 'Admin\LaporanController@index_wilayah')->name('laporan.index.wilayah');
+        Route::get('/getLaporanWilayah', 'Admin\LaporanController@getLaporanWilayah')->name('laporan.data.wilayah');
     });
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {
