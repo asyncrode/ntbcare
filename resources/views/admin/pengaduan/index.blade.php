@@ -170,7 +170,7 @@
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
                             {{-- <span class="text-muted">{{$d->wilayah->nama_will}}</span> <br> --}}
-                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->sub->subkategori}}</span><br>
+                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->subkategori->subkategori}}</span><br>
                         </p>
                     </div>
                     <div class="block-content mb-10">
@@ -237,10 +237,10 @@
                 {{-- ($aduan->where('id_pelapor','=',Auth::user()->id)->get() as $d) --}}
                 @foreach ($aduan as $s)
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-category-link="{{$s->sub->id}}">
+                    <a class="nav-link" href="#" data-category-link="{{$s->subkategori->id}}">
                         <i class="fa fa-fw fa-th"></i> 
-                        {{$s->sub->subkategori}}
-                        <span class="text-light badge badge-secondary ml-5" data-toggle="countTo" data-to="{{$s->where('id_subkategori','=',$s->sub->id)->count()}}">
+                        {{$s->subkategori->subkategori}}
+                        <span class="text-light badge badge-secondary ml-5" data-toggle="countTo" data-to="{{$s->where('id_subkategori','=',$s->subkategori->id)->count()}}">
                             0
                         </span>
                     </a>
@@ -300,7 +300,7 @@
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
                             {{-- <span class="text-muted">{{$d->wilayah->nama_will}}</span> <br> --}}
-                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->sub->subkategori}}</span><br>
+                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->subkategori->subkategori}}</span><br>
                         </p>
                     </div>
                     <div class="block-content mb-10">

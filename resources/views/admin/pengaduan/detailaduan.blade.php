@@ -188,7 +188,7 @@
                                 </tr>
                                 <tr>
                                     <td class="font-w600">Subkategori</td>
-                                    <td class="font-w600">{{$aduan->sub->subkategori}}</td>
+                                    <td class="font-w600">{{$aduan->subkategori->subkategori}}</td>
                                 </tr>
                                 <tr>
                                     <td class="font-w600">Lokasi</td>

@@ -121,6 +121,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/getLaporanSub', 'Admin\LaporanController@getLaporanSub')->name('laporan.data.subkategori');
         Route::get('/laporan/wilayah', 'Admin\LaporanController@index_wilayah')->name('laporan.index.wilayah');
         Route::get('/getLaporanWilayah', 'Admin\LaporanController@getLaporanWilayah')->name('laporan.data.wilayah');
+        Route::get('/laporan/opd', 'Admin\LaporanController@index_opd')->name('laporan.index.opd');
+        Route::get('/getLaporanOpd', 'Admin\LaporanController@getLaporanOpd')->name('laporan.data.opd');
+    });
+
+    Route::group(['prefix' => 'rekap', 'middleware' => ['role:super-admin']], function () {
+        Route::get('/', 'Admin\RekapController@index')->name('rekap.index');
+        Route::get('/getRekap', 'Admin\RekapController@getRekap')->name('rekap.data');
     });
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {
