@@ -49,12 +49,11 @@ class LaporanController extends Controller
                         return $laporan->aduan->status;
                     }
                 })
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                    return $btn;
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('kategori'))) {
@@ -71,7 +70,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['action', 'kategori'])
+                ->rawColumns(['kategori','bukti'])
                 ->make(true);
         }
     }
@@ -114,12 +113,11 @@ class LaporanController extends Controller
                         return $laporan->aduan->alamat;
                     }
                 })
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                    return $btn;
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('status'))) {
@@ -136,7 +134,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['action', 'status'])
+                ->rawColumns(['status','bukti'])
                 ->make(true);
         }
     }
@@ -172,12 +170,11 @@ class LaporanController extends Controller
                         return $laporan->aduan->status;
                     }
                 })
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                    return $btn;
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('subkategori'))) {
@@ -194,7 +191,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['action', 'subkategori'])
+                ->rawColumns(['bukti','subkategori'])
                 ->make(true);
         }
     }
@@ -230,12 +227,11 @@ class LaporanController extends Controller
                         return $laporan->aduan->status;
                     }
                 })
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                    return $btn;
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('wilayah'))) {
@@ -252,7 +248,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['action', 'wilayah'])
+                ->rawColumns(['bukti', 'wilayah'])
                 ->make(true);
         }
     }
@@ -292,12 +288,11 @@ class LaporanController extends Controller
                         return $laporan->aduan->status;
                     }
                 })
-                ->addColumn('action', function ($row) {
-                    $btn = '';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
-                    $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="delete" type="button" class="delete btn btn-danger btn-sm m-1" tittle="Hapus"><i class="fa fa-trash" ></i></button>';
-
-                    return $btn;
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
                 })
                 ->filter(function ($instance) use ($request) {
                     if (!empty($request->get('opd'))) {
@@ -314,7 +309,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['action', 'id_opd'])
+                ->rawColumns(['bukti', 'id_opd'])
                 ->make(true);
         }
     }

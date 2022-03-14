@@ -30,7 +30,7 @@
                 {data: 'id_kategori', name: 'id_kategori'},
                 {data: 'status', name: 'status'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'action', name: 'action', orderable: false, searchable: false},
+                {data: 'bukti', name: 'bukti'},
             ]
         });
         // End Show

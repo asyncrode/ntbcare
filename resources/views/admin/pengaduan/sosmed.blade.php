@@ -64,8 +64,9 @@
         <!-- Projects -->
         <div class="row row-deck" >
             
-            @foreach ($aduan_sosmed as $d)
-            {{-- {{var_dump($d->visitor_posts)}} --}}
+            @foreach ($data_sosmed as $d)
+           
+            
             <div class="col-sm-4" data-category="">
                 
                 <a class="block block-link-pop " href="">
@@ -73,10 +74,10 @@
                     <div class="block-header block-header-default ribbon ribbon-info">
                         <img class="img-avatar img-avatar48 mr-10" src="{{asset('assets_user/media/avatars/avatar9.jpg')}}" alt="">
                         <h3 class="block-title" style="line-height: 1.3">
-                            <small class="text-capitalize text-dark"><b>{{$d->user->name}}</b></small>
-                            <small><span class="text-muted">&bull; Time</span></small>
+                            <small class="text-capitalize text-dark"><b></b></small>
+                            <small><span class="text-muted">&bull; {{$d['created_time']->format('Y-m-d H:i:s')}}</span></small>
                             <br>
-                            <small class="text-muted mt-0">Wilayah</small>
+                            
                             <br>
                             
                         </h3>
@@ -99,25 +100,26 @@
                             @endif
                         @endif --}}
                     </div>
-                    <div class="block-header block-header-default pt-0">
-                        <p class="m-0">
-                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i>Subkategori</span><br>
-                        </p>
-                    </div>
                     <!-- Picture and Img -->
                     <div class="block-content mb-10">
-                        <div class="d-flex align-item-center" style="height: 290px">
-                            <img class="p-0 img-fluid img-thumb " src="{{$d->visitor_posts->picture}}" alt="">
-                        </div>
-                        <p class="mb-10 mt-10 mr-10" style="text-align: justify">
-                            {!!Str::limit($d->visitor_posts->message, 200)!!}
-                            <em>
-                                <b class="link-effect font-w600" href="{{route('pengaduan.detailaduan',$d->id)}}">
-                                    see more.
-                                </b>
-                            </em>
-                            <br>
-                        </p>
+                        @isset($d['full_picture'])
+                            <div class="d-flex align-item-center" style="height: 290px">
+                                <img class="p-0 img-fluid img-thumb " src="{{$d['full_picture']}}" alt="">
+                            </div>
+                        @endisset
+                        
+                        @isset($d['message'])
+                            <p class="mb-10 mt-10 mr-10" style="text-align: justify">
+                                {!!Str::limit($d['message'], 200)!!}
+                                <em>
+                                    {{-- <b class="link-effect font-w600" href="{{route('pengaduan.detailaduan')}}">
+                                        see more.
+                                    </b> --}}
+                                </em>
+                                <br>
+                            </p>
+                        @endisset
+                        
                     </div>
                     
                 </a>

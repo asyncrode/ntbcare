@@ -30,7 +30,7 @@
                 {data: 'id_opd', name: 'id_opd'},
                 {data: 'status', name: 'status'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'action', name: 'action', orderable: false, searchable: false},
+                {data: 'bukti', name: 'bukti'},
             ]
         });
         // End Show

@@ -139,6 +139,6 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'sosmed', 'middleware' => ['role:super-admin']], function () {
-        Route::get('/', 'Admin\PengaduanSosmedController@get')->name('');
+        Route::get('/', 'Admin\PengaduanSosmedController@get')->name('pengaduan.sosmed');
     });
 });

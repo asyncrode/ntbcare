@@ -24,7 +24,7 @@
                 {data: 'id_admin', name: 'id_admin'},
                 {data: 'id_wilayah', name: 'id_wilayah'},
                 {data: 'created_at', name: 'created_at'},
-                {data: 'action', name: 'action', orderable: false, searchable: false},
+                {data: 'bukti', name: 'bukti'},
             ]
         });
         // End Show
