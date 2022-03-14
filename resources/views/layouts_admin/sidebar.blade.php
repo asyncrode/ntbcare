@@ -150,6 +150,10 @@
                         <span class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
+                    <a href="{{route('pengaduan.sosmed')}}"><i class="fa fa-facebook"></i>Pengaduan Facebook</span></a>
+                    
+                </li>
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>
@@ -166,11 +170,11 @@
                             <a href="{{route('laporan.index.wilayah')}}">Rincian per Wilayah</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rincian per OPD/Instansi</a>
+                            <a href="{{route('laporan.index.opd')}}">Rincian per OPD/Instansi</a>
                         </li>
-                        {{-- <li>
-                            <a href="javascript:void(0)">Rincian per Wilayah</a>
-                        </li> --}}
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Status</a>
+                        </li>
                     </ul>
                 </li>
                 

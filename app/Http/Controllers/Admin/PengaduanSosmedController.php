@@ -13,18 +13,22 @@ class PengaduanSosmedController extends Controller
         $this->middleware('auth:admin');
     }
 
+
+
     public function get()
     {
-        $token = 'EAAHFT0ZCIrsMBAKIBge0Uu4rCVo8SUkIhA2ZCwdb1cvAvZC1cuajxGctWP7YfM86zZB3RCGsXeqKUkEBrZCyTEvF8DRWt0wBWTbwKmqtITZBpzhgH8bkdxg26uuiUZBBEaVwoDMwFlMHobboSgRw5f53xkhQCHZBGOE9aEdUkt8NoNI9th4ZAO5PodvXHCsF4ZB27uHBgd2NEu3AZDZD';
-        
+        $token = 'EAAHFT0ZCIrsMBADhfSFeqAtNZC8gzgU2P5AirtCk6fen3A3YYlT4xSUPBYZCZAEE2e110Ud3waHlYZAM4DqIlCJbjUx4DVMqgPysW9EcIcWUierNa6sIsIueGcnkbP5w5ZCH537D8JJOPt3Yw86x7idZB2hwxKaiLtHovGrlzXmVTMjAZCh85pX5ciul2iSHv5gM96gBrkYfJAZDZD';
+
         try {
-            $response = Facebook::get('/me?fields=id,name,visitor_posts{message,picture,created_time}', $token);
-          } catch(\Facebook\Exceptions\FacebookSDKException $e) {
-            dd($e->getMessage());
-          }
-          
-          $aduan_sosmed = $response->getGraphUser();
-          dd($aduan_sosmed->getProperty('visitor_posts')->asArray());
-          return view('',compact('aduan_sosmed'));
+        $response = Facebook::get('/me?fields=id,name,visitor_posts{message,full_picture,created_time}', $token);
+        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
+        dd($e->getMessage());
+        }
+
+        $aduan_sosmed = $response->getGraphUser();
+        $data_sosmed = array();
+        $data_sosmed = $aduan_sosmed->getProperty('visitor_posts')->asArray();
+        // dd($response);
+        return view('admin.pengaduan.sosmed', compact('data_sosmed'));
     }
 }

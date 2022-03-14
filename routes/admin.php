@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/detail/{id}', 'Admin\PengaduanController@detail')->middleware('auth:admin')->name('pengaduan.detailaduan');
     Route::put('/pengaduan/status/{id}', 'Admin\PengaduanController@editstat')->middleware('auth:admin')->name('pengaduan.admin.stat');
     Route::delete('/delete/{id}', 'Admin\PengaduanController@delete')->middleware('auth:admin')->name('pengaduan.detailaduan.delete');
+    Route::get('/pengaduansosmed', 'Admin\PengaduanSosmedController@get')->middleware('auth:admin')->name('aduansosmed.admin.index');
 
     Route::post('/pengaduan/komentar', 'Admin\KomentarController@store')->middleware('auth:admin')->name('admin.komentar.store');
     Route::delete('/pengaduan/komentar/delete', 'Admin\KomentarController@delete')->middleware('auth:admin')->name('admin.komentar.delete');
@@ -121,6 +122,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/getLaporanSub', 'Admin\LaporanController@getLaporanSub')->name('laporan.data.subkategori');
         Route::get('/laporan/wilayah', 'Admin\LaporanController@index_wilayah')->name('laporan.index.wilayah');
         Route::get('/getLaporanWilayah', 'Admin\LaporanController@getLaporanWilayah')->name('laporan.data.wilayah');
+        Route::get('/laporan/opd', 'Admin\LaporanController@index_opd')->name('laporan.index.opd');
+        Route::get('/getLaporanOpd', 'Admin\LaporanController@getLaporanOpd')->name('laporan.data.opd');
+    });
+
+    Route::group(['prefix' => 'rekap', 'middleware' => ['role:super-admin']], function () {
+        Route::get('/', 'Admin\RekapController@index')->name('rekap.index');
+        Route::get('/getRekap', 'Admin\RekapController@getRekap')->name('rekap.data');
     });
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {
@@ -131,6 +139,6 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'sosmed', 'middleware' => ['role:super-admin']], function () {
-        Route::get('/', 'Admin\PengaduanSosmedController@get')->name('');
+        Route::get('/', 'Admin\PengaduanSosmedController@get')->name('pengaduan.sosmed');
     });
 });

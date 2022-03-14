@@ -3,7 +3,7 @@
         var idEdit = 0;
 
         // Show Data
-        var table = $('.tableLaporan').DataTable({
+        var table = $('.tableLaporanOpd').DataTable({
             processing: true,
             serverSide: true,
             searching:  true,
@@ -12,9 +12,9 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             ajax: {
-            url: "{{ route('laporan.data') }}",
+            url: "{{ route('laporan.data.opd') }}",
             data: function (d) {
-                    d.kategori = $('#kategori').val()
+                    d.opd = $('#opd').val()
                     d.awal = $('input[name=awal]').val();
                     d.akhir = $('input[name=akhir]').val();
                 }
@@ -27,7 +27,7 @@
             columns: [
                 {data: 'id_pelapor', name: 'id_pelapor'},
                 {data: 'pesan', name: 'pesan'},
-                {data: 'id_kategori', name: 'id_kategori'},
+                {data: 'id_opd', name: 'id_opd'},
                 {data: 'status', name: 'status'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'bukti', name: 'bukti'},
@@ -36,7 +36,7 @@
         // End Show
 
         // Filter Select
-        $('#kategori').change(function(){
+        $('#opd').change(function(){
             console.log('oke')
             table.draw();
         });
