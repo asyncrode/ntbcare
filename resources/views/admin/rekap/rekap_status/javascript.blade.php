@@ -12,13 +12,12 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             ajax: {
-            url: "{{ route('rekap.data') }}",
-            
+                url: "{{ route('rekap.data') }}"
             },
             
             columns: [
-                {data: 'waiting', name: 'waiting'},
-                
+                {data: 'total', name: 'total'},
+                {data: 'waiting', name: 'waiting'}   
             ]
         });
         // End Show

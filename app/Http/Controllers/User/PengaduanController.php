@@ -39,7 +39,7 @@ class PengaduanController extends Controller
 
     public function getWilayah()
     {
-        $wilayah = Wilayah::all();
+        $wilayah = Wilayah::all()->where('id', '!=', 'P');
         return response()->json($wilayah, 200);
     }
 
