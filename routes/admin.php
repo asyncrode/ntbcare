@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/detail/{id}', 'Admin\PengaduanController@detail')->middleware('auth:admin')->name('pengaduan.detailaduan');
     Route::put('/pengaduan/status/{id}', 'Admin\PengaduanController@editstat')->middleware('auth:admin')->name('pengaduan.admin.stat');
     Route::delete('/delete/{id}', 'Admin\PengaduanController@delete')->middleware('auth:admin')->name('pengaduan.detailaduan.delete');
+    Route::get('/pengaduansosmed', 'Admin\PengaduanSosmedController@get')->middleware('auth:admin')->name('aduansosmed.admin.index');
 
     Route::post('/pengaduan/komentar', 'Admin\KomentarController@store')->middleware('auth:admin')->name('admin.komentar.store');
     Route::delete('/pengaduan/komentar/delete', 'Admin\KomentarController@delete')->middleware('auth:admin')->name('admin.komentar.delete');
