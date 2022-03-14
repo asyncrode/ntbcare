@@ -150,6 +150,10 @@
                         <span class="sidebar-mini-hide">Pengaduan</span></a>
                 </li>
                 <li>
+                    <a href="{{route('pengaduan.sosmed')}}"><i class="fa fa-facebook"></i>Pengaduan Facebook</span></a>
+                    
+                </li>
+                <li>
                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
                             class="sidebar-mini-hide">Report Filtering</span></a>
                     <ul>

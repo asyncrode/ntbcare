@@ -39,7 +39,7 @@
                         <th class="d-none d-sm-table-cell" style="width: 15%;">subkategori</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">status</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;">dikirim pada</th>
-                        <th class="text-center" style="width: 15%;">action</th>
+                        <th class="text-center" style="width: 15%;">bukti</th>
                     </tr>
                 </thead>
             </table>
