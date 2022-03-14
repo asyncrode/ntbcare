@@ -17,7 +17,7 @@ class PengaduanSosmedController extends Controller
 
     public function get()
     {
-        $token = 'EAAHFT0ZCIrsMBADhfSFeqAtNZC8gzgU2P5AirtCk6fen3A3YYlT4xSUPBYZCZAEE2e110Ud3waHlYZAM4DqIlCJbjUx4DVMqgPysW9EcIcWUierNa6sIsIueGcnkbP5w5ZCH537D8JJOPt3Yw86x7idZB2hwxKaiLtHovGrlzXmVTMjAZCh85pX5ciul2iSHv5gM96gBrkYfJAZDZD';
+        $token = 'EAAHFT0ZCIrsMBAG3NhmwAcnbp6RK4lCgBGBQMcr7vtN6e4jVADqlT4hE96D9bGeedTHJ8PlbjbLCZCy35xGs4cF0oo9YhoGeYmawKJKMy9e9TxbjXQ32vT8wRGPjICXhZAEf7GUV03bCsoQEtLa6rdwi00wOVnG0ceOuImXW1mmRDwBPwZCY3GZAvgaXWKhHykTnyc6fk6QZDZD';
 
         try {
         $response = Facebook::get('/me?fields=id,name,visitor_posts{message,full_picture,created_time}', $token);
