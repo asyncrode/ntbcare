@@ -17,7 +17,7 @@
                         <th class="d-none d-sm-table-cell text-center">admin opd</th>
                         <th class="d-none d-sm-table-cell text-center">wilayah</th>
                         <th class="d-none d-sm-table-cell text-center" style="width: 15%;">terdaftar</th>
-                        <th class="text-center" style="width: 15%;">bukti</th>
+                        <th class="text-center" style="width: 15%;">action</th>
                     </tr>
                 </thead>
             </table>
