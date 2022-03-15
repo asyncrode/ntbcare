@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Komentar;
 use App\Models\Wilayah;
 use App\Models\Opd;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -28,7 +29,8 @@ class DashboardController extends Controller
         $kategori = Kategori::all();
         $user = User::all();
         $sub = Subkategori::all();
+        $today = Aduan::whereDate('created_at', '=', Carbon::today())->get();
 
-        return view('admin/dashboard', compact('aduan', 'kategori', 'user', 'sub'));
+        return view('admin/dashboard', compact('aduan', 'kategori', 'user', 'sub', 'today'));
     }
 }

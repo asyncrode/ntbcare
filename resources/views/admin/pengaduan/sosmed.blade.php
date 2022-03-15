@@ -74,7 +74,7 @@
                     <div class="block-header block-header-default ribbon ribbon-info">
                         <img class="img-avatar img-avatar48 mr-10" src="{{asset('assets_user/media/avatars/avatar9.jpg')}}" alt="">
                         <h3 class="block-title" style="line-height: 1.3">
-                            <small class="text-capitalize text-dark"><b></b></small>
+                            <small class="text-capitalize text-dark"><b>{{$d['id']}}</b></small>
                             <small><span class="text-muted">&bull; {{$d['created_time']->format('Y-m-d H:i:s')}}</span></small>
                             <br>
                             
