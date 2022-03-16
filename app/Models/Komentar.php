@@ -13,7 +13,7 @@ class Komentar extends Model
 
     public function aduan()
     {
-        return $this->belongsTo(Aduan::class, 'id_aduan');
+        return $this->belongsTo(Aduan::class,'id');
     }
 
     public function user()

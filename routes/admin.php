@@ -124,6 +124,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/getLaporanWilayah', 'Admin\LaporanController@getLaporanWilayah')->name('laporan.data.wilayah');
         Route::get('/laporan/opd', 'Admin\LaporanController@index_opd')->name('laporan.index.opd');
         Route::get('/getLaporanOpd', 'Admin\LaporanController@getLaporanOpd')->name('laporan.data.opd');
+        Route::get('/laporan/komentar', 'Admin\LaporanController@index_komentar')->name('laporan.index.komentar');
+        Route::get('/getLaporanKomentar', 'Admin\LaporanController@getLaporanKomentar')->name('laporan.data.komentar');
     });
 
     Route::group(['prefix' => 'rekap', 'middleware' => ['role:super-admin']], function () {

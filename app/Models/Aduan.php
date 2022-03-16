@@ -49,6 +49,6 @@ class Aduan extends Model
 
     public function komentar()
     {
-        return $this->hasMany(Komentar::class, 'id');
+        return $this->hasMany(Komentar::class, 'id_aduan');
     }
 }
