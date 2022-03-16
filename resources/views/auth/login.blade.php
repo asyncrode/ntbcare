@@ -127,8 +127,9 @@
                     <!-- Header -->
                     <div class="py-50 px-5 text-center">
                         <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
-                            <a class="link-effect" href="{{route('landing')}}">
-                                <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span>
+                            <a href="{{route('landing')}}">
+                                {{-- <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span> --}}
+                                <img src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 120px">
                             </a>
                         </h1>
                         <h2 class="h4 font-w400 text-muted mb-0 invisible" data-toggle="appear" data-class="animated fadeInUp">Please sign in</h2>
@@ -175,7 +176,7 @@
                                 <div class="form-group row gutters-tiny mx-5">
                                     <div class="col-12 mb-10">
                                         <button type="submit"
-                                            class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary">
+                                            class="btn btn-block btn-hero btn-noborder btn-rounded btn-success">
                                             Login
                                         </button>
                                     </div>

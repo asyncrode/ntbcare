@@ -37,64 +37,6 @@
             </div>
         </div>
     </div>
-    {{-- <div class="bg-white push">
-        <div class="row text-center">
-            <div class="col-sm-2 py-20">
-                <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 1)->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Infrastruktur</div>
-            </div>
-            <div class="col-sm-2 py-20 text-warning">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Waiting</div>
-            </div>
-            <div class="col-sm-2 py-20 text-danger">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Rejected</div>
-            </div>
-            <div class="col-sm-2 py-20 text-info">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Approved</div>
-            </div>
-            <div class="col-sm-2 py-20 text-success">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">On Process</div>
-            </div>
-            <div class="col-sm-2 py-20 text-success">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Completed')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Completed</div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="bg-white push">
-        <div class="row text-center">
-            <div class="col-sm-2 py-20">
-                <div class="font-size-h1 font-w700 text-black pb-2" data-toggle="countTo" data-to="{{$aduan->where('id_kategori', '=', 2)->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Infrastruktur</div>
-            </div>
-            <div class="col-sm-2 py-20 text-warning">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Waiting')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Waiting</div>
-            </div>
-            <div class="col-sm-2 py-20 text-danger">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Rejected')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Rejected</div>
-            </div>
-            <div class="col-sm-2 py-20 text-info">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Approved')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Approved</div>
-            </div>
-            <div class="col-sm-2 py-20 text-success">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'On process')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">On Process</div>
-            </div>
-            <div class="col-sm-2 py-20 text-success">
-                <div class="font-size-h1 font-w700 pb-2" data-toggle="countTo" data-to="{{$aduan->where('status', '=', 'Completed')->count()}}">0</div>
-                <div class="font-w600 text-muted text-uppercase">Completed</div>
-            </div>
-            
-        </div>
-    </div> --}}
 
 
     <div class="js-filter">
@@ -137,7 +79,7 @@
                         <img class="img-avatar img-avatar48 mr-10" src="{{asset('assets_user/media/avatars/avatar9.jpg')}}" alt="">
                         <h3 class="block-title" style="line-height: 1.3">
                             <small class="text-capitalize text-dark"><b>{{$d->user->name}}</b></small>
-                            <small><span class="text-muted">&bull; <?= date('d-m-Y', strtotime($d->created_at)); ?></span></small>
+                            <small><span class="text-muted" style="font-size: 12px">&bull; <?= date('d-m-Y', strtotime($d->created_at)); ?></span></small>
                             <br>
                             <small class="text-muted mt-0">{{$d->wilayah->nama_will}}</small>
                             <br>
@@ -315,48 +257,6 @@
             </div>
             @endforeach
         </div>
-        {{-- <div class="row items-push img-fluid-100">
-            @foreach ($aduan as $d)
-
-            <div class="col-sm-6 col-md-3" data-category="{{$d->id_kategori}}">
-                <a class="block block-link-pop" href="javascript:void(0)">
-                    <div class="block-header">
-                        <h3 class="block-title">Title</h3>
-                    </div>
-                    <div class="block-content">
-                        <img class="img-fluid img-thumb" src="{{ asset('upload/aduan/'.$d->bukti) }}"
-                            alt="Project 12 Promo">
-                    </div>
-                </a>
-            </div>
-            @endforeach
-            <div class="col-sm-6 col-md-3" data-category="2">
-                <a class="img-link" href="be_pages_generic_project.html">
-                    <img class="img-fluid img-thumb" src="assets/media/various/cb-project-promo3.png"
-                        alt="Project 12 Promo">
-                </a>
-            </div>
-        </div> --}}
-
-
-        <!-- END Projects -->
-
-        <!-- Quick Stats -->
-        <!-- CountTo ([data-toggle="countTo"] is initialized in Helpers.coreAppearCountTo()) -->
-        <!-- For more info and examples you can check out https://github.com/mhuggins/jquery-countTo -->
-        {{-- <div class="bg-white push">
-            <div class="row text-center">
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="0">0</div>
-                    <div class="font-w600 text-muted text-uppercase">On Process</div>
-                </div>
-                <div class="col-sm-4 py-30">
-                    <div class="font-size-h1 font-w700 text-black" data-toggle="countTo" data-to="0">0</div>
-                    <div class="font-w600 text-muted text-uppercase">Completed</div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- END Quick Stats -->
     </div>
     @endhasrole
     <!-- END Project Filtering -->

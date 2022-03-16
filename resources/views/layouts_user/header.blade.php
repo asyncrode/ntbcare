@@ -7,7 +7,7 @@
             <div class="content-header-item">
                 <a class="link-effect font-w700 mr-5" href="{{route('landing')}}">
                     {{-- <i class="si si-fire text-primary"></i> --}}
-                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
+                    {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%"> --}}
                     <span class="font-size-xl text-black-op">ntb</span><span class="font-size-xl text-primary">care</span>
                 </a>
             </div>
