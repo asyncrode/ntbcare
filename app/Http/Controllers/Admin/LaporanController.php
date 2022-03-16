@@ -9,6 +9,7 @@ use App\Models\Kategori;
 use App\Models\Opd;
 use App\Models\Subkategori;
 use App\Models\Wilayah;
+use App\Models\Komentar;
 use DataTables;
 
 
@@ -310,6 +311,87 @@ class LaporanController extends Controller
                     }
                 }, true)
                 ->rawColumns(['bukti', 'id_opd'])
+                ->make(true);
+        }
+    }
+
+    public function index_komentar()
+    {
+        $opd = Opd::all();
+        return view('admin.laporan_komentar.index', compact('opd'));
+    }
+
+    public function getLaporanKomentar(Request $request)
+    {
+        // $laporan = Aduan::with('komentar')->get();
+        // $data = [];
+        // foreach($laporan as $d)
+        // {
+            
+        //     $data = $d['komentar'];
+           
+        // }
+        // dd($data);
+        if ($request->ajax()) {
+            $laporan = Aduan::with('komentar')->latest();
+            return Datatables::of($laporan)
+                ->addIndexColumn()
+                ->addColumn('created_at', function ($laporan) {
+
+                    return date('d-m-Y', strtotime($laporan->created_at));
+                })
+                ->addColumn('id_opd', function ($laporan) {
+                    if ($laporan->id_opd != null) {
+                        return $laporan->opd->nama;
+                    } else {
+                        $fx = '';
+                        $fx = $fx . '<span class="badge badge-danger">Aduan belum diteruskan</span>';
+                        return $fx;
+                    }
+                })
+                ->editColumn('komentar', function ($laporan) {
+                    if ($laporan != null) {
+                        $data = [];
+                        // foreach($laporan->komentar as $d)
+                        // {
+                        //     $data = $d->komentar;
+                        // }
+                        $data = json_decode($laporan->komentar , true);
+                        return $data;
+                    }
+                })
+                ->addColumn('id_pelapor', function ($laporan) {
+                    if ($laporan->id_pelapor != null) {
+                        return $laporan->user->name;
+                    }
+                })
+                ->addColumn('id_aduan', function ($laporan) {
+                    if ($laporan->id_aduan != null) {
+                        return $laporan->aduan->status;
+                    }
+                })
+                ->addColumn('bukti', function ($laporan) {
+                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $img = '';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    return $img;
+                })
+                ->filter(function ($instance) use ($request) {
+                    if (!empty($request->get('opd'))) {
+                        $instance->where('id_opd', $request->get('opd'))->latest();
+                    } else {
+                        $instance->select('*');
+                    }
+                    $awal = $request->get('awal');
+                    $akhir = $request->get('akhir');
+
+                    if (!empty($awal) and !empty($akhir)) {
+                        $instance->whereBetween('created_at', [$awal, $akhir])->latest();;
+                    } else {
+                        $instance->select('*');
+                    }
+                }, true)
+                ->rawColumns(['bukti', 'id_opd','komentar'])
                 ->make(true);
         }
     }

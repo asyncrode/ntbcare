@@ -173,6 +173,9 @@
                             <a href="{{route('laporan.index.opd')}}">Rincian per OPD/Instansi</a>
                         </li>
                         <li>
+                            <a href="{{route('laporan.index.komentar')}}">Rincian per Komentar</a>
+                        </li>
+                        <li>
                             <a href="javascript:void(0)">Rekap per Status</a>
                         </li>
                     </ul>
@@ -202,6 +205,44 @@
                         </li>
                         <li>
                             <a href="javascript:void(0)">Manage</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- END Side Navigation -->
+        @elserole('pimpinan')
+         <!-- Side Navigation -->
+        <div class="content-side content-side-full">
+            <ul class="nav-main">
+                <li>
+                    <a href="{{route('dashboard.index')}}"><i class="si si-bar-chart"></i><span
+                            class="sidebar-mini-hide">Dashboard</span></a>
+                </li>
+                <li>
+                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pie-chart"></i><span
+                            class="sidebar-mini-hide">Report Filtering</span></a>
+                    <ul>
+                        <li>
+                            <a href="{{route('laporan.index.status')}}">Rincian per Status</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index')}}">Rincian per Kategori</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index.subkategori')}}">Rincian per Subkategori</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index.wilayah')}}">Rincian per Wilayah</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index.opd')}}">Rincian per OPD/Instansi</a>
+                        </li>
+                        <li>
+                            <a href="{{route('laporan.index.komentar')}}">Rincian per Komentar</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Rekap per Status</a>
                         </li>
                     </ul>
                 </li>
