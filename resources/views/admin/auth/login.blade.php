@@ -52,12 +52,13 @@
                         <!-- Header -->
                         <div class="py-30 text-center">
                             <h1>
-                                <a class="link-effect font-w700" href="{{route('landing')}}">
-                                    <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 15px">
-                                    <span class="text-dual-primary-dark">ntb</span><span class="text-primary">care</span>
+                                <a class="font-w700" href="{{route('landing')}}">
+                                    {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 20px">
+                                    <span class="text-dual-primary-dark">ntb</span><span class="text-primary">care</span> --}}
+                                    <img src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 120px">
                                 </a>
                             </h1>
-                            <h2 class="h4 font-w400 text-muted mb-0">Please sign in</h2>
+                            <h2 class="h4 font-w400 text-muted mb-0">Admin Dashboard</h2>
                         </div>
                         <!-- END Header -->
 
@@ -96,13 +97,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row gutters-tiny">
-                                        <div class="col-12 mb-10">
-                                            <button type="submit" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary">
+                                        <div class="col-12 mb-10 mt-10">
+                                            <button type="submit" class="btn btn-block btn-hero btn-noborder btn-rounded btn-success">
                                                 <i class="si si-login mr-10"></i> Sign In
                                             </button>
                                         </div>
                                         <div class="col-sm-12 mb-5">
-                                            <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary" href="op_auth_reminder.html">
+                                            <a class="btn btn-block btn-noborder btn-rounded " href="op_auth_reminder.html">
                                                 <i class="fa fa-warning text-muted mr-5"></i> Forgot password
                                             </a>
                                         </div>

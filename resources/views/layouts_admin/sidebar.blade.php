@@ -27,8 +27,8 @@
                 <!-- Logo -->
                 <div class="content-header-item">
                     <a class=" font-w700" href="javascript:void(0)">
-                        {{-- <i class="si si-fire text-primary"></i> --}}
-                        <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%">
+                        {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 45%"> --}}
+                        {{-- <img class="" src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 30px"> --}}
                         <span class="font-size-xl text-dual-primary-dark">ntb</span><span class="font-size-xl text-primary">care</span>
                     </a>
                 </div>
