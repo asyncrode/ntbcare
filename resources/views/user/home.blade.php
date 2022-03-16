@@ -15,16 +15,16 @@
             <span class="hero-bubble wh-30 pos-t-90 pos-l-90 bg-elegance"></span>
             <div class="hero-inner">
                 <div class="content content-full text-center">
-                    {{-- <img class="invisible" data-toggle="appear" data-class="animated fadeInDown" src="{{asset('assets/media/favicons/logo2.png')}}" alt=""> --}}
-                    <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
+                    <img class="invisible" data-toggle="appear" data-class="animated fadeInDown" src="{{asset('assets_user/media/favicons/ugl1.png')}}" style="max-height: 300px">
+                    {{-- <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
                         <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span>
-                    </h1>
+                    </h1> --}}
                     <h2 class="font-w400 text-black-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown" style="font-size: 130%">
-                        caring society with integrity</h2>
+                        caring society with integrity.</h2>
                     <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('pengaduan.index')}}">
                         <i class="fa fa-pencil-square-o mr-10"></i> Buat Pengaduan
                     </a>
-                    <a class="btn btn-hero btn-noborder btn-rounded btn-primary mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)">
+                    <a class="btn btn-hero btn-noborder btn-rounded btn-primary mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="javascript:void(0)" >
                         <i class="fa fa-search mr-10"></i> Lacak Pengaduan
                     </a>
                     
@@ -49,92 +49,11 @@
             <div class="row items-push py-30">
                 <!-- Posts -->
                 <div class="col-xl-12">
-                    {{-- <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo3@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">The new version is now live!</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 16, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>News
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo7@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">How to work from home more efficiently</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 10, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>Inpiration
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo28@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">Travel the world and feel alive</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 5, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>Travel
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div>
-                    <div class="mb-50">
-                        <div class="overflow-hidden rounded mb-20" style="height: 200px;">
-                            <a class="img-link" href="be_pages_generic_story.html">
-                                <img class="img-fluid" src="assets/media/photos/photo30@2x.jpg" alt="">
-                            </a>
-                        </div>
-                        <h3 class="h4 font-w700 text-uppercase mb-5">Believe in your dreams and start working</h3>
-                        <div class="text-muted mb-10">
-                            <span class="mr-15">
-                                <i class="fa fa-fw fa-calendar mr-5"></i>July 1, 2017
-                            </span>
-                            <a class="text-muted mr-15" href="be_pages_generic_profile.html">
-                                <i class="fa fa-fw fa-user mr-5"></i>John Smith
-                            </a>
-                            <a class="text-muted" href="javascript:void(0)">
-                                <i class="fa fa-fw fa-tag mr-5"></i>Motivation
-                            </a>
-                        </div>
-                        <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                        <a class="link-effect font-w600" href="be_pages_generic_story.html">Read More..</a>
-                    </div> --}}
-
-                    <h2 class="font-w700 content-heading mt-10" data-toggle="appear" data-class="animated fadeInRight" style="font-size: 190%"><span class="text-dual-primary-dark px-0">untold</span><span class="text-primary">story</span></h2>
+                    
+                    <p class="font-w700 content-heading mt-10" data-toggle="appear" data-class="animated fadeInRight" >
+                        <span><i class="fa fa-fw fa-align-left fa-1x text-dark"></i></span>
+                        <span class="text-dual-primary-dark px-0" style="font-size: 150%">untold</span><span class="text-primary" style="font-size: 150%;">story</span>
+                    </p>
                     <div class="row items-push js-gallery ">
                         
                         @foreach ($untold as $u)
@@ -166,178 +85,9 @@
                             </div>
                         @endif
                         @endforeach
-                        
-                        {{-- <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo15.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo15@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo14.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo14@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo13.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo13@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo12.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo12@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo11.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo11@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo10.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo10@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo9.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo9@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo8.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo8@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo7.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo7@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo6.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo6@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4  animated fadeIn">
-                            <div class="options-container fx-item-zoom-in fx-overlay-slide-down">
-                                <img class="img-fluid options-item" src="assets/media/photos/photo5.jpg" alt="">
-                                <div class="options-overlay bg-black-op-75">
-                                    <div class="options-overlay-content">
-                                        <h3 class="h4 text-white mb-5">Image</h3>
-                                        <h4 class="h6 text-white-op mb-15">More Details</h4>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-primary min-width-75 img-lightbox" href="assets/media/photos/photo5@2x.jpg">
-                                            <i class="fa fa-search-plus"></i> View
-                                        </a>
-                                        <a class="btn btn-sm btn-rounded btn-noborder btn-alt-success min-width-75" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     
                     <nav class="clearfix push">
-                        {{-- <a class="btn btn-secondary min-width-100 float-right" href="{{route('user.story.index')}}">
-                            See More
-                        </a> --}}
                         <a class="btn btn-noborder btn-rounded btn-primary mr-5 mb-10 float-right invisible" data-toggle="appear" data-class="animated fadeInLeft" href="{{route('user.story.index')}}">
                             See More
                         </a>
@@ -503,81 +253,7 @@
             </div>
         </div>
         <!-- END Blog and Sidebar -->
-
-        <!-- Inspiring Quotes -->
-
-        {{-- <div class="bg-body-dark">
-            <div class="content content-full text-center">
-                <div class="py-30 invisible" data-toggle="appear">
-                    <!-- Quotes Slider (.js-slider class is initialized in Helpers.slick()) -->
-                    <!-- For more info and examples you can check out http://kenwheeler.github.io/slick/ -->
-                    <div class="js-slider slick-nav-black" data-autoplay="true" data-autoplay-speed="6000">
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Strive not to be a success, but rather to be of value &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Albert Einstein</em></div>
-                        </div>
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Success is where preparation and opportunity meet &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Bobby Unser</em></div>
-                        </div>
-                        <div>
-                            <div class="h3 font-w700 mb-10">&ldquo; Life is really simple, but we insist on making it complicated &rdquo;</div>
-                            <div class="h4 font-w400 text-muted"><em>Confucius</em></div>
-                        </div>
-                    </div>
-                    <!-- END Quotes Slider -->
-                </div>
-            </div>
-        </div> --}}
-
-        <!-- END Inspiring Quotes -->
-
-    </main>
-    
-<!-- Content #1 -->
-{{-- <div class="bg-white">
-    <div class="content content-full">
-        <div class="py-50 text-center">
-            <h3 class="font-w700 mb-10">Title #1</h3>
-            <h4 class="font-w400 text-muted mb-0">Content..</h4>
-        </div>
-    </div>
-</div> --}}
-<!-- END Content #1 -->
-
-<!-- Content #2 -->
-{{-- <div class="bg-body-light">
-    <div class="content content-full">
-        <div class="py-50 text-center">
-            <h3 class="font-w700 mb-10">Title #2</h3>
-            <h4 class="font-w400 text-muted mb-0">Content..</h4>
-        </div>
-    </div>
-</div> --}}
-<!-- END Content #2 -->
-
-<!-- Content #3 -->
-{{-- <div class="bg-white">
-    <div class="content content-full">
-        <div class="py-50 text-center">
-            <h3 class="font-w700 mb-10">Title #3</h3>
-            <h4 class="font-w400 text-muted mb-0">Content..</h4>
-        </div>
-    </div>
-</div> --}}
-<!-- END Content #3 -->
-
-<!-- Call to Action -->
-{{-- <div class="bg-body-light">
-    <div class="content content-full text-center">
-        <div class="py-50">
-            <h3 class="font-w700 mb-10">Title</h3>
-            <h4 class="font-w400 text-muted mb-30">Subtitle.</h4>
-            <a class="btn btn-hero btn-rounded btn-alt-primary" href="">Call to Action</a>
-        </div>
-    </div>
-</div> --}}
-<!-- END Call to Action -->  
+    </main>  
  @endsection
  @push('scripts')
     <script src="assets/js/codebase.core.min.js"></script>

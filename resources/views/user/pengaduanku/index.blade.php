@@ -54,7 +54,7 @@
                     <div class="block-header block-header-default pt-0">
                         <p class="m-0">
                             {{-- <span class="text-muted">{{$d->wilayah->nama_will}}</span> <br> --}}
-                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->sub->subkategori}}</span><br>
+                            <span class="badge badge-dark"><i class="fa fa-fw fa-hashtag " style="color: beige"></i> {{$d->subkategori->subkategori}}</span><br>
                         </p>
                     </div>
                     <div class="block-content mb-10">

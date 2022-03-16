@@ -96,52 +96,78 @@
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="100" data-line-width="4" data-size="100" data-bar-color="#575757" data-track-color="#e9e9e9">
-                    <span>{{$aduan->count()}}<br><small class="text-muted">Pengaduan</small></span>
+                    <span>{{$aduan->count()}}<br></span>
+                </div>
+                <div class="mt-10">
+                    <span class="text-uppercase">Total Aduan</span>
                 </div>
             </div>
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="<?= ($aduan->where('status', '=', 'Waiting')->count() / $aduan->count()) * 100; ?>" data-line-width="4" data-size="<?= ($aduan->count()/$aduan->count()) * 100 ?>" data-bar-color="#ffca28" data-track-color="#e9e9e9">
-                    <span>{{$aduan->where('status', '=', 'Waiting')->count()}}<small class="text-muted">/{{$aduan->count()}}</small></span>
+                    <span>
+                        <?= ($aduan->where('status', '=', 'Waiting')->count() / $aduan->count()) * 100; ?>%
+                        <br>
+                    </span>
                 </div>
                 <div class="mt-10">
-                    <span class="text-uppercase">Waiting</span>
+                    <span class="text-uppercase text-warning">
+                        <b>{{$aduan->where('status', '=', 'Waiting')->count()}}</b>
+                        <br>
+                        Waiting
+                    </span>
                 </div>
             </div>
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="<?= ($aduan->where('status', '=', 'Rejected')->count() / $aduan->count()) * 100; ?>" data-line-width="4" data-size="<?= ($aduan->count()/$aduan->count()) * 100 ?>" data-bar-color="#ef5350" data-track-color="#e9e9e9">
-                    <span>{{$aduan->where('status', '=', 'Rejected')->count()}}<small class="text-muted">/{{$aduan->count()}}</small></span>
+                    <span><?= ($aduan->where('status', '=', 'Rejected')->count() / $aduan->count()) * 100; ?>%</span>
                 </div>
                 <div class="mt-10">
-                    <span class="text-uppercase">Rejected</span>
+                    <span class="text-uppercase text-danger">
+                        <b>{{$aduan->where('status', '=', 'Rejected')->count()}}</b>
+                        <br>
+                        Rejected
+                    </span>
                 </div>
             </div>
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="<?= ($aduan->where('status', '=', 'Approved')->count() / $aduan->count()) * 100; ?>" data-line-width="4" data-size="<?= ($aduan->count()/$aduan->count()) * 100 ?>" data-bar-color="#26c6da" data-track-color="#e9e9e9">
-                    <span>{{$aduan->where('status', '=', 'Approved')->count()}}<small class="text-muted">/{{$aduan->count()}}</small></span>
+                    <span><?= ($aduan->where('status', '=', 'Approved')->count() / $aduan->count()) * 100; ?>%</span>
                 </div>
                 <div class="mt-10">
-                    <span class="text-uppercase">Approved</span>
+                    <span class="text-uppercase text-info">
+                        <b>{{$aduan->where('status', '=', 'Approved')->count()}}</b>
+                        <br>
+                        Approved
+                    </span>
                 </div>
             </div>
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="<?= ($aduan->where('status', '=', 'On process')->count() / $aduan->count()) * 100; ?>" data-line-width="4" data-size="<?= ($aduan->count()/$aduan->count()) * 100 ?>" data-bar-color="#9ccc65" data-track-color="#e9e9e9">
-                    <span>{{$aduan->where('status', '=', 'On process')->count()}}<small class="text-muted">/{{$aduan->count()}}</small></span>
+                    <span><?= ($aduan->where('status', '=', 'On process')->count() / $aduan->count()) * 100; ?>%</span>
                 </div>
                 <div class="mt-10">
-                    <span class="text-uppercase">On Process</span>
+                    <span class="text-uppercase text-success">
+                        <b>{{$aduan->where('status', '=', 'On process')->count()}}</b>
+                        <br>
+                        On Process
+                    </span>
                 </div>
             </div>
             <div class="col-4 col-xl-2">
                 <!-- Pie Chart Container -->
                 <div class="js-pie-chart pie-chart" data-percent="<?= ($aduan->where('status', '=', 'Complete')->count() / $aduan->count()) * 100; ?>" data-line-width="4" data-size="<?= ($aduan->count()/$aduan->count()) * 100 ?>" data-bar-color="#9ccc65" data-track-color="#e9e9e9">
-                    <span>{{$aduan->where('status', '=', 'Complete')->count()}}<small class="text-muted">/{{$aduan->count()}}</small></span>
+                    <span><?= ($aduan->where('status', '=', 'Complete')->count() / $aduan->count()) * 100; ?>%</span>
                 </div>
                 <div class="mt-10">
-                    <span class="text-uppercase">Completed</span>
+                    <span class="text-uppercase text-success">
+                        <b>{{$aduan->where('status', '=', 'Complete')->count()}}</b>
+                        <br>
+                        Completed
+                    </span>
                 </div>
             </div>
         </div>

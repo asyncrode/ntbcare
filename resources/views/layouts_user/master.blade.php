@@ -72,28 +72,22 @@
                     <!-- Footer Navigation -->
                     <div class="row items-push-2x mt-30">
                         <div class="col-6 col-md-3 ">
-                            <a class="font-w700 mr-5 mb-10" href="{{route('landing')}}">
-                                {{-- <i class="si si-fire text-primary"></i> --}}
-                                <img class="img-fluid" src="{{asset('assets/media/favicons/favicon-192x192.png')}}" alt="" style="max-height: 150px">
-                                {{-- <span class="font-size-xl text-black-op" style="height: 50px">ntb</span><span class="font-size-xl text-primary" style="height: 50px">care</span> --}}
+                            <a class="font-w700 mb-10 d-flex justify-content-center" href="{{route('landing')}}">
+                                {{-- <img class="img-fluid" src="{{asset('assets/media/favicons/favicon-192x192.png')}}" alt="" style="max-height: 150px"> --}}
+                                <img class="img-fluid mx-20" src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 150px"><br>
                             </a>
                             
                         </div>
+
                         <div class="col-6 col-md-3">
-                            <h3 class="h5 font-w700">Keep in touch with us</h3>
-                            <div class="push">
-                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
-                                    <i class="fa fa-facebook" aria-hidden="true" ></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
-                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </button>   
+                            <h3 class="h5 font-w700">Contact</h3>
+                            <div class="font-size-sm mb-30 mt-10">
+                                <ul class="nav">
+                                    <li><i class="fa fa-phone fa-fw"></i> (0370) 631000</li>
+                                    <li><i class="fa fa-map-marker fa-fw"></i> Jl. Pejanggik No.12, Pejanggik, Kec. Mataram, Kota Mataram, Nusa Tenggara Barat 83122</li>
+                                </ul>
                             </div>
                         </div>
-                        
                         <div class="col-6 col-md-3 ">
                             <h3 class="h5 font-w700">General</h3>
                             <ul class="list list-simple-mini font-size-sm ">
@@ -112,13 +106,19 @@
                             </ul>
                         </div>
                         
+                        
                         <div class="col-6 col-md-3">
-                            <h3 class="h5 font-w700">Contact</h3>
-                            <div class="font-size-sm mb-30 mt-10">
-                                <ul class="nav">
-                                    <li><i class="fa fa-phone fa-fw"></i> (0370) 631000</li>
-                                    <li><i class="fa fa-map-marker fa-fw"></i> Jl. Pejanggik No.12, Pejanggik, Kec. Mataram, Kota Mataram, Nusa Tenggara Barat 83122</li>
-                                </ul>
+                            <h3 class="h5 font-w700">Keep in touch with us</h3>
+                            <div class="push">
+                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
+                                    <i class="fa fa-facebook" aria-hidden="true" ></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-circle btn-outline-primary mr-5 mb-5">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </button>   
                             </div>
                         </div>
                     </div>
