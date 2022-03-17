@@ -26,6 +26,10 @@ class RoleController extends Controller
         $role = Role::all();
         return Datatables::of($role)
             ->addIndexColumn()
+            ->addColumn('created_at', function ($role) {
+
+                return date('d-m-Y h:i', strtotime($role->created_at));
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 // $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="edit" class="edit btn btn-primary btn-sm">Edit</a>';
@@ -47,7 +51,7 @@ class RoleController extends Controller
         $role->save();
         return response()->json([
             'message' => 'Role Berhasil Di Tambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -76,6 +80,6 @@ class RoleController extends Controller
         $role->delete();
         return response()->json([
             'message'   => 'Role Deleted'
-        ],200);
+        ], 200);
     }
 }
