@@ -9,6 +9,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use DataTables;
 use Illuminate\Support\Facades\Hash;
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -26,6 +27,10 @@ class AdminController extends Controller
         $admin = Admin::all();
         return Datatables::of($admin)
             ->addIndexColumn()
+            ->addColumn('created_at', function ($admin) {
+
+                return date('d-m-Y h:i', strtotime($admin->created_at));
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
@@ -56,7 +61,7 @@ class AdminController extends Controller
         $admin->save();
         return response()->json([
             'message' => 'User berhasil ditambah'
-        ],200);
+        ], 200);
     }
 
     public function edit($id)
@@ -70,7 +75,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $admin = Admin::find($id);
         $admin->nama = $request->nama;
@@ -79,7 +84,7 @@ class AdminController extends Controller
         $admin->save();
         return response()->json([
             'message' => 'Update Admin Berhasil'
-        ],200);
+        ], 200);
     }
 
     public function delete($id)
@@ -88,6 +93,6 @@ class AdminController extends Controller
         $admin->delete();
         return response()->json([
             'message' => 'Admin Deleted'
-        ],200);
+        ], 200);
     }
 }

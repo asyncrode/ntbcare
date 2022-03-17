@@ -25,6 +25,10 @@ class WilayahController extends Controller
         $wilayah = Wilayah::all();
         return Datatables::of($wilayah)
             ->addIndexColumn()
+            ->addColumn('created_at', function ($wilayah) {
+
+                return date('d-m-Y h:i', strtotime($wilayah->created_at));
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';
