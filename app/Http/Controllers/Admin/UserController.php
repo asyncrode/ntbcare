@@ -25,6 +25,10 @@ class UserController extends Controller
         $user = User::all();
         return Datatables::of($user)
             ->addIndexColumn()
+            ->addColumn('created_at', function ($user) {
+
+                return date('d-m-Y h:i', strtotime($user->created_at));
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 $btn = $btn . '<button href="javascript:void(0)" data-id="' . $row->id . '" id="edit" type="button" class="edit btn btn-primary btn-sm m-1" tittle="Edit"><i class="fa fa-pencil" ></i></button>';

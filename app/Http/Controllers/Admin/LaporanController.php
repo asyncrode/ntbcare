@@ -33,7 +33,7 @@ class LaporanController extends Controller
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
 
-                    return date('d-m-Y', strtotime($laporan->created_at));
+                    return date('d-m-Y h:i', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_kategori', function ($laporan) {
                     if ($laporan->id_kategori != null) {
@@ -51,7 +51,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -71,7 +71,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['kategori','bukti'])
+                ->rawColumns(['kategori', 'bukti'])
                 ->make(true);
         }
     }
@@ -115,7 +115,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -135,7 +135,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['status','bukti'])
+                ->rawColumns(['status', 'bukti'])
                 ->make(true);
         }
     }
@@ -154,7 +154,7 @@ class LaporanController extends Controller
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
 
-                    return date('d-m-Y', strtotime($laporan->created_at));
+                    return date('d-m-Y h:i', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_subkategori', function ($laporan) {
                     if ($laporan->id_subkategori != null) {
@@ -172,7 +172,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -192,7 +192,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['bukti','subkategori'])
+                ->rawColumns(['bukti', 'subkategori'])
                 ->make(true);
         }
     }
@@ -211,7 +211,7 @@ class LaporanController extends Controller
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
 
-                    return date('d-m-Y', strtotime($laporan->created_at));
+                    return date('d-m-Y h:i', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_wil', function ($laporan) {
                     if ($laporan->id_wil != null) {
@@ -229,7 +229,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -268,7 +268,7 @@ class LaporanController extends Controller
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
 
-                    return date('d-m-Y', strtotime($laporan->created_at));
+                    return date('d-m-Y h:i', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_opd', function ($laporan) {
                     if ($laporan->id_opd != null) {
@@ -290,7 +290,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -327,9 +327,9 @@ class LaporanController extends Controller
         // $data = [];
         // foreach($laporan as $d)
         // {
-            
+
         //     $data = $d['komentar'];
-           
+
         // }
         // dd($data);
         if ($request->ajax()) {
@@ -338,7 +338,7 @@ class LaporanController extends Controller
                 ->addIndexColumn()
                 ->addColumn('created_at', function ($laporan) {
 
-                    return date('d-m-Y', strtotime($laporan->created_at));
+                    return date('d-m-Y h:i', strtotime($laporan->created_at));
                 })
                 ->addColumn('id_opd', function ($laporan) {
                     if ($laporan->id_opd != null) {
@@ -356,27 +356,22 @@ class LaporanController extends Controller
                         $user = array();
                         $fx = array();
                         $content[] = array();
-                        
-                        foreach($laporan->komentar as $d => $val)
-                        {
-                             
+
+                        foreach ($laporan->komentar as $d => $val) {
+
 
                             // $data[] = $d->komentar;
-                            if($val->id_user != null )
-                            {
+                            if ($val->id_user != null) {
                                 $data[] = $val->komentar;
                                 $user[] = $val->user->name;
-                                $fx[] = "<b>".$user[$d]. "</b> : " .$data[$d]."<br><br>"; 
-                                
-                            }else{
+                                $fx[] = "<b>" . $user[$d] . "</b> : " . $data[$d] . "<br><br>";
+                            } else {
                                 $data[] = $val->komentar;
                                 $user[] = $val->admin->nama;
-                                $fx[] = "<b>".$user[$d]. "</b> : " .$data[$d]."<br><br>"; 
-                                
+                                $fx[] = "<b>" . $user[$d] . "</b> : " . $data[$d] . "<br><br>";
                             }
-                            
                         }
-                        $string=implode("",$fx);
+                        $string = implode("", $fx);
                         // $data = json_decode($laporan->komentar , true);
                         return $string;
                     }
@@ -392,7 +387,7 @@ class LaporanController extends Controller
                     }
                 })
                 ->addColumn('bukti', function ($laporan) {
-                    $url = asset('upload/aduan/'.$laporan->bukti);
+                    $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
                     $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
                     return $img;
@@ -412,7 +407,7 @@ class LaporanController extends Controller
                         $instance->select('*');
                     }
                 }, true)
-                ->rawColumns(['bukti', 'id_opd','komentar'])
+                ->rawColumns(['bukti', 'id_opd', 'komentar'])
                 ->make(true);
         }
     }

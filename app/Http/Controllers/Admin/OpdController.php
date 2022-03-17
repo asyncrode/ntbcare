@@ -38,6 +38,10 @@ class OpdController extends Controller
                     return $opd->wilayah->nama_will;
                 }
             })
+            ->addColumn('created_at', function ($opd) {
+
+                return date('d-m-Y h:i', strtotime($opd->created_at));
+            })
             ->addColumn('action', function ($row) {
                 $btn = '';
                 // $btn = $btn.'<a href="javascript:void(0)" data-id="'.$row->id.'" id="edit" class="edit btn btn-primary btn-sm">Edit</a>';
