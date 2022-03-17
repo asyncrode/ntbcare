@@ -21,13 +21,13 @@
             },
             'columnDefs': [
             {
-                "targets": [0,2,3,4,5], // your case first column
+                "targets": [0,3,4,5], // your case first column
                 "className": "text-center"
             }],
             columns: [
                 {data: 'id_pelapor', name: 'id_pelapor'},
                 {data: 'pesan', name: 'pesan'},
-                {data: 'komentar[, ].komentar', name: 'komentar'},
+                {data: 'komentar', name: 'komentar'},
                 {data: 'id_opd', name: 'id_opd'},
                 {data: 'status', name: 'status'},
                 {data: 'created_at', name: 'created_at'},

@@ -351,13 +351,34 @@ class LaporanController extends Controller
                 })
                 ->editColumn('komentar', function ($laporan) {
                     if ($laporan != null) {
-                        $data = [];
-                        // foreach($laporan->komentar as $d)
-                        // {
-                        //     $data = $d->komentar;
-                        // }
-                        $data = json_decode($laporan->komentar , true);
-                        return $data;
+                        $data = array();
+                        $admin = array();
+                        $user = array();
+                        $fx = array();
+                        $content[] = array();
+                        
+                        foreach($laporan->komentar as $d => $val)
+                        {
+                             
+
+                            // $data[] = $d->komentar;
+                            if($val->id_user != null )
+                            {
+                                $data[] = $val->komentar;
+                                $user[] = $val->user->name;
+                                $fx[] = "<b>".$user[$d]. "</b> : " .$data[$d]."<br><br>"; 
+                                
+                            }else{
+                                $data[] = $val->komentar;
+                                $user[] = $val->admin->nama;
+                                $fx[] = "<b>".$user[$d]. "</b> : " .$data[$d]."<br><br>"; 
+                                
+                            }
+                            
+                        }
+                        $string=implode("",$fx);
+                        // $data = json_decode($laporan->komentar , true);
+                        return $string;
                     }
                 })
                 ->addColumn('id_pelapor', function ($laporan) {
