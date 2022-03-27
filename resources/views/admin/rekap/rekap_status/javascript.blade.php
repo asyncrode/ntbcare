@@ -1,9 +1,8 @@
 <script>
     $(document).ready(function(){
-        var idEdit = 0;
-
-        // Show Data
-        var table = $('.tableRekap').DataTable({
+      
+         // Show Data
+         var table = $('.tableRekap').DataTable({
             processing: true,
             serverSide: true,
             searching:  true,
@@ -12,15 +11,14 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             ajax: {
-                url: "{{ route('rekap.data') }}"
+            url: "{{ route('rekap.data') }}",
             },
-            
             columns: [
                 {data: 'total', name: 'total'},
-                {data: 'waiting', name: 'waiting'}   
+                {data: 'waiting', name: 'waiting'},
             ]
         });
         // End Show
-
+       
     })
 </script>

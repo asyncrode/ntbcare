@@ -9,7 +9,51 @@
             searching:  true,
             dom: 'lBfrtip',
             buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
+                {
+                    extend: 'print',
+                    // autoPrint: false,
+                    title:'Laporan Pengaduan per Komentar',
+                    customize: function ( win ) 
+                    {
+                        $(win.document.body).find('h1').css('text-align', 'center');
+                        $(win.document.body)
+                            .css( 'font-size', '10pt' )
+                            .prepend(
+                                '<img src="{!! asset('assets_user/media/favicons/ugl1.png') !!}" style="height:100px; display: block;margin-left: auto;margin-right: auto;" />'
+                            );
+    
+                        $(win.document.body).find( 'table' )
+                            .addClass( 'compact' )
+                            .css( 'font-size', 'inherit' );
+
+                        // Landscape
+                        var last = null;
+                        var current = null;
+                        var bod = [];
+
+                        var css = '@page { size: landscape; }',
+                            head = win.document.head || win.document.getElementsByTagName('head')[0],
+                            style = win.document.createElement('style');
+
+                        style.type = 'text/css';
+                        style.media = 'print';
+
+                        if (style.styleSheet)
+                        {
+                        style.styleSheet.cssText = css;
+                        }
+                        else
+                        {
+                        style.appendChild(win.document.createTextNode(css));
+                        }
+
+                        head.appendChild(style);
+                    },
+                    text:'Download',
+                    exportOptions: {
+                        stripHtml: false
+                    }
+                }
             ],
             ajax: {
             url: "{{ route('laporan.data.komentar') }}",

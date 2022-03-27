@@ -116,15 +116,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'laporan', 'middleware' => ['role:super-admin|pimpinan']], function () {
         Route::get('/', 'Admin\LaporanController@index')->name('laporan.index');
         Route::get('/getLaporan', 'Admin\LaporanController@getLaporan')->name('laporan.data');
-        Route::get('/laporan/status', 'Admin\LaporanController@index_status')->name('laporan.index.status');
+        Route::get('/status', 'Admin\LaporanController@index_status')->name('laporan.index.status');
         Route::get('/getLaporanStatus', 'Admin\LaporanController@getLaporanStatus')->name('laporan.data.status');
-        Route::get('/laporan/subkategori', 'Admin\LaporanController@index_subkategori')->name('laporan.index.subkategori');
+        Route::get('/subkategori', 'Admin\LaporanController@index_subkategori')->name('laporan.index.subkategori');
         Route::get('/getLaporanSub', 'Admin\LaporanController@getLaporanSub')->name('laporan.data.subkategori');
-        Route::get('/laporan/wilayah', 'Admin\LaporanController@index_wilayah')->name('laporan.index.wilayah');
+        Route::get('/wilayah', 'Admin\LaporanController@index_wilayah')->name('laporan.index.wilayah');
         Route::get('/getLaporanWilayah', 'Admin\LaporanController@getLaporanWilayah')->name('laporan.data.wilayah');
-        Route::get('/laporan/opd', 'Admin\LaporanController@index_opd')->name('laporan.index.opd');
+        Route::get('/opd', 'Admin\LaporanController@index_opd')->name('laporan.index.opd');
         Route::get('/getLaporanOpd', 'Admin\LaporanController@getLaporanOpd')->name('laporan.data.opd');
-        Route::get('/laporan/komentar', 'Admin\LaporanController@index_komentar')->name('laporan.index.komentar');
+        Route::get('/komentar', 'Admin\LaporanController@index_komentar')->name('laporan.index.komentar');
         Route::get('/getLaporanKomentar', 'Admin\LaporanController@getLaporanKomentar')->name('laporan.data.komentar');
     });
 
