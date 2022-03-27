@@ -117,7 +117,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-thumb" style = "max-width:50%;" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
