@@ -176,7 +176,7 @@
                             <a href="{{route('laporan.index.komentar')}}">Rincian per Komentar</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rekap per Status</a>
+                            <a href="{{route('rekap.index')}}">Rekap per Status</a>
                         </li>
                     </ul>
                 </li>
@@ -242,7 +242,7 @@
                             <a href="{{route('laporan.index.komentar')}}">Rincian per Komentar</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Rekap per Status</a>
+                            <a href="{{route('rekap.index')}}">Rekap per Status</a>
                         </li>
                     </ul>
                 </li>

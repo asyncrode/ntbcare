@@ -15,11 +15,10 @@
                     <tr>
                         <th class="text-center">total</th>
                         <th class="text-center">waiting</th>
-                        {{-- <th class="text-center">waiting</th>
-                        <th class="text-center">alamat</th>
-                        <th class="text-center">OPD/Instansi</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">kategori</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">status</th> --}}
+                        {{-- <th class="text-center">rejected</th>
+                        <th class="text-center">approved</th>
+                        <th class="text-center">on process</th>
+                        <th class="text-center">completed</th> --}}
                     </tr>
                 </thead>
             </table>

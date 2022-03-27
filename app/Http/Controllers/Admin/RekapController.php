@@ -10,6 +10,7 @@ use App\Models\Opd;
 use App\Models\Subkategori;
 use App\Models\Wilayah;
 use DataTables;
+use DB;
 
 class RekapController extends Controller
 {
@@ -25,21 +26,21 @@ class RekapController extends Controller
 
     public function getRekap(Request $request)
     {
+        // $rekap = Aduan::select('status');
+        // dd($rekap->sum('status'));
+       
         if ($request->ajax()) {
             $rekap = Aduan::select('*');
             return Datatables::of($rekap)
-                ->addIndexColumn()
-                ->addColumn('total', function ($rekap) {
-
-                    return $rekap->count();
-                })
-                ->addColumn('waiting', function ($rekap) {
-
-                    return $rekap->where('status', 'Waiting')->count();
-                })
-
-                ->rawColumns()
-                ->make(true);
+            ->addColumn('total', function ($rekap) {
+                $jumlah = $rekap->count();
+                
+            })
+            ->addColumn('waiting', function($rekap) {
+                return $rekap::where('status','Waiting')->distinct()->count();
+            })
+            ->rawColumns(['total'])
+            ->make();
         }
     }
 }

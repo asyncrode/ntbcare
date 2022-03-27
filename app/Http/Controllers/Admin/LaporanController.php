@@ -53,7 +53,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -117,7 +117,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -174,7 +174,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -231,7 +231,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -292,7 +292,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -323,15 +323,6 @@ class LaporanController extends Controller
 
     public function getLaporanKomentar(Request $request)
     {
-        // $laporan = Aduan::with('komentar')->get();
-        // $data = [];
-        // foreach($laporan as $d)
-        // {
-
-        //     $data = $d['komentar'];
-
-        // }
-        // dd($data);
         if ($request->ajax()) {
             $laporan = Aduan::with('komentar')->latest();
             return Datatables::of($laporan)
@@ -389,7 +380,7 @@ class LaporanController extends Controller
                 ->addColumn('bukti', function ($laporan) {
                     $url = asset('upload/aduan/' . $laporan->bukti);
                     $img = '';
-                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" >';
+                    $img = $img . '<img src="' . $url . '" class="p-0 img-fluid img-thumb" style = "max-width:50%;" >';
                     return $img;
                 })
                 ->filter(function ($instance) use ($request) {
@@ -411,4 +402,5 @@ class LaporanController extends Controller
                 ->make(true);
         }
     }
+    
 }

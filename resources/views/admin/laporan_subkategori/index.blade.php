@@ -36,10 +36,10 @@
                     <tr>
                         <th class="text-center">pelapor</th>
                         <th class="text-center">pesan</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">subkategori</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">status</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">dikirim pada</th>
-                        <th class="text-center" style="width: 15%;">bukti</th>
+                        <th class="d-none d-sm-table-cell">subkategori</th>
+                        <th class="d-none d-sm-table-cell">status</th>
+                        <th class="d-none d-sm-table-cell">dikirim pada</th>
+                        <th class="text-center">bukti</th>
                     </tr>
                 </thead>
             </table>

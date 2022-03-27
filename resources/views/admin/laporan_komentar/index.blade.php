@@ -37,10 +37,10 @@
                         <th class="text-center">pelapor</th>
                         <th class="text-center">pesan</th>
                         <th class="text-center">komentar</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">opd</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">status</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">dikirim pada</th>
-                        <th class="text-center" style="width: 15%;">bukti</th>
+                        <th class="d-none d-sm-table-cell">opd</th>
+                        <th class="d-none d-sm-table-cell">status</th>
+                        <th class="d-none d-sm-table-cell">dikirim pada</th>
+                        <th class="text-center">bukti</th>
                     </tr>
                 </thead>
             </table>
