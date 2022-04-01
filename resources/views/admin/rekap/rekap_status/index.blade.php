@@ -15,20 +15,13 @@
                     <tr>
                         <th class="text-center">OPD</th>
                         <th class="text-center">Total</th>
-                        {{-- <th class="text-center">rejected</th>
+                        <th class="text-center">waiting</th>
                         <th class="text-center">approved</th>
+                        <th class="text-center">rejected</th>
                         <th class="text-center">on process</th>
-                        <th class="text-center">completed</th> --}}
+                        <th class="text-center">completed</th> 
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach ($rekap as $d)
-                    <tr>
-                        <td class="text-center">{{$d->opd->nama}}</td>
-                        <td class="text-center">{{$d->total}}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
             </table>
         </div>
     </div>

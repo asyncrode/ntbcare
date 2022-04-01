@@ -9,13 +9,18 @@
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
-            // ajax: {
-            // url: "{{ route('rekap.data') }}",
-            // },
-            // columns: [
-            //     {data: 'id_opd', name: 'id_opd'},
-            //     {data: 'waiting', name: 'waiting'},
-            // ]
+            ajax: {
+            url: "{{ route('rekap.data') }}",
+            },
+            columns: [
+                {data: 'nama', name: 'nama'},
+                {data: 'total', name: 'total'},
+                {data: 'waiting', name: 'waiting'},
+                {data: 'approved', name: 'approved'},
+                {data: 'rejected', name: 'rejected'},
+                {data: 'process', name: 'process'},
+                {data: 'complete', name: 'complete'},
+            ]
         });
         // End Show
        
