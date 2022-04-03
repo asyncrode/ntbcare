@@ -222,6 +222,12 @@
                                     <td><a href="{{ asset('upload/aduan/'.$aduan->bukti_2) }}"
                                             target="_blank">{{$aduan->bukti_2}}</a></td>
                                 </tr>
+                                <tr>
+                                    <td class="font-w600">No Handphone</td>
+                                    <td>
+                                        <b>{{$aduan->nohp}}</b>
+                                    </td>
+                                </tr>
                                 {{-- <tr>
                                     <td class="font-w600">Kelurahan</td>
                                     <td>{{$aduan->kel->nama_kel}}</td>
