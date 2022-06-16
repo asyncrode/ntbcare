@@ -9,10 +9,21 @@
             <div class="float-right">
                 {{-- <button type="button" class="btn btn-secondary dropdown-toggle" id="btnGroupDrop1"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Forward</button> --}}
+                @if ($aduan->status == 'Waiting')
+                <button type="button" id="forward" data-toggle="modal" data-target="#modalForward"
+                    class="btn btn-outline-dark" disabled>
+                    <i class="si si-action-redo"></i>
+                </button>
+                @else
                 <button type="button" id="forward" data-toggle="modal" data-target="#modalForward"
                     class="btn btn-outline-dark">
                     <i class="si si-action-redo"></i>
                 </button>
+                @endif
+                {{-- <button type="button" id="forward" data-toggle="modal" data-target="#modalForward"
+                    class="btn btn-outline-dark">
+                    <i class="si si-action-redo"></i>
+                </button> --}}
             </div>
             <button type="button" id="delete" class="btn btn-outline-danger float-right ml-5 mr-5" data-type="delete"
                 data-id="{{$aduan->id}}">
@@ -210,6 +221,12 @@
                                     <td class="font-w600">Lampiran</td>
                                     <td><a href="{{ asset('upload/aduan/'.$aduan->bukti_2) }}"
                                             target="_blank">{{$aduan->bukti_2}}</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-w600">No Handphone</td>
+                                    <td>
+                                        <b>{{$aduan->nohp}}</b>
+                                    </td>
                                 </tr>
                                 {{-- <tr>
                                     <td class="font-w600">Kelurahan</td>

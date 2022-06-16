@@ -33,8 +33,8 @@ class OpdController extends Controller
                     return $opd->admin->nama;
                 }
             })
-            ->addColumn('id_wil', function ($opd) {
-                if ($opd->id_wil != null) {
+            ->addColumn('id_wilayah', function ($opd) {
+                if ($opd->id_wilayah != null) {
                     return $opd->wilayah->nama_will;
                 }
             })

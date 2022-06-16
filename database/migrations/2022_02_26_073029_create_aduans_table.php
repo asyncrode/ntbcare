@@ -18,6 +18,7 @@ class CreateAduansTable extends Migration
             $table->unsignedBigInteger('id_kategori');
             $table->unsignedBigInteger('id_subkategori');
             $table->unsignedBigInteger('id_pelapor')->nullable();
+            $table->string('nohp');
             $table->char('id_wil');
             $table->char('id_kec');
             $table->char('id_kel');

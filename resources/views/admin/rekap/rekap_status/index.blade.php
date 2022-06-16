@@ -13,12 +13,13 @@
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableRekap">
                 <thead>
                     <tr>
-                        <th class="text-center">total</th>
+                        <th class="text-center">OPD</th>
+                        <th class="text-center">Total</th>
                         <th class="text-center">waiting</th>
-                        {{-- <th class="text-center">rejected</th>
                         <th class="text-center">approved</th>
+                        <th class="text-center">rejected</th>
                         <th class="text-center">on process</th>
-                        <th class="text-center">completed</th> --}}
+                        <th class="text-center">completed</th> 
                     </tr>
                 </thead>
             </table>

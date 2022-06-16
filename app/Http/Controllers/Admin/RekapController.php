@@ -20,27 +20,36 @@ class RekapController extends Controller
     }
     public function index()
     {
-
-        return view('admin.rekap.rekap_status.index');
+       
+        $opd = Opd::all();
+        
+        return view('admin.rekap.rekap_status.index',compact('opd'));
     }
 
     public function getRekap(Request $request)
     {
-        // $rekap = Aduan::select('status');
-        // dd($rekap->sum('status'));
-       
         if ($request->ajax()) {
-            $rekap = Aduan::select('*');
+            $rekap = Opd::get();
             return Datatables::of($rekap)
             ->addColumn('total', function ($rekap) {
-                $jumlah = $rekap->count();
-                
+                return $rekap->aduan->count();
             })
-            ->addColumn('waiting', function($rekap) {
-                return $rekap::where('status','Waiting')->distinct()->count();
+            ->addColumn('waiting', function ($rekap) {
+                return $rekap->aduan->where('status','Waiting')->count();
             })
-            ->rawColumns(['total'])
-            ->make();
+            ->addColumn('approved', function ($rekap) {
+                return $rekap->aduan->where('status','Approved')->count();
+            })
+            ->addColumn('rejected', function ($rekap) {
+                return $rekap->aduan->where('status','Rejected')->count();
+            })
+            ->addColumn('process', function ($rekap) {
+                return $rekap->aduan->where('status','On process')->count();
+            })
+            ->addColumn('complete', function ($rekap) {
+                return $rekap->aduan->where('status','Completed')->count();
+            })
+            ->make(true);
         }
     }
 }

@@ -78,6 +78,15 @@
                     </div>
                     <div class="col-xl-12">
                         <div class="form-group ">
+                            <label class="col-form-label" for="nohp">No Handphone <span
+                                    class="text-danger">*</span></label>
+                            <div class="">
+                                <input type="text" class="form-control" id="nohp" name="nohp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="form-group ">
                             <label class="col-form-label" for="pesan">Alamat <span
                                     class="text-danger">*</span></label>
                             <div class="">

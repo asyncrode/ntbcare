@@ -80,6 +80,7 @@ class PengaduanController extends Controller
         $aduan->id_kec = $request->kecamatan;
         $aduan->id_kel = $request->kelurahan;
         $aduan->id_pelapor = Auth::user()->id;
+        $aduan->nohp = $request->nohp;
         $aduan->alamat = $request->alamat;
         $aduan->bukti = $name;
         $aduan->bukti_2 = $dokumen_name;
