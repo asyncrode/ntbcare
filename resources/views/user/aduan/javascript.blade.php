@@ -36,7 +36,7 @@
         $("#bukti_2").fileinput({
                theme: 'fa',
                 required: true,
-                allowedFileExtensions: ["pdf"],
+                allowedFileExtensions: ["pdf","xls","xlsx","doc","docx"],
                 showUpload: false,
                 "fileActionSettings":{
                     "showDrag":false,
