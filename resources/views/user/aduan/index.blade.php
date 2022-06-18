@@ -18,22 +18,22 @@
                     <div class="row py-20">
                         <div class="col-xl-6">
                             <div class="form-group ">
-                                <label class="col-form-label" for="kategori">Pilih Kategori <span
+                                <label class="col-form-label" for="kategori">Kategori Aduan <span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <select class="js-select2 form-control" id="kategori" name="kategori"
-                                        style="width: 100%;" data-placeholder="Choose one..">
+                                        style="width: 100%;" data-placeholder="Pilih Kategori">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group ">
-                                <label class="col-form-label" for="subkategori">Pilih Subkategori<span
+                                <label class="col-form-label" for="subkategori">Subkategori Aduan<span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <select class="js-select2 form-control" id="subkategori" name="subkategori"
-                                        style="width: 100%;" data-placeholder="Choose one..">
+                                        style="width: 100%;" data-placeholder="Pilih Subkategori">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     </select>
@@ -42,33 +42,33 @@
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group ">
-                                <label class="col-form-label" for="wilayah">Pilih Wilayah <span
+                                <label class="col-form-label" for="wilayah">Kabupaten/Kota <span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <select class="js-select2 form-control" id="wilayah" name="wilayah"
-                                        style="width: 100%;" data-placeholder="Choose one..">
+                                        style="width: 100%;" data-placeholder="Pilih Kabupaten/Kota">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group ">
-                                <label class="col-form-label" for="kecamatan">Pilih Kecamatan<span
+                                <label class="col-form-label" for="kecamatan">Kecamatan<span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <select class="js-select2 form-control" id="kecamatan" name="kecamatan"
-                                        style="width: 100%;" data-placeholder="Choose one..">
+                                        style="width: 100%;" data-placeholder="Pilih Kecamatan">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group ">
-                                <label class="col-form-label" for="kelurahan">Pilih Kelurahan<span
+                                <label class="col-form-label" for="kelurahan">Kelurahan<span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <select class="js-select2 form-control" id="kelurahan" name="kelurahan"
-                                        style="width: 100%;" data-placeholder="Choose one..">
+                                        style="width: 100%;" data-placeholder="Pilih Kelurahan">
                                         <option></option>
                                         <!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                     </select>
@@ -81,7 +81,8 @@
                             <label class="col-form-label" for="nohp">No Handphone <span
                                     class="text-danger">*</span></label>
                             <div class="">
-                                <input type="text" class="form-control" id="nohp" name="nohp">
+                                <input type="text" class="form-control" id="nohp" name="nohp"
+                                    placeholder="Isi Nomor HP yang dapat dihubungi">
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,8 @@
                             <label class="col-form-label" for="pesan">Alamat <span
                                     class="text-danger">*</span></label>
                             <div class="">
-                                <input type="text" class="form-control" id="alamat" name="alamat">
+                                <input type="text" class="form-control" id="alamat" name="alamat"
+                                    placeholder="Isi alamat terkait aduan / alamat anda">
                             </div>
                         </div>
                     </div>
@@ -100,7 +102,7 @@
                                     class="text-danger">*</span></label>
                             <div class="">
                                 <textarea class="form-control" id="pesan" name="pesan" rows="5"
-                                    placeholder="What would you like to see?"></textarea>
+                                    placeholder="Isi aduan anda"></textarea>
                             </div>
                         </div>
                     </div>

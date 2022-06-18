@@ -3,7 +3,7 @@
 <div class="content">
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Rekap Pengaduan By Status</h3>
+            <h3 class="block-title">Rekap Pengaduan Per Organisasi Perangkat Daerah Se-NTB</h3>
         </div>
 
         <div class="block-content block-content-full">
@@ -13,7 +13,7 @@
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination tableRekap">
                 <thead>
                     <tr>
-                        <th class="text-center">OPD</th>
+                        <th class="text-center">Nama OPD</th>
                         <th class="text-center">Total</th>
                         <th class="text-center">waiting</th>
                         <th class="text-center">approved</th>
