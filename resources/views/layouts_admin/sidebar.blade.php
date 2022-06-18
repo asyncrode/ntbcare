@@ -176,7 +176,7 @@
                             <a href="{{route('laporan.index.komentar')}}">Rincian per Komentar</a>
                         </li>
                         <li>
-                            <a href="{{route('rekap.index')}}">Rekap per Status</a>
+                            <a href="{{route('rekap.index')}}">Rekap Aduan per OPD</a>
                         </li>
                     </ul>
                 </li>
