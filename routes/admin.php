@@ -128,9 +128,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/getLaporanKomentar', 'Admin\LaporanController@getLaporanKomentar')->name('laporan.data.komentar');
     });
 
-    Route::group(['prefix' => 'rekap', 'middleware' => ['role:super-admin']], function () {
+    Route::group(['prefix' => 'rekap', 'middleware' => ['role:super-admin|pimpinan']], function () {
         Route::get('/', 'Admin\RekapController@index')->name('rekap.index');
         Route::get('/getRekap', 'Admin\RekapController@getRekap')->name('rekap.data');
+        Route::get('/wilayah', 'Admin\RekapController@index_wilayah')->name('rekap.index.wilayah');
+        Route::get('/getRekapWilayah', 'Admin\RekapController@getRekapWilayah')->name('rekap.data.wilayah');
     });
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {

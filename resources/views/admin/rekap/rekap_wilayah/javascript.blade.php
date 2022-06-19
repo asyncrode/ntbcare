@@ -11,10 +11,10 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             ajax: {
-            url: "{{ route('rekap.data') }}",
+            url: "{{ route('rekap.data.wilayah') }}",
             },
             columns: [
-                {data: 'nama', name: 'nama'},
+                {data: 'nama_will', name: 'nama_will'},
                 {data: 'total', name: 'total'},
                 {data: 'waiting', name: 'waiting'},
                 {data: 'approved', name: 'approved'},
@@ -25,7 +25,7 @@
         });
         // End Show
 
-        // dom Style
+        // dom and Button Style
         $("#DataTables_Table_0_wrapper > div.row").css("display", "grid");
         $("#DataTables_Table_0_wrapper > div.row").css("grid-template-columns", "auto auto");
         $("#DataTables_Table_0_wrapper > div.row").css("margin-top", "1%");
