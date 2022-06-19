@@ -18,12 +18,13 @@ class RekapController extends Controller
     {
         $this->middleware('auth:admin');
     }
+    //Rekap OPD
     public function index()
     {
-       
+
         $opd = Opd::all();
-        
-        return view('admin.rekap.rekap_status.index',compact('opd'));
+
+        return view('admin.rekap.rekap_status.index', compact('opd'));
     }
 
     public function getRekap(Request $request)
@@ -31,25 +32,61 @@ class RekapController extends Controller
         if ($request->ajax()) {
             $rekap = Opd::get();
             return Datatables::of($rekap)
-            ->addColumn('total', function ($rekap) {
-                return $rekap->aduan->count();
-            })
-            ->addColumn('waiting', function ($rekap) {
-                return $rekap->aduan->where('status','Waiting')->count();
-            })
-            ->addColumn('approved', function ($rekap) {
-                return $rekap->aduan->where('status','Approved')->count();
-            })
-            ->addColumn('rejected', function ($rekap) {
-                return $rekap->aduan->where('status','Rejected')->count();
-            })
-            ->addColumn('process', function ($rekap) {
-                return $rekap->aduan->where('status','On process')->count();
-            })
-            ->addColumn('complete', function ($rekap) {
-                return $rekap->aduan->where('status','Completed')->count();
-            })
-            ->make(true);
+                ->addColumn('total', function ($rekap) {
+                    return $rekap->aduan->count();
+                })
+                ->addColumn('waiting', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Waiting')->count();
+                })
+                ->addColumn('approved', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Approved')->count();
+                })
+                ->addColumn('rejected', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Rejected')->count();
+                })
+                ->addColumn('process', function ($rekap) {
+                    return $rekap->aduan->where('status', 'On process')->count();
+                })
+                ->addColumn('complete', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Completed')->count();
+                })
+                ->make(true);
+        }
+    }
+
+    //Rekap Kab Kota
+    public function index_wilayah()
+    {
+
+        $wilayah = Wilayah::all();
+
+        return view('admin.rekap.rekap_wilayah.index', compact('wilayah'));
+    }
+
+    public function getRekapWilayah(Request $request)
+    {
+        if ($request->ajax()) {
+            $rekap = Wilayah::get();
+            return Datatables::of($rekap)
+                ->addColumn('total', function ($rekap) {
+                    return $rekap->aduan->count();
+                })
+                ->addColumn('waiting', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Waiting')->count();
+                })
+                ->addColumn('approved', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Approved')->count();
+                })
+                ->addColumn('rejected', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Rejected')->count();
+                })
+                ->addColumn('process', function ($rekap) {
+                    return $rekap->aduan->where('status', 'On process')->count();
+                })
+                ->addColumn('complete', function ($rekap) {
+                    return $rekap->aduan->where('status', 'Completed')->count();
+                })
+                ->make(true);
         }
     }
 }

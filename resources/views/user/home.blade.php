@@ -14,13 +14,42 @@
             <span class="hero-bubble wh-40 pos-t-75 pos-l-10 bg-earth"></span>
             <span class="hero-bubble wh-30 pos-t-90 pos-l-90 bg-elegance"></span>
             <div class="hero-inner">
-                <div class="content content-full text-center">
-                    <img class="invisible" data-toggle="appear" data-class="animated fadeInDown" src="{{asset('assets_user/media/favicons/ugl1.png')}}" style="max-height: 300px">
+                <div class="content content-full text-center" style="padding: 10%">
+                    {{-- <img class="invisible" data-toggle="appear" data-class="animated fadeInDown" src="{{asset('assets_user/media/favicons/ugl1.png')}}" style="max-height: 300px"> --}}
+                    <div class="invisible" data-toggle="appear" data-class="animated fadeInDown">
+                        <div class="js-slider slick-dotted-inner slick-dotted-white" data-dots="true" data-arrows="true" style="margin-top: 15%;">
+                            <div>
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 1.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            </div>
+                            <div>
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 2.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            </div>
+                            <div >
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 3.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            </div>
+                            <div>
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 4.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            </div>
+                            {{-- <div>
+                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 1.png')}}" >
+                            </div>
+                            <div>
+                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 2.png')}}" >
+                            </div>
+                            <div >
+                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 3.png')}}" >
+                            </div>
+                            <div>
+                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 4.png')}}" >
+                            </div> --}}
+                        </div>
+                    </div>
                     {{-- <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
                         <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span>
                     </h1> --}}
-                    <h2 class="font-w400 text-black-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown" style="font-size: 130%">
-                        caring society with integrity.</h2>
+                    {{-- <h2 class="font-w400 text-black-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInDown" style="font-size: 130%">
+                        caring society with integrity.</h2> --}}
+                    <br>
                     <a class="btn btn-hero btn-noborder btn-rounded btn-success mr-5 mb-10 invisible" data-toggle="appear" data-class="animated fadeInUp" href="{{route('pengaduan.index')}}">
                         <i class="fa fa-pencil-square-o mr-10"></i> Buat Pengaduan
                     </a>
@@ -256,7 +285,15 @@
     </main>  
  @endsection
  @push('scripts')
-    <script src="assets/js/codebase.core.min.js"></script>
+    <link rel="stylesheet" href="{{asset('assets_user/js/plugins/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_user/js/plugins/slick/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_user/js/core/jquery.min.js')}}">
+    <link rel="stylesheet" href="{{asset('assets_user/js/plugins/magnific-popup/magnific-popup.css')}}">
+
+
+    
+
+    <script src="{{asset('assets_user/js/codebase.core.min.js')}}"></script>
 
     <!--
         Codebase JS
@@ -264,12 +301,36 @@
         Custom functionality including Blocks/Layout API as well as other vital and optional helpers
         webpack is putting everything together at assets/_es6/main/app.js
     -->
-    <script src="assets/js/codebase.app.min.js"></script>
+    <script src="{{asset('assets_user/js/codebase.app.min.js')}}"></script>
+    <script src="{{asset('assets_user/js/plugins/slick/slick.min.js')}}"></script>
+    <script src="{{asset('assets_user/js/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
     <!-- Page JS Plugins -->
-    <script src="assets/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset('assets_user/js/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
     <!-- Page JS Helpers (Magnific Popup plugin) -->
     <script>jQuery(function(){ Codebase.helpers('magnific-popup'); });</script>
+    {{-- <script>
+        jQuery(
+            function()
+            { 
+                Codebase.helpers('slick'); 
+            });
+    </script> --}}
+    <script type="text/javascript">
+        $('.js-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 2,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            centerMode: true,
+            centerPadding: '160px',
+            variableWidth: true, 
+            adaptiveHeight: true
+        });
+        
+    </script>
  @endpush
  
