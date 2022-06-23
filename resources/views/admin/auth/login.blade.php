@@ -53,8 +53,6 @@
                         <div class="py-30 text-center">
                             <h1>
                                 <a class="font-w700" href="{{route('landing')}}">
-                                    {{-- <img src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 20px">
-                                    <span class="text-dual-primary-dark">ntb</span><span class="text-primary">care</span> --}}
                                     <img src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 120px">
                                 </a>
                             </h1>
@@ -72,14 +70,14 @@
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <div class="form-material floating">
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"> {{-- @error('email') is-invalid @enderror --}}
                                                 <label for="email">Email</label>
-                                                <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" required>
+                                            </div>
                                                 @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div>
                                             
                                         </div>
                                     </div>
@@ -90,9 +88,9 @@
                                                 <label for="password">Password</label>
                                             </div>
                                             @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
                                     </div>

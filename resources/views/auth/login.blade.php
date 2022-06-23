@@ -128,7 +128,6 @@
                     <div class="py-50 px-5 text-center">
                         <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
                             <a href="{{route('landing')}}">
-                                {{-- <img class="" src="{{asset('assets/media/favicons/favicon2.png')}}" alt="" style="max-height: 55px"><span class="text-dual-primary-dark px-0">ntb</span><span class="text-primary">care</span> --}}
                                 <img src="{{asset('assets/media/favicons/ugl1.png')}}" alt="" style="max-height: 120px">
                             </a>
                         </h1>
@@ -172,6 +171,14 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    @if (Route::has('password.request'))
+                                    <div class="col-sm-12 mt-10">
+                                        <a class="btn-block btn-noborder btn-rounded nav-link"
+                                            href="{{ route('password.request') }}" style="text-align: right">
+                                            <i class="fa fa-warning text-muted mr-5" ></i> Lupa password
+                                        </a>
+                                    </div>
+                                    @endif
                                 </div>
                                 <div class="form-group row gutters-tiny mx-5">
                                     <div class="col-12 mb-10">
@@ -180,23 +187,25 @@
                                             Login
                                         </button>
                                     </div>
+                                    
+                                    <div class="col-sm-12 mt-10">
+                                        <p style="text-align: center; margin:auto">Belum punya akun? <a href="{{ route('register') }}">Daftar disini!</a>
+                                        </p>
+                                    </div>
+
                                     <div class="col-12 mt-10 mb-20 strike">
-                                        <span>or Login with</span>
+                                        <span>atau Login dengan</span>
                                     </div>
-                                    <div class="col-6 mb-10">
-                                        <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Google+</a>
+                                    <div class="col-4 mb-10">
+                                        <a href="{{ url('/auth/google') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-danger btn-google"  ><i class="fa fa-fw fa-google fa-1x"></i> Google+</a>
                                     </div>
-                                    <div class="col-6 mb-10">
-                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-primary btn-facebook"  ><i class="fa fa-fw fa-facebook fa-1x"></i> Facebook</a>
+                                    <div class="col-4 mb-10">
+                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-primary btn-facebook"  ><i class="fa fa-fw fa-facebook fa-1x"></i> Facebook</a>
                                     </div>
-                                    @if (Route::has('password.request'))
-                                    <div class="col-sm-12 mb-5">
-                                        <a class="btn btn-block btn-noborder btn-rounded "
-                                            href="{{ route('password.request') }}">
-                                            <i class="fa fa-warning text-muted mr-5"></i> Forgot password
-                                        </a>
+                                    <div class="col-4 mb-10">
+                                        <a href="{{ url('/auth/twitter') }}" class="btn btn-block btn-hero btn-noborder btn-rounded btn-light btn-link btn-twitter"  ><i class="fa fa-fw fa-twitter fa-1x"></i> Twitter</a>
                                     </div>
-                                    @endif
+                                    
 
                                 </div>
                             </form>

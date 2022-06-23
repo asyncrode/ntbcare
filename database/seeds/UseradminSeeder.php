@@ -22,27 +22,27 @@ class UseradminSeeder extends Seeder
         $admin->assignRole('super-admin');
 
         $lombok = Admin::create([
-            'nama' => 'opd lombok',
-            'email' => 'lombok@gmail.com',
+            'nama' => 'Dinas PU Kota Mataram',
+            'email' => 'pumtr@gmail.com',
             'password' => bcrypt('admin123')
         ]);
 
-        $lombok->assignRole('opd-lombok');
+        $lombok->assignRole('OPD');
 
         $bima = Admin::create([
-            'nama' => 'opd bima',
-            'email' => 'bima@gmail.com',
+            'nama' => 'Dinas PUPR Provinsi NTB',
+            'email' => 'pupr@gmail.com',
             'password' => bcrypt('admin123')
         ]);
 
-        $bima->assignRole('opd-bima');
+        $bima->assignRole('OPD-Prov');
 
         $mataram = Admin::create([
-            'nama' => 'OPD PU Mataram',
-            'email' => 'pu@gmail.com',
+            'nama' => 'Pimpinan',
+            'email' => 'vip@gmail.com',
             'password' => bcrypt('admin123')
         ]);
 
-        $mataram->assignRole('opd-pu');
+        $mataram->assignRole('Executive');
     }
 }

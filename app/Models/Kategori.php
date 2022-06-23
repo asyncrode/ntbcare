@@ -8,17 +8,16 @@ class Kategori extends Model
 {
     protected $table = 'kategoris';
     protected $fillable = [
-        'kategori'
+        'id', 'kategori'
     ];
 
 
     public function aduan()
     {
-        return $this->hasOne(Aduan::class, 'id');
+        return $this->hasMany(Aduan::class, 'id_kategori');
     }
     public function subkategori()
     {
-        return $this->hasMany(Subkategori::class,'id');
-
+        return $this->hasMany(Subkategori::class, 'id_kategori');
     }
 }
