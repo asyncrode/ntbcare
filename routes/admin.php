@@ -132,7 +132,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'Admin\RekapController@index')->name('rekap.index');
         Route::get('/getRekap', 'Admin\RekapController@getRekap')->name('rekap.data');
         Route::get('/wilayah', 'Admin\RekapController@index_wilayah')->name('rekap.index.wilayah');
-        Route::get('/getRekapWilayah', 'Admin\RekapController@getRekapWilayah')->name('rekap.data.wilayah');
+        Route::get('/getRekapWilayah', 'Admin\RekapController@getWilayah')->name('rekap.data.wilayah');
+        Route::get('/kategori', 'Admin\RekapController@index_Kategori')->name('rekap.index.kategori');
+        Route::get('/getRekapKategori', 'Admin\RekapController@getKategori')->name('rekap.data.kategori');
     });
 
     Route::group(['prefix' => 'untold-story', 'middleware' => ['role:super-admin']], function () {

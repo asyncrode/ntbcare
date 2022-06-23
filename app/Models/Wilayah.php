@@ -12,23 +12,21 @@ class Wilayah extends Model
     protected $table = 'wilayahs';
     protected $fillable = [
 
-        'id','nama_will',
+        'id', 'nama_will',
     ];
 
     public function aduan()
     {
-        return $this->hasOne(Aduan::class, 'id');
-
+        return $this->hasMany(Aduan::class, 'id_wil');
     }
 
     public function opd()
     {
-        return $this->hasMany(Opd::class, 'id');
+        return $this->hasMany(Opd::class, 'id_wilayah');
     }
 
     public function kecamatan()
     {
-        return $this->hasOne(kecamatan::class,'id');
-
+        return $this->hasOne(kecamatan::class, 'id_wilayahs');
     }
 }

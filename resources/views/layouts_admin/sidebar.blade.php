@@ -181,6 +181,9 @@
                         <li>
                             <a href="{{route('rekap.index.wilayah')}}">Rekap Aduan per Wilayah</a>
                         </li>
+                        <li>
+                            <a href="{{route('rekap.index.kategori')}}">Rekap Aduan per Kategori</a>
+                        </li>
                     </ul>
                 </li>
                 
@@ -249,6 +252,9 @@
                         </li>
                         <li>
                             <a href="{{route('rekap.index.wilayah')}}">Rekap Aduan per Wilayah</a>
+                        </li>
+                        <li>
+                            <a href="{{route('rekap.index.kategori')}}">Rekap Aduan per Kategori</a>
                         </li>
                     </ul>
                 </li>
