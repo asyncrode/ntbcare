@@ -17,31 +17,19 @@
                 <div class="content content-full text-center" style="padding: 10%">
                     {{-- <img class="invisible" data-toggle="appear" data-class="animated fadeInDown" src="{{asset('assets_user/media/favicons/ugl1.png')}}" style="max-height: 300px"> --}}
                     <div class="invisible" data-toggle="appear" data-class="animated fadeInDown">
-                        <div class="js-slider slick-dotted-inner slick-dotted-white" data-dots="true" data-arrows="true" style="margin-top: 15%;">
-                            <div>
-                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 1.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                        <div class="js-slider slick-dotted-inner slick-dotted-white" data-dots="true" data-arrows="true" style="margin-top: 15%;display: flex; align-items:center">
+                            <div style="display: flex; align-items:center">
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 1.png')}}" > {{--height: auto; width:auto; object-fit:fill; text-align:center--}}
                             </div>
-                            <div>
-                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 2.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            <div style="display: flex; align-items:center">
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 2.png')}}" >
                             </div>
-                            <div >
-                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 3.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            <div style="display: flex; align-items:center">
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 3.png')}}" >
                             </div>
-                            <div>
-                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 4.png')}}" style="height: auto; width:auto; object-fit:fill; text-align:center">
+                            <div style="display: flex; align-items:center">
+                                <img class="img-fluid img-responsive"  src="{{asset('assets_user/media/photos/Frame 4.png')}}" >
                             </div>
-                            {{-- <div>
-                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 1.png')}}" >
-                            </div>
-                            <div>
-                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 2.png')}}" >
-                            </div>
-                            <div >
-                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 3.png')}}" >
-                            </div>
-                            <div>
-                                <img class="img-fluid img-responsive"  data-lazy="{{asset('assets_user/media/photos/Frame 4.png')}}" >
-                            </div> --}}
                         </div>
                     </div>
                     {{-- <h1 class="display-3 font-w700 text-black mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown" >
@@ -318,17 +306,18 @@
             });
     </script> --}}
     <script type="text/javascript">
+        
         $('.js-slider').slick({
             dots: true,
             infinite: true,
             speed: 1000,
-            slidesToShow: 2,
+            slidesToShow: 1,
             autoplay: true,
             autoplaySpeed: 3000,
-            centerMode: true,
-            centerPadding: '160px',
-            variableWidth: true, 
-            adaptiveHeight: true
+            // centerMode: true,
+            // centerPadding: '160px',
+            // variableWidth: true, 
+            // adaptiveHeight: true
         });
         
     </script>

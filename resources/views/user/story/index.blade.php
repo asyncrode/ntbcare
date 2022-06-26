@@ -82,7 +82,7 @@
                         {!!Str::limit($g->description, 500)!!}
                     </p>
                     <a class="link-effect font-w600" href="{{route('user.story.detail', $g->id)}}">
-                        Read More..
+                        Baca selengkapnya..
                     </a>
                 </div>
                 @endif

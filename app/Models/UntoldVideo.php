@@ -13,6 +13,6 @@ class UntoldVideo extends Model
 
     public function untold()
     {
-        return $this->belongsTo(Untold::class,'id');
+        return $this->belongsTo(Untold::class, 'id');
     }
 }
