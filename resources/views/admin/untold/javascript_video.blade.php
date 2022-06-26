@@ -4,6 +4,7 @@
             uploadUrl: "#",
             theme: 'fa',
             required: false,
+            allowedFileExtensions:  ["mp4", "mov", "avi", "MP4", "MOV", "AVI"],
             showUpload: false,
             "fileActionSettings":{
                 "showDrag":false,
@@ -26,7 +27,7 @@
            
             $.ajax({
                 data : formData,
-                url: "{{ route('untold.admin.store.video') }}",
+                url: "{{route('untold.admin.store.video')}}",
                 type: "POST",
                 contentType:false,
                 processData:false,

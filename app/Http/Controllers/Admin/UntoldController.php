@@ -27,7 +27,6 @@ class UntoldController extends Controller
 
     public function getUntold()
     {
-
     }
 
     public function store(Request $request)
@@ -37,9 +36,8 @@ class UntoldController extends Controller
         $untold->shortdesc = $request->shortdesc;
         $untold->description = $request->description;
         $untold->save();
-        
-        if($request->hasfile('gambar'))
-        {
+
+        if ($request->hasfile('gambar')) {
             $gambar = $request->gambar;
             $gambar_ext = $gambar->getClientOriginalExtension();
             $name = $gambar->getClientOriginalName();
@@ -54,8 +52,8 @@ class UntoldController extends Controller
         }
 
         return response()->json([
-            'message' => 'Untold Berhasil Di Tambah'
-        ],200);
+            'message' => 'Untold Story Berhasil Ditambah'
+        ], 200);
     }
 
     public function store_video(Request $request)
@@ -64,9 +62,8 @@ class UntoldController extends Controller
         $untold->judul = $request->judul;
         $untold->shortdesc = $request->shortdesc;
         $untold->save();
-        
-        if($request->hasfile('video'))
-        {
+
+        if ($request->hasfile('video')) {
             $video = $request->video;
             $video_ext = $video->getClientOriginalExtension();
             $name = $video->getClientOriginalName();
@@ -79,11 +76,10 @@ class UntoldController extends Controller
             $video_data->id_untold = $untold->id;
             $video_data->save();
         }
-        
+
 
         return response()->json([
-            'message' => 'Untold Berhasil Di Tambah'
-        ],200);
+            'message' => 'Video Berhasil Di Tambah'
+        ], 200);
     }
-
 }
