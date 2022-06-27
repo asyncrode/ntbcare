@@ -58,10 +58,13 @@ class UntoldController extends Controller
 
     public function store_video(Request $request)
     {
+
+
         $untold = new Untold;
         $untold->judul = $request->judul;
         $untold->shortdesc = $request->shortdesc;
         $untold->save();
+
 
         if ($request->hasfile('video')) {
             $video = $request->video;

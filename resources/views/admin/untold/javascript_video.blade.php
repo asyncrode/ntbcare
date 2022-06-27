@@ -4,7 +4,7 @@
             uploadUrl: "#",
             theme: 'fa',
             required: false,
-            allowedFileExtensions:  ["mp4", "mov", "avi", "MP4", "MOV", "AVI"],
+            allowedFileExtensions:  ["mp4", "mov", "avi", "webm", "MP4", "MOV", "AVI"],
             showUpload: false,
             "fileActionSettings":{
                 "showDrag":false,
@@ -24,7 +24,10 @@
             let formData = new FormData($('#frm_add')[0])
             formData.append("shortdesc",$('#shortdesc').summernote('code'))
             
-           
+            jQuery.each($('input[name^="video"]')[0].files, function(i, file) {
+                formData.append(i, file);
+            });
+
             $.ajax({
                 data : formData,
                 url: "{{route('untold.admin.store.video')}}",
