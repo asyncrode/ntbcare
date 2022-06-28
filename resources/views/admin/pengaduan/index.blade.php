@@ -116,8 +116,8 @@
                         </p>
                     </div>
                     <div class="block-content mb-10">
-                        <div class="d-flex align-item-center" style="height: 290px">
-                            <img class="p-0 img-fluid img-thumb " src="{{ asset('upload/aduan/'.$d->bukti) }}" alt="">
+                        <div class="d-flex align-item-center" style="height: 290px; min-w">
+                            <img class="p-0 img-fluid img-thumb" style="min-width:324px" src="{{ asset('upload/aduan/'.$d->bukti) }}" alt="">
                         </div>
                         <p class="mb-10 mt-10 mr-10" style="text-align: justify">
                             {!!Str::limit($d->pesan, 200)!!}
